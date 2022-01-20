@@ -11,8 +11,8 @@ Features include:
 
 ## Getting Started
 
-1. Clone this repo: `git clone https://github.com/calpoly-csai/swanton-chat-bot.git`
-2. Navigate to folder: `cd swanton-chat-bot`
+1. Clone this repo: `https://github.com/EdikusRex/CalPoppy.git`
+2. Navigate to folder: `cd CalPoppy`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open the app in your browser: `http://localhost:3000`
