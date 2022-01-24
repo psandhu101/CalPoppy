@@ -1,11 +1,7 @@
-.polygreen-bg {
-    background-color: #154734;
-}
-
-.white-bg {
-    background-color: white;
-}
-
 .white-text {
     color: white;
+}
+
+.source-sans {
+    font-family: 'Source Sans Pro', sans-serif;
 }
