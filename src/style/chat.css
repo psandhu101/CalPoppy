@@ -1,0 +1,24 @@
+.bubble {
+    display: block;
+    padding: 10px 20px;
+    margin: 20px auto;
+    width: max-content;
+    text-align: center;
+    max-width: 400px;
+    border-radius: 30px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    box-shadow: 0 10px 20px transparent;
+}
+
+/* a rem is 16 px */
+.margin1rem {
+    margin: 1 rem;
+}
+
+.margin2rem {
+    margin: 2rem;
+}
+
+.beveledEdge {
+    border-radius: 50%;
+}
