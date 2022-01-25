@@ -1,3 +1,7 @@
+:root {
+    --polyGreenShadow: rgba(21, 71, 52, 0.257);
+}
+
 .polyGreenBG {
     background-color: #154734;
 }
