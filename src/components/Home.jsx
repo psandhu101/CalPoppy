@@ -6,7 +6,7 @@ export default function Home() {
         <><div>
             <p class="bubble">Chat with Poppy</p>
         </div><div>
-                <p class="bubble">FAQ</p>
+                <p class="bubble">FAQ </p>
             </div></>
 
     );
