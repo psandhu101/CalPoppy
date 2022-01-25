@@ -10,6 +10,15 @@
     box-shadow: 0 10px 20px transparent;
 }
 
+.bubbleHover {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px var(--polyGreenShadow);
+        }
+    }
+}
+
 /* a rem is 16 px */
 .margin1rem {
     margin: 1 rem;
