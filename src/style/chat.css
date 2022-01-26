@@ -1,3 +1,4 @@
+/* basic formatting for a chat bubble */
 .bubble {
     display: block;
     padding: 10px 20px;
@@ -8,6 +9,15 @@
     border-radius: 30px;
     transition: transform 0.5s, box-shadow 0.5s;
     box-shadow: 0 10px 20px transparent;
+}
+
+/* bubble formatting for messages from bot */
+.bubble-bot {
+    background-color: var(--polyGreen);
+}
+
+.bubble-user {
+    background-color: white;
 }
 
 .bubbleHover {
