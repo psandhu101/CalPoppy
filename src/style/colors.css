@@ -1,6 +1,7 @@
 :root {
     --polyGreen: #154734;
-    --polyGreenShadow: rgba(21, 71, 52, 0.257);
+    --polyGreenShadow: rgba(21, 71, 52, 0.25);
+    --sealGrayShadow: rgba(84, 88, 90, 0.125);
 }
 
 .polyGreenBG {
