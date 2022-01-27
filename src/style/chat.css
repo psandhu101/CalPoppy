@@ -12,7 +12,7 @@
     text-align: left;
     /* bevels chat bubbles with the bottom left corner more pointed */
     border-radius: 50% 50% 50% 15%;
-    margin-right: 10%;
+    margin-right: 20px;
 }
 
 /* formatting for messages from user */
