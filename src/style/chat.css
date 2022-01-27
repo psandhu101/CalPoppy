@@ -1,8 +1,14 @@
 /* basic formatting for a message bubble */
 .msg {
+    --roundCorner: 50%;
+    --pointedCorner: 15%;
+    --feedbackMargin: 20px;
+
     display: inline-block;
     padding: 10% 5%;
     box-shadow: var(--sealGrayShadow);
+    border-top-left-radius: var(--roundCorner);
+    border-top-right-radius: var(--roundCorner);
 }
 
 /* formatting for messages from bot */
@@ -11,8 +17,9 @@
     background-color: var(--polyGreen);
     text-align: left;
     /* bevels chat bubbles with the bottom left corner more pointed */
-    border-radius: 50% 50% 50% 15%;
-    margin-right: 20px;
+    border-bottom-left-radius: var(--pointedCorner);
+    border-bottom-right-radius: var(--roundCorner);
+    margin-right: var(--feedbackMargin);
 }
 
 /* formatting for messages from user */
@@ -21,7 +28,8 @@
     background-color: white;
     text-align: right;
     /* bevels chat bubbles with the bottom right corner more pointed */
-    border-radius: 50% 50% 15% 50%;
+    border-bottom-left-radius: var(--roundCorner);
+    border-bottom-right-radius: var(--pointedCorner);
 }
 
 .bubbleHover {
