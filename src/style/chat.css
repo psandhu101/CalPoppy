@@ -1,30 +1,34 @@
-/* basic formatting for a chat bubble */
-.bubble {
-    display: block;
-    padding: 10px 20px;
-    margin: 20px auto;
-    width: max-content;
-    text-align: center;
-    max-width: 400px;
-    border-radius: 30px;
-    transition: transform 0.5s, box-shadow 0.5s;
-    box-shadow: 0 10px 20px transparent;
+/* basic formatting for a message bubble */
+.msg {
+    display: inline-block;
+    padding: 10% 5%;
+    box-shadow: var(--sealGrayShadow);
 }
 
-/* bubble formatting for messages from bot */
-.bubble-bot {
+/* formatting for messages from bot */
+.msg.bot {
+    color: white;
     background-color: var(--polyGreen);
+    text-align: left;
+    /* bevels chat bubbles with the bottom left corner more pointed */
+    border-radius: 50% 50% 50% 15%;
+    margin-right: 10%;
 }
 
-.bubble-user {
+/* formatting for messages from user */
+.msg.user {
+    color: black;
     background-color: white;
+    text-align: right;
+    /* bevels chat bubbles with the bottom right corner more pointed */
+    border-radius: 50% 50% 15% 50%;
 }
 
 .bubbleHover {
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 15px var(--polyGreenShadow);
+            box-shadow: 0 10px 15px var(--sealGrayShadow);
         }
     }
 }
