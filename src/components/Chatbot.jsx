@@ -14,12 +14,27 @@ export default function Chatbot(props) {
   const [query, setQuery] = useState("");
   const [conversation, setConversation] = useState([]);
 
+  
   /**
    * Toggles the suggestions
    */
   let onSuggestionClick = () => {
     setSuggestionsOpen((s) => !s);
   };
+
+  window.onload = function() {
+    var data = sessionStorage.getItem("key");
+    if (data != null) {
+      const myArray = data.split("    ");
+      for (const element of myArray){
+        setConversation([
+          ...conversation,
+          { text: element, sender: SENDER_USER, timestamp: Date.now() },
+        ]);
+      }
+    }
+    
+  }
 
   /**
    * Every time the user sends a new question, get the answer from the API and
@@ -58,7 +73,17 @@ export default function Chatbot(props) {
       { text: message, sender: SENDER_USER, timestamp: Date.now() },
     ]);
     setQuery(message);
+    if (sessionStorage.getItem("key") == null){
+      sessionStorage.setItem("key", message);
+    }
+    else {
+      var temp = sessionStorage.getItem("key");
+      console.log(temp);
+      sessionStorage.setItem("key", message + "    " + temp);
+    }
   };
+  
+  
   /**
    * Handles user feedback about chatbot answer accuracy.
    */

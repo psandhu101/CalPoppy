@@ -52,6 +52,7 @@ export default function ChatWindow({
   ) : (
     <GreetingCard />
   );
+
   return (
     <div className="ChatWindow" css={windowStyles} ref={chatWindowRef}>
       {suggestionsOpen ? (
