@@ -10,6 +10,8 @@
     onFeedbackGiven,
     timestamp,
     }) {
+
+    /* TODO: look up tutorials for css animation */
     const animWrapperStyle = useSpring({
         from: { opacity: 0 },
         to: { opacity: 1 },
@@ -20,6 +22,7 @@
         to: { opacity: 1, fontSize: '20px' },
     });
 
+    /* TODO: move into msg classes */
     const messageCss = (theme) =>
         css`
         display: inline-block;
@@ -42,6 +45,7 @@
         align-self: ${!alignLeft && "flex-end"};
     `;
 
+    /* TODO: add css styling for feedback icon on bot messages */
     const feedbackIconCss = css`
         display: inline-block;
         margin: 0 5px;
