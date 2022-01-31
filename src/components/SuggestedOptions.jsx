@@ -1,85 +1,67 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { useSpring, useTrail, animated } from '@react-spring/web';
-import suggestions from "./suggestions";
 
-export default function SuggestedOptions({ onSend, onSuggestionClick }) {
-  const trail = useTrail(suggestions.length, {
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-  });
+// import suggestions from "./suggestions";
+import {aboutSPR, aboutCreators} from "./suggestions"
+import '../style/faq.css'
 
-  const animContactStyle = useSpring({
-    from: { opacity: 0},
-    to: { opacity: 1},
-  });
-
-  const contactText =
-    "Please send feedback and comments to swantonpoppycp@gmail.com";
-
-  const suggestionBubbleStyle = (theme) =>
-    css`
-      display: block;
-      padding: 10px 20px;
-      margin: 20px auto;
-      background-color: ${theme.color.accent};
-      color: white;
-      width: max-content;
-      text-align: center;
-      max-width: 400px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: transform 0.5s, box-shadow 0.5s;
-      box-shadow: 0 10px 20px transparent;
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          transform: scale(1.05);
-          box-shadow: 0 10px 15px rgba(30, 78, 33, 0.257);
-        }
-      }
-    `;
-
-  const suggestionListStyle = css`
-    padding: 0 0 20px; // pad the bottom to create room for list items to grow
-    margin: 0;
-    list-style: none;
-    width: 100%;
-    text-align: left;
-  `;
-
-  const suggestedOptionsStyle = css`
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  `;
-
-  const contactTextStyle = css`
-    font-size: 16px;
-    color: red;
-    text-align: center;
-    padding-bottom: 20px;
-  `;
-
-  function sendMessage(suggestion) {
-    onSuggestionClick();
-    onSend(suggestion);
-  }
-
+export default function SuggestedOptions() {
   return (
-    <div css={suggestedOptionsStyle}>
-      <ul css={suggestionListStyle}>
-        {trail.map(({ opacity }, index) => (
-          <animated.li
-            style={{ opacity }}
-            css={suggestionBubbleStyle}
-            key={suggestions[index]}
-            onClick={() => sendMessage(suggestions[index])}
-          >{suggestions[index]}
-          </animated.li>))}
-      </ul>
+    <div class="container">
+      <div class="row bg-white text-white center-block">
+        <div class="col" align="center">
+          <div class="bubble">
+            <div class="card-body">
+              <h5 class="card-title">Suggested Questions</h5>
+              <div class="btn-group-vertical">
+                <button type="button" class="roundButton">How big is Swanton Pacific Ranch?</button>
+                <button type="button" class="roundButton">Where did Swanton get its name?</button>
+                <button type="button" class="roundButton">What group of Indigenous Peoples lived in the Swanton area before Spanish colonization?</button>
+                <button type="button" class="roundButton">How many plants have been identified in the Swanton/Scott Creek Watershed?</button>
+                <button type="button" class="roundButton">What is a fun fact about the Rancho?</button>
+                <button type="button" class="roundButton">How do I plan a visit to Swanton?</button>
 
-      <animated.p style={animContactStyle} css={contactTextStyle}>{contactText}</animated.p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" align="center">
+          <div class="bubble">
+          <div class="card-body">
+            <h5 class="card-title">About Swanton Pacific Ranch</h5>
+            <h6><br/>{aboutSPR}</h6>
+          </div> 
+          </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col" align="center">
+          <div class="bubble">
+          <div class="card-body">
+            <h5 class="card-title">About the Creators</h5>
+            <h6><br/>{aboutCreators}
+            <br/><br/>
+            Poppy Software Team<br/>
+            poppyemail@email.com</h6>
+          </div> 
+          </div>
+        </div>
+        <div class="col" align="center">
+        <div class="bubble">
+          <div class="card-body">
+            <h5 class="card-title">Want to Help?</h5>
+            <h6><br/>Poppy needs your help to ensure that she can stay up and running to educate future generations on 
+            SPR rich history!<br/>
+
+            Interested in donating? Contact:<br/><br/>
+
+            Jeanine Scaramozzino<br/>
+            (805) 123 - 4567<br/>
+            poppyemail@email.com
+            </h6>
+          </div> 
+          </div> 
+        </div>
+      </div>
     </div>
   );
-}
+  }

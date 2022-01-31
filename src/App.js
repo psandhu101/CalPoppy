@@ -4,6 +4,7 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.js";
 import SuggestedOptions from "./components/SuggestedOptions";
 import Home from "./components/Home";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,7 +16,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>  
         <Router>
-            <div>
+            <div class="container">
                 <nav>
                     <div>
                         <Link to="/">

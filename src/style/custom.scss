@@ -1,6 +1,8 @@
 // Custom.scss
 $poppy-green : #203e2f; //Consistent Variable to Set Greens
+$light-gray : #969696;
 $primary:  $poppy-green; //Changing the Primary Color from blue to Poppy Green
+$secondary: $light-gray;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 /*Custom Code Example:
