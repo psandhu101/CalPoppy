@@ -2,8 +2,10 @@ import Chatbot from "./components/Chatbot";
 import "./axios-config.js";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.js";
-import SuggestedOptions from "./components/SuggestedOptions";
+import SuggestedOptions from "./components/FAQ";
 import Home from "./components/Home";
+import {} from "./style/navbar.css"
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,39 +17,38 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>  
         <Router>
-            <div>
-                <nav>
-                    <div>
+            <div class="topnav">
+                <div class="row">
+                    <nav>
+                        <img src="/logo192.png" height="46" alt="poppy logo"/>
                         <Link to="/">
-                            <button type="button">
+                            <button class="navbutton" type="button">
                                 Home
                             </button>
                         </Link>
-                    </div>
-                    <div>
                         <Link to="/chatbot">
-                            <button type="button">
+                            <button class="navbutton" type="button">
                                 Chat
                             </button>
                         </Link>
-                    </div>
-                    <div>
                         <Link to="/suggestions">
-                            <button type="button">
-                                Suggestions
+                            <button class="navbutton" type="button">
+                                FAQ
                             </button>
                         </Link>
-                    </div>
-                </nav>
+                        
+                    </nav>
 
-                {/* A <Routes> looks through its children <Route>s and
-                    renders the first one that matches the current URL. */}
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/chatbot" element={<Chatbot/>}/>
-                    <Route path="/suggestions" element={<SuggestedOptions/>}/>
-                </Routes>
+                    {/* A <Routes> looks through its children <Route>s and
+                        renders the first one that matches the current URL. */}
+                    
+                </div>
             </div>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/chatbot" element={<Chatbot/>}/>
+                <Route path="/suggestions" element={<SuggestedOptions/>}/>
+            </Routes>
         </Router>
     </ThemeProvider>
   );
