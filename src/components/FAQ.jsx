@@ -1,6 +1,6 @@
 
-import suggestions from "./suggestions";
-import {aboutSPR, aboutCreators, helpMessage} from "./suggestions"
+import suggestions from "./faqs";
+import {aboutSPR, aboutCreators, helpMessage} from "./faqs"
 import '../style/faq.css'
 
 // function sendMessage(suggestion){
@@ -10,7 +10,7 @@ import '../style/faq.css'
 export default function SuggestedOptions() {
   return (
     <div class="container">
-      <div class="row bg-white text-white center-block">
+      <div class="row text-white center-block">
         <div class="col" align="center">
           <div class="bubble">
             <div class="card-body">
