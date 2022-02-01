@@ -1,10 +1,10 @@
 .bubble {
     display: block;
       padding: 10px 20px;
-      margin: 20px auto;
+      margin: 15px auto;
       background-color: #203e2f;
       color: white;
-      width: max-content;
+      width: 100%;
       text-align: center;
       max-width: 600px;
       border-radius: 30px;
@@ -12,28 +12,23 @@
       box-shadow: 0 10px 20px transparent;
 }
 
-.btn {
-    margin: 10px auto;
-}
-
-.roundButton{
+.roundbutton{
     display: block;
-       padding: 5px 10px;
+       padding: 9px 15px;
        margin: 10px auto;
        background-color: gray;
        color: white;
-       width: max-content;
+       width: auto;
        text-align: center;
-       max-width: 400px;
+       max-width: 500px;
+       border: 1px solid #203e2f;
        border-radius: 20px;
        cursor: pointer;
-       transition: transform 0.5s, box-shadow 0.5s;
-       box-shadow: 0 10px 20px transparent;
-       @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          transform: scale(1.05);
-          box-shadow: 0 10px 15px rgba(30, 78, 33, 0.257);
-        }
-      }
+       transition-duration: 0.4s;
 
 }
+
+.roundbutton:hover {
+    background-color: #b6b6b6; /* Green */
+    color: white;
+  }
