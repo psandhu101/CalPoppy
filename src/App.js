@@ -4,6 +4,7 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.js";
 import SuggestedOptions from "./components/SuggestedOptions";
 import Home from "./components/Home";
+import './style/custom.scss';
 import {
   BrowserRouter as Router,
   Routes,

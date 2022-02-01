@@ -1,8 +1,8 @@
 // Custom.scss
-$poppy-green : #203e2f; //Consistent Variable to Set Greens
+$poppy-green : #203E2F; //Consistent Variable to Set Greens
 $primary:  $poppy-green; //Changing the Primary Color from blue to Poppy Green
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
+@import "~bootstrap/scss/bootstrap";
 /*Custom Code Example:
     https://getbootstrap.com/docs/5.1/components/alerts/
     Alert warning's default background color is yellow. This overwrites the color of the text to white and the background to poppy green. 
@@ -15,3 +15,5 @@ $primary:  $poppy-green; //Changing the Primary Color from blue to Poppy Green
     background-color: tint-color($poppy-green, 40%);
     border-color: $poppy-green;
 }
+
+
