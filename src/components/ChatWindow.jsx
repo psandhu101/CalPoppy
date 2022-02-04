@@ -43,9 +43,9 @@ const conversationElements = conversation.length ? (
     <MessageBubble
         key={m.timestamp}
         text={m.text}
-        timestamp={m.timestamp}
+        // timestamp={m.timestamp}
         // showFeedback={m.responseType === "answer"}
-        // senderID={m.sender !== "user"}
+        senderID={m.sender !== "user"}
         // onFeedbackGiven={onFeedbackGiven}
     />
     ))
