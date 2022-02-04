@@ -1,7 +1,8 @@
     /** @jsxImportSource @emotion/react */
-    import { css } from "@emotion/react";
-    import { ThumbsUp, ThumbsDown } from "react-feather";
+    // import { css } from "@emotion/react";
+    // import { ThumbsUp, ThumbsDown } from "react-feather";
     // import { useSpring, animated } from '@react-spring/web';
+    import '../style/chat.css';
 
     export default function MessageBubble({
     text,

@@ -17,10 +17,11 @@
     --pointedCorner: 15%;
     --feedbackMargin: 20px;
 
+    font-family: 'Source Sans Pro', sans-serif;
     display: inline-block;
     padding: 10% 5%;
     box-shadow: var(--sealGrayShadow);
-    border-color: var(--sealGray);
+    border: 1px solid var(--sealGray);
     border-top-left-radius: var(--roundCorner);
     border-top-right-radius: var(--roundCorner);
 
