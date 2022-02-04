@@ -6,13 +6,13 @@ import SuggestedOptions from "./SuggestedOptions";
 import GreetingCard from "./GreetingCard";
 
 export default function ChatWindow({
-  conversation,
-  suggestionsOpen,
-  onSend,
-  onSuggestionClick,
-  onFeedbackGiven,
+conversation,
+suggestionsOpen,
+onSend,
+onSuggestionClick,
+onFeedbackGiven,
 }) {
-  const windowStyles = css`
+const windowStyles = css`
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -21,47 +21,47 @@ export default function ChatWindow({
     grid-area: chat-window;
     overflow-y: scroll;
     background: whitesmoke;
-  `;
+`;
 
-  const chatWindowRef = useRef(null);
+const chatWindowRef = useRef(null);
 
-  // Scroll to the bottom of the chat window every time a new message is sent
-  useEffect(() => {
+// Scroll to the bottom of the chat window every time a new message is sent
+useEffect(() => {
     if (!chatWindowRef.current || suggestionsOpen) return;
     chatWindowRef.current.scrollTo({
-      top: chatWindowRef.current.scrollHeight,
-      left: 0,
-      behavior: "smooth",
+    top: chatWindowRef.current.scrollHeight,
+    left: 0,
+    behavior: "smooth",
     });
-  });
+});
 
-  /**
-   * Create message bubbles from the current conversation
-   */
-  const conversationElements = conversation.length ? (
+/**
+ * Create message bubbles from the current conversation
+ */
+const conversationElements = conversation.length ? (
     conversation.map((m) => (
-      <MessageBubble
+    <MessageBubble
         key={m.timestamp}
         text={m.text}
         timestamp={m.timestamp}
-        showFeedback={m.responseType === "answer"}
-        alignLeft={m.sender !== "user"}
-        onFeedbackGiven={onFeedbackGiven}
-      />
+        // showFeedback={m.responseType === "answer"}
+        // senderID={m.sender !== "user"}
+        // onFeedbackGiven={onFeedbackGiven}
+    />
     ))
-  ) : (
+) : (
     <GreetingCard />
-  );
-  return (
+);
+return (
     <div className="ChatWindow" css={windowStyles} ref={chatWindowRef}>
-      {suggestionsOpen ? (
+    {suggestionsOpen ? (
         <SuggestedOptions
-          onSend={onSend}
-          onSuggestionClick={onSuggestionClick}
+        onSend={onSend}
+        onSuggestionClick={onSuggestionClick}
         />
-      ) : (
+    ) : (
         conversationElements
-      )}
+    )}
     </div>
-  );
+);
 }

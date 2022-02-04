@@ -1,4 +1,17 @@
-/* basic formatting for a message bubble */
+@import "./colors.css";
+
+/* animation styles */
+@keyframes animSpringOpacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes animSpringFontSize {
+    from {fontSize: '5px';}
+    to {fontSize: '20px';}
+}
+
+/* basic formatting for a message text */
 .msg {
     --roundCorner: 50%;
     --pointedCorner: 15%;
@@ -7,8 +20,13 @@
     display: inline-block;
     padding: 10% 5%;
     box-shadow: var(--sealGrayShadow);
+    border-color: var(--sealGray);
     border-top-left-radius: var(--roundCorner);
     border-top-right-radius: var(--roundCorner);
+
+    /* spring animation */
+    animation-name: animSpringFontSize;
+    animation-duration: 10s;
 }
 
 /* formatting for messages from bot */
@@ -19,7 +37,8 @@
     /* bevels chat bubbles with the bottom left corner more pointed */
     border-bottom-left-radius: var(--pointedCorner);
     border-bottom-right-radius: var(--roundCorner);
-    margin-right: var(--feedbackMargin);
+    /* adds in space for feedback icons */
+    /* margin-right: var(--feedbackMargin); */
 }
 
 /* formatting for messages from user */
@@ -37,6 +56,50 @@
         &:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 15px var(--sealGrayShadow);
+        }
+    }
+}
+
+.msgWrapper {
+    width: max-content;
+    max-width: 70%;
+    margin: 20px 0;
+
+    animation-name: animSpringOpacity;
+    animation-duration: 10s;
+}
+
+.msgWrapper.bot {
+    align-self: flex-start;
+}
+
+.msgWrapper.user {
+    align-self: flex-end;
+}
+
+.feedbackIcon {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    vertical-align: middle;
+    fill: transparent;
+    transition: fill 0.4s, transform 0.4s;
+}
+
+.feedbackIcon.positive {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            fill: green;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.feedbackIcon.negative {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            fill: red;
+            transform: translateY(2px);
         }
     }
 }
