@@ -1,7 +1,9 @@
     /** @jsxImportSource @emotion/react */
     // import { css } from "@emotion/react";
-    // import { ThumbsUp, ThumbsDown } from "react-feather";
+    import { ThumbsUp, ThumbsDown } from "react-feather";
     // import { useSpring, animated } from '@react-spring/web';
+    import {Button} from 'react-bootstrap';
+    import 'bootstrap/dist/css/bootstrap.css';
     import '../style/chat.css';
     import '../style/colors.css';
 
@@ -9,16 +11,15 @@
     text,
     /* senderID: SENDER_USER when false, SENDER_BOT when true */
     senderID,
-    // showFeedback,
-    // onFeedbackGiven,
-    // timestamp,
+    showFeedback,
+    onFeedbackGiven,
+    timestamp,
     })
     
     {
     // const SENDER_USER = false;
     // const SENDER_BOT = true;
 
-    // /* TODO: look up tutorials for css animation */
     // const animWrapperStyle = useSpring({
     //     from: { opacity: 0 },
     //     to: { opacity: 1 },
@@ -29,7 +30,6 @@
     //     to: { opacity: 1, fontSize: '20px' },
     // });
 
-    // /* TODO: move into msg classes */
     // const messageCss = (theme) =>
     //     css`
     //     display: inline-block;
@@ -52,7 +52,6 @@
     //     align-self: ${!senderID && "flex-end"};
     // `;
 
-    // /* TODO: add css styling for feedback icon on bot messages */
     // const feedbackIconCss = css`
     //     display: inline-block;
     //     margin: 0 5px;
@@ -96,9 +95,17 @@
         /* wrapper div for messages */
         <div className = {`msgWrapper ${ senderID ? "msgWrapperBot" : "msgWrapperUser" } `}>
             {/* actual message text */}
-            <p className = {` msg ${ senderID ? "msgBot" : "msgUser" } `} >
+            <p className = {` msg ${ senderID ? "msgBot" : "msgUser" } `}>
                 {text}
             </p>
+            {/* feedback buttons */}
+            { senderID && showFeedback && (
+                <>
+                {/* TODO: use bootstrap glyphicons for feedback */}
+                    <ThumbsUp className = "feedbackIcon feedbackIconPos" onClick = {() => onFeedbackGiven(timestamp, true)} />
+                    <ThumbsDown className = "feedbackIcon feedbackIconNeg" onClick = {() => onFeedbackGiven(timestamp, false)} />
+                </>
+            )}
         </div>
     );
     }

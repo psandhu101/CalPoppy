@@ -20,7 +20,7 @@
 .msgWrapper {
     width: max-content;
     max-width: 70%;
-    /* margin: 20px 0; */
+    margin-bottom: var(--feedbackMargin);
 
     animation-name: animSpringOpacity;
     animation-duration: 0.5s;
@@ -53,7 +53,7 @@
 .msgBot {
     color: white;
     background-color: var(--polyGreen);
-    /* text-align: left; */
+    text-align: left;
     /* bevels chat bubbles with the bottom left corner more pointed */
     border-bottom-left-radius: var(--pointedCorner);
     border-bottom-right-radius: var(--roundCorner);
@@ -65,7 +65,7 @@
 .msgUser {
     color: black;
     background-color: white;
-    /* text-align: right; */
+    text-align: right;
     /* bevels chat bubbles with the bottom right corner more pointed */
     border-bottom-left-radius: var(--roundCorner);
     border-bottom-right-radius: var(--pointedCorner);
@@ -81,7 +81,7 @@
 }
 
 .feedbackIcon {
-    display: inline-block;
+    /* display: inline-block; */
     margin: 0 5px;
     cursor: pointer;
     vertical-align: middle;
@@ -89,7 +89,7 @@
     transition: fill 0.4s, transform 0.4s;
 }
 
-.feedbackIconPositive {
+.feedbackIconPos {
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             fill: green;
@@ -98,7 +98,7 @@
     }
 }
 
-.feedbackIconNegative {
+.feedbackIconNeg {
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             fill: red;
