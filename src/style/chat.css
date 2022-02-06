@@ -1,5 +1,11 @@
 @import "./colors.css";
 
+:root {
+    --roundCorner: 2em;
+    --pointedCorner: 0.75em;
+    --feedbackMargin: 20px;
+}
+
 /* animation styles */
 @keyframes animSpringOpacity {
     from {opacity: 0;}
@@ -11,15 +17,28 @@
     to {fontSize: '20px';}
 }
 
+.msgWrapper {
+    width: max-content;
+    max-width: 70%;
+    /* margin: 20px 0; */
+
+    animation-name: animSpringOpacity;
+    animation-duration: 0.5s;
+}
+
+.msgWrapperBot {
+    align-self: flex-start;
+}
+
+.msgWrapperUser {
+    align-self: flex-end;
+}
+
 /* basic formatting for a message text */
 .msg {
-    --roundCorner: 50%;
-    --pointedCorner: 15%;
-    --feedbackMargin: 20px;
-
     font-family: 'Source Sans Pro', sans-serif;
     display: inline-block;
-    padding: 10% 5%;
+    padding: 1em 0.75em;
     box-shadow: var(--sealGrayShadow);
     border: 1px solid var(--sealGray);
     border-top-left-radius: var(--roundCorner);
@@ -27,26 +46,26 @@
 
     /* spring animation */
     animation-name: animSpringFontSize;
-    animation-duration: 10s;
+    animation-duration: 5s;
 }
 
 /* formatting for messages from bot */
-.msg.bot {
+.msgBot {
     color: white;
     background-color: var(--polyGreen);
-    text-align: left;
+    /* text-align: left; */
     /* bevels chat bubbles with the bottom left corner more pointed */
     border-bottom-left-radius: var(--pointedCorner);
     border-bottom-right-radius: var(--roundCorner);
     /* adds in space for feedback icons */
-    /* margin-right: var(--feedbackMargin); */
+    margin-left: var(--feedbackMargin);
 }
 
 /* formatting for messages from user */
-.msg.user {
+.msgUser {
     color: black;
     background-color: white;
-    text-align: right;
+    /* text-align: right; */
     /* bevels chat bubbles with the bottom right corner more pointed */
     border-bottom-left-radius: var(--roundCorner);
     border-bottom-right-radius: var(--pointedCorner);
@@ -61,23 +80,6 @@
     }
 }
 
-.msgWrapper {
-    width: max-content;
-    max-width: 70%;
-    margin: 20px 0;
-
-    animation-name: animSpringOpacity;
-    animation-duration: 10s;
-}
-
-.msgWrapper.bot {
-    align-self: flex-start;
-}
-
-.msgWrapper.user {
-    align-self: flex-end;
-}
-
 .feedbackIcon {
     display: inline-block;
     margin: 0 5px;
@@ -87,7 +89,7 @@
     transition: fill 0.4s, transform 0.4s;
 }
 
-.feedbackIcon.positive {
+.feedbackIconPositive {
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             fill: green;
@@ -96,7 +98,7 @@
     }
 }
 
-.feedbackIcon.negative {
+.feedbackIconNegative {
     @media (hover: hover) and (pointer: fine) {
         &:hover {
             fill: red;

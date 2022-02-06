@@ -39,13 +39,13 @@ useEffect(() => {
  * Create message bubbles from the current conversation
  */
 const conversationElements = conversation.length ? (
-    conversation.map((m) => (
+    conversation.map((msg) => (
     <MessageBubble
-        key={m.timestamp}
-        text={m.text}
+        key={msg.timestamp}
+        text={msg.text}
         // timestamp={m.timestamp}
         // showFeedback={m.responseType === "answer"}
-        senderID={m.sender !== "user"}
+        senderID={msg.sender !== "user"}
         // onFeedbackGiven={onFeedbackGiven}
     />
     ))

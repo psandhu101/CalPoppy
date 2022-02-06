@@ -3,10 +3,11 @@
     // import { ThumbsUp, ThumbsDown } from "react-feather";
     // import { useSpring, animated } from '@react-spring/web';
     import '../style/chat.css';
+    import '../style/colors.css';
 
     export default function MessageBubble({
     text,
-    /* senderID: SENDER_USER when user, SENDER_BOT when bot */
+    /* senderID: SENDER_USER when false, SENDER_BOT when true */
     senderID,
     // showFeedback,
     // onFeedbackGiven,
@@ -14,8 +15,8 @@
     })
     
     {
-    // const SENDER_USER = "user";
-    const SENDER_BOT = "bot";
+    // const SENDER_USER = false;
+    // const SENDER_BOT = true;
 
     // /* TODO: look up tutorials for css animation */
     // const animWrapperStyle = useSpring({
@@ -93,9 +94,9 @@
         // </animated.div>
 
         /* wrapper div for messages */
-        <div className = { `${ senderID === SENDER_BOT ? "msgWrapper.bot" : "msgWrapper.user" }` }>
+        <div className = {`msgWrapper ${ senderID ? "msgWrapperBot" : "msgWrapperUser" } `}>
             {/* actual message text */}
-            <p className = {` ${ senderID === SENDER_BOT ? "msg.bot" : "msg.user" } `}>
+            <p className = {` msg ${ senderID ? "msgBot" : "msgUser" } `} >
                 {text}
             </p>
         </div>
