@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { css } from "@emotion/react";
 import MessageBubble from "./MessageBubble";
-import SuggestedOptions from "./SuggestedOptions";
+import SuggestedOptions from "./FAQ";
 import GreetingCard from "./GreetingCard";
 
 export default function ChatWindow({

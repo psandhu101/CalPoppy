@@ -1,0 +1,22 @@
+
+.topnav {
+    background-color: #203e2f;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+.navbutton{
+    padding: 10px 15px;
+    background-color: #203e2f;
+    color: white;
+    width:max-content;
+    text-align:center;
+    border: 1px solid #203e2f;
+    transition-duration: 0.4s;
+}
+
+.navbutton:hover {
+    background-color: #296e2b; 
+    border-color: #296e2b; 
+    color: white;
+  }
