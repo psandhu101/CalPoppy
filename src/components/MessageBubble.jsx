@@ -1,9 +1,9 @@
     /** @jsxImportSource @emotion/react */
     // import { css } from "@emotion/react";
-    import { ThumbsUp, ThumbsDown } from "react-feather";
+    // import { ThumbsUp, ThumbsDown } from "react-feather";
     // import { useSpring, animated } from '@react-spring/web';
-    import {Button} from 'react-bootstrap';
-    import 'bootstrap/dist/css/bootstrap.css';
+    // import {Button} from 'react-bootstrap';
+    // import 'bootstrap/dist/css/bootstrap.css';
     import '../style/chat.css';
     import '../style/colors.css';
 
@@ -98,12 +98,17 @@
             <p className = {` msg ${ senderID ? "msgBot" : "msgUser" } `}>
                 {text}
             </p>
+            <br></br>
             {/* feedback buttons */}
             { senderID && showFeedback && (
                 <>
                 {/* TODO: use bootstrap glyphicons for feedback */}
-                    <ThumbsUp className = "feedbackIcon feedbackIconPos" onClick = {() => onFeedbackGiven(timestamp, true)} />
-                    <ThumbsDown className = "feedbackIcon feedbackIconNeg" onClick = {() => onFeedbackGiven(timestamp, false)} />
+                <button type = "button" className = "feedbackIcon feedbackIconPos" onClick = {() => onFeedbackGiven(timestamp, true)}>
+                    <i class = "bi bi-hand-thumbs-up"></i>
+                </button>
+                <button type = "button" className = "feedbackIcon feedbackIconNeg" onClick = {() => onFeedbackGiven(timestamp, true)}>
+                    <i class="bi bi-hand-thumbs-down"></i>
+                </button>
                 </>
             )}
         </div>

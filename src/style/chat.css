@@ -1,8 +1,8 @@
 @import "./colors.css";
 
 :root {
-    --roundCorner: 2em;
-    --pointedCorner: 0.75em;
+    --roundCorner: 2rem;
+    --pointedCorner: 0.5rem;
     --feedbackMargin: 20px;
 }
 
@@ -18,9 +18,11 @@
 }
 
 .msgWrapper {
-    width: max-content;
+    width: fit-content;
+    block-size: fit-content;
     max-width: 70%;
     margin-bottom: var(--feedbackMargin);
+    align-content: center;
 
     animation-name: animSpringOpacity;
     animation-duration: 0.5s;
@@ -38,7 +40,7 @@
 .msg {
     font-family: 'Source Sans Pro', sans-serif;
     display: inline-block;
-    padding: 1em 0.75em;
+    padding: 1rem 0.75rem;
     box-shadow: var(--sealGrayShadow);
     border: 1px solid var(--sealGray);
     border-top-left-radius: var(--roundCorner);
@@ -58,14 +60,15 @@
     border-bottom-left-radius: var(--pointedCorner);
     border-bottom-right-radius: var(--roundCorner);
     /* adds in space for feedback icons */
-    margin-left: var(--feedbackMargin);
+    margin-left: var(--feedbackMargin) 0;
 }
 
 /* formatting for messages from user */
 .msgUser {
     color: black;
     background-color: white;
-    text-align: right;
+    /* text-align: right; */
+    align-self: flex-end;
     /* bevels chat bubbles with the bottom right corner more pointed */
     border-bottom-left-radius: var(--roundCorner);
     border-bottom-right-radius: var(--pointedCorner);
@@ -81,29 +84,31 @@
 }
 
 .feedbackIcon {
-    /* display: inline-block; */
+    display: inline-block;
     margin: 0 5px;
-    cursor: pointer;
     vertical-align: middle;
-    fill: transparent;
+    background-color: transparent;
+    text-align: center;
+    /* border:  */
     transition: fill 0.4s, transform 0.4s;
 }
 
-.feedbackIconPos {
-    @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            fill: green;
-            transform: translateY(-2px);
-        }
-    }
+.feedbackIconPos:hover {
+    background-color: green;
+    color: white;
+    transform: translateY(-2px);
 }
 
-.feedbackIconNeg {
-    @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            fill: red;
-            transform: translateY(2px);
-        }
+.feedbackIconNeg:hover {
+    background-color: red;
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .feedbackIconNeg {
+        fill: red;
+        transform: translateY(2px);
     }
 }
 
