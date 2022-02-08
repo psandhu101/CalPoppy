@@ -11,16 +11,19 @@
     --feedbackCorner: 0.75rem;
 }
 
-/* animation styles */
+/*** animation styles ***/
+
 @keyframes animSpringOpacity {
     from {opacity: 0;}
     to {opacity: 1;}
 }
 
 @keyframes animSpringFontSize {
-    from {fontSize: '5px';}
-    to {fontSize: '20px';}
+    from {font-size: 5px;}
+    to {font-size: 20px;}
 }
+
+/*** class styles ***/
 
 .msgWrapper {
     width: fit-content;

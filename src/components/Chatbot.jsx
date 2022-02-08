@@ -1,10 +1,10 @@
     /** @jsxImportSource @emotion/react */
     import { useEffect, useState } from "react";
-    import { css } from "@emotion/react";
     import ChatComposer from "./ChatComposer";
     import ChatWindow from "./ChatWindow";
     import HeaderNav from "./HeaderNav";
     import axios from "axios";
+    import "../style/chatbot.css";
 
 export default function Chatbot(props) {
     const SENDER_USER = "user";
@@ -87,19 +87,8 @@ export default function Chatbot(props) {
         axios.post("log/query", payload);
     }
 
-    const chatbotStyles = css`
-    display: grid;
-    grid-template-rows: min-content auto min-content;
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "chat-window" "composer";
-    width: 100%;
-    max-width: 700px;
-    margin: auto;
-    height: 100%;
-  `;
-
     return (
-        <main className="Chatbot" css={chatbotStyles}>
+        <main className="Chatbot chatbotStyle">
             <HeaderNav
                 onSuggestionClick={onSuggestionClick}
                 suggestionsOpen={suggestionsOpen}

@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useRef } from "react";
-import { css } from "@emotion/react";
 import MessageBubble from "./MessageBubble";
 import SuggestedOptions from "./FAQ";
 import GreetingCard from "./GreetingCard";
+import "../style/chatWindow.css";
 
 export default function ChatWindow({
 conversation,
@@ -12,16 +12,16 @@ onSend,
 onSuggestionClick,
 onFeedbackGiven,
 }) {
-const windowStyles = css`
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    grid-area: chat-window;
-    overflow-y: scroll;
-    background: whitesmoke;
-`;
+// const windowStyles = css`
+//     display: flex;
+//     flex-direction: column;
+//     padding: 20px;
+//     width: 100%;
+//     height: 100%;
+//     grid-area: chat-window;
+//     overflow-y: scroll;
+//     background: whitesmoke;
+// `;
 
 const chatWindowRef = useRef(null);
 
@@ -53,7 +53,7 @@ const conversationElements = conversation.length ? (
     <GreetingCard />
 );
 return (
-    <div className="ChatWindow" css={windowStyles} ref={chatWindowRef}>
+    <div className="ChatWindow windowStyles" ref={chatWindowRef}>
     {suggestionsOpen ? (
         <SuggestedOptions
         onSend={onSend}
