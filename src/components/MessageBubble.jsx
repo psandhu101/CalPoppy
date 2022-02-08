@@ -1,9 +1,4 @@
     /** @jsxImportSource @emotion/react */
-    // import { css } from "@emotion/react";
-    // import { ThumbsUp, ThumbsDown } from "react-feather";
-    // import { useSpring, animated } from '@react-spring/web';
-    // import {Button} from 'react-bootstrap';
-    // import 'bootstrap/dist/css/bootstrap.css';
     import '../style/chatMsg.css';
     import '../style/colors.css';
 
