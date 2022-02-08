@@ -53,6 +53,7 @@
     /* border: 1px solid var(--kennedyGray); */
     border-top-left-radius: var(--roundCorner);
     border-top-right-radius: var(--roundCorner);
+    word-wrap: break-word;
 
     /* spring animation */
     animation-name: animSpringFontSize;

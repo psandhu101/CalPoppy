@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { Send } from "react-feather";
 import "../style/chatComposer.css";
+import "../style/text.css";
 
 export default function ChatComposer({ onSend }) {
 
@@ -38,7 +39,7 @@ return (
     <div className="menuBarStyle ChatComposer">
     <div className="contentStyle">
         <div
-        className="txtFieldStyle scrollable"
+        className="scrollableY txtFieldStyle"
         ref={textFieldRef}
         contentEditable="true"
         ></div>

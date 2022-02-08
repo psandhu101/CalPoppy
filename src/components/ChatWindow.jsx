@@ -4,6 +4,7 @@ import MessageBubble from "./MessageBubble";
 import SuggestedOptions from "./FAQ";
 import GreetingCard from "./GreetingCard";
 import "../style/chatWindow.css";
+import "../style/text.css";
 
 export default function ChatWindow({
 conversation,
@@ -43,7 +44,7 @@ const conversationElements = conversation.length ? (
     <GreetingCard />
 );
 return (
-    <div className="ChatWindow windowStyles scrollable" ref={chatWindowRef}>
+    <div className="ChatWindow scrollableY windowStyles" ref={chatWindowRef}>
     {suggestionsOpen ? (
         <SuggestedOptions
         onSend={onSend}
