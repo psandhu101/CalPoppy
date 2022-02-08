@@ -1,57 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useRef } from "react";
-// import { css } from "@emotion/react";
 import { Send } from "react-feather";
 import "../style/chatComposer.css";
 
 export default function ChatComposer({ onSend }) {
-  // const menuBarStyle = (theme) => css`
-  //   height: auto;
-  //   grid-area: "composer";
-  //   padding: 10px 20px;
-  //   background-color: white;
-  //   box-shadow: ${theme.shadow.menuBar};
-  // `;
-
-  // const contentStyle = css`
-  //   display: flex;
-  //   align-items: center;
-  //   max-width: 700px;
-  //   margin: auto;
-  //   width: 100%;
-  // `;
-
-  // const txtFieldStyle = (theme) => css`
-  //   width: 100%;
-  //   height: 100%;
-  //   font-size: 15px;
-  //   padding: 10px 20px;
-  //   background-color: #ebebeb;
-  //   border-radius: 30px;
-  //   max-height: 100px;
-  //   overflow-y: scroll;
-  //   border: 1px solid rgba(34, 34, 34, 0.2);
-  // `;
-
-  // const sendButtonStyle = (theme) => css`
-  //   display: flex;
-  //   align-items: center;
-  //   color: ${theme.color.primary};
-  //   background-color: ${theme.color.accent};
-  //   margin-left: 20px;
-  //   padding: 10px 15px;
-  //   border-radius: 30px;
-  //   border: none;
-  //   cursor: pointer;
-  // `;
-
-  // const buttonTextStyle = css`
-  //   font-size: 15px;
-  //   font-weight: 600;
-  //   padding: 0;
-  //   margin: 0;
-  //   margin-left: 10px;
-  // `;
 
   let textFieldRef = useRef(null);
 
