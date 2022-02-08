@@ -20,7 +20,7 @@
 
 @keyframes animSpringFontSize {
     from {font-size: 5px;}
-    to {font-size: 20px;}
+    to {font-size: initial;}
 }
 
 /*** class styles ***/
@@ -33,7 +33,7 @@
     align-content: center;
 
     animation-name: animSpringOpacity;
-    animation-duration: 0.5s;
+    animation-duration: 250ms;
 }
 
 .msgWrapperBot {
@@ -50,13 +50,13 @@
     display: inline-block;
     padding: 1rem 0.75rem;
     box-shadow: var(--msgShadowDist) var(--msgShadowDist) var(--msgShadowBlur) var(--sealGrayShadow);
-    /* border: 1px solid var(--sealGray); */
+    /* border: 1px solid var(--kennedyGray); */
     border-top-left-radius: var(--roundCorner);
     border-top-right-radius: var(--roundCorner);
 
     /* spring animation */
     animation-name: animSpringFontSize;
-    animation-duration: 5s;
+    animation-duration: 250ms;
 }
 
 /* formatting for messages from bot */

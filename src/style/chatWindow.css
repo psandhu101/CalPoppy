@@ -1,7 +1,6 @@
 .windowStyles {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 20px;
     width: 100%;
     height: 100%;
