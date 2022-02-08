@@ -14,7 +14,8 @@ export default function Home() {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            height:'100%',
+            width: '100%',
+            height: '100%'
           }} class='home'>
             <div style={{marginBottom: '6rem'}}>
                     <Image src={poppy_logo} height='375rem' width='375rem'  class='bg-white rounded-circle mb-2' filter='blur(rem)'>
