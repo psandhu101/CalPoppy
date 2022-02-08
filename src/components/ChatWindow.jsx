@@ -43,7 +43,7 @@ const conversationElements = conversation.length ? (
     <GreetingCard />
 );
 return (
-    <div className="ChatWindow windowStyles" ref={chatWindowRef}>
+    <div className="ChatWindow windowStyles scrollable" ref={chatWindowRef}>
     {suggestionsOpen ? (
         <SuggestedOptions
         onSend={onSend}

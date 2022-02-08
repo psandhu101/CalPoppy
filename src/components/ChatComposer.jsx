@@ -38,7 +38,7 @@ return (
     <div className="menuBarStyle ChatComposer">
     <div className="contentStyle">
         <div
-        className="txtFieldStyle"
+        className="txtFieldStyle scrollable"
         ref={textFieldRef}
         contentEditable="true"
         ></div>

@@ -82,15 +82,6 @@
     border-bottom-right-radius: var(--pointedCorner);
 }
 
-.bubbleHover {
-    @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px var(--sealGrayShadow);
-        }
-    }
-}
-
 .feedbackIcon {
     display: inline-block;
     margin: 0 var(--feedbackMargin);
