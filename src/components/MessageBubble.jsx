@@ -4,7 +4,7 @@
     // import { useSpring, animated } from '@react-spring/web';
     // import {Button} from 'react-bootstrap';
     // import 'bootstrap/dist/css/bootstrap.css';
-    import '../style/chat.css';
+    import '../style/chatMsg.css';
     import '../style/colors.css';
 
     export default function MessageBubble({
@@ -102,7 +102,6 @@
             {/* feedback buttons */}
             { senderID && showFeedback && (
                 <>
-                {/* TODO: use bootstrap glyphicons for feedback */}
                 <button type = "button" className = "feedbackIcon feedbackIconPos" onClick = {() => onFeedbackGiven(timestamp, true)}>
                     <i class = "bi bi-hand-thumbs-up"></i>
                 </button>

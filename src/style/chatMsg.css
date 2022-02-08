@@ -3,7 +3,12 @@
 :root {
     --roundCorner: 2rem;
     --pointedCorner: 0.5rem;
-    --feedbackMargin: 20px;
+
+    --msgShadowDist: 0.5rem;
+    --msgShadowBlur: 0.25rem;
+
+    --feedbackMargin: 0.25rem;
+    --feedbackCorner: 0.75rem;
 }
 
 /* animation styles */
@@ -41,8 +46,8 @@
     font-family: 'Source Sans Pro', sans-serif;
     display: inline-block;
     padding: 1rem 0.75rem;
-    box-shadow: var(--sealGrayShadow);
-    border: 1px solid var(--sealGray);
+    box-shadow: var(--msgShadowDist) var(--msgShadowDist) var(--msgShadowBlur) var(--sealGrayShadow);
+    /* border: 1px solid var(--sealGray); */
     border-top-left-radius: var(--roundCorner);
     border-top-right-radius: var(--roundCorner);
 
@@ -85,16 +90,19 @@
 
 .feedbackIcon {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 var(--feedbackMargin);
     vertical-align: middle;
-    background-color: transparent;
-    text-align: center;
+    align-items: center;
+    border-color: transparent;
+    border-radius: var(--feedbackCorner);
+    background: none;
+    font-size: x-large;
     /* border:  */
     transition: fill 0.4s, transform 0.4s;
 }
 
 .feedbackIconPos:hover {
-    background-color: green;
+    background-color: var(--polyGreen);
     color: white;
     transform: translateY(-2px);
 }
@@ -103,24 +111,4 @@
     background-color: red;
     color: white;
     transform: translateY(-2px);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .feedbackIconNeg {
-        fill: red;
-        transform: translateY(2px);
-    }
-}
-
-/* a rem is 16 px */
-.margin1rem {
-    margin: 1 rem;
-}
-
-.margin2rem {
-    margin: 2rem;
-}
-
-.beveledEdge {
-    border-radius: 50%;
 }
