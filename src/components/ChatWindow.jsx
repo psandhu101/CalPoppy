@@ -12,16 +12,6 @@ onSend,
 onSuggestionClick,
 onFeedbackGiven,
 }) {
-// const windowStyles = css`
-//     display: flex;
-//     flex-direction: column;
-//     padding: 20px;
-//     width: 100%;
-//     height: 100%;
-//     grid-area: chat-window;
-//     overflow-y: scroll;
-//     background: whitesmoke;
-// `;
 
 const chatWindowRef = useRef(null);
 

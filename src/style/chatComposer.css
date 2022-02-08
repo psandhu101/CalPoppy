@@ -1,6 +1,6 @@
 :root {
-    --chatBarDist: 1rem;
-    --chatBarBlur: 1rem;
+    --chatBarDist: 0;
+    --chatBarBlur: 2rem;
 }
 
 .menuBarStyle {
