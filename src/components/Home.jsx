@@ -5,16 +5,14 @@ import {Image, Button, Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import "../style/home.scss"
 
-//TO-DO: Gradient on logo
-//TO-DO: Button Spacing
-//TO-DO: Full screen bottom spacing
+
 export default function Home() {
     return (
         <Container fluid style={{height: "94.8%", padding:"0", overflow: "hidden"}}>
         <div class="home_background">
             <Row style={{paddingTop:"2rem"}}>
                 <Col>
-                    <Image src={poppy_logo} height='300rem' width='300rem'  class='bg-white rounded-circle' style={{filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}>
+                    <Image src={poppy_logo} height='300rem' width='300rem' style={{filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}>
                     </Image>
                 </Col>
             </Row>
