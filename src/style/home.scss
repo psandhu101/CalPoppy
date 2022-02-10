@@ -1,39 +1,22 @@
 @import "./custom.scss";
 
-
-
-
-.home {
-    text-align: center;
-}
-
-  
-#home_background{
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
-}
-#home_background img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
+.home_background{
+  text-align: center;
+  background-image: url("../images/poppymtn2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 #btn-large{
-  @include button-size(2rem, 1rem, 5rem, 5rem);
-
+  @include button-size(2rem, 3rem, 5rem, 5rem);
 }
+
 #btn-small{
   @include button-size(1rem, 4rem, 5rem, 3rem);
-  
-  }
+}
+
 .btn{
   font-size: 80px;
   font-style: normal;
@@ -48,22 +31,13 @@
   linear-gradient(0deg, #203E2F, #203E2F);
 }
 
-
-
-.hm_bkgrnd{
-    background-image: url("../images/poppy_field.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
+.top_row{
+  padding-top: 2rem;
 }
 
-.mb-2{
-  margin-bottom: 200rem;
-}
-
-.p{
-  color: white;
+.middle_row{
+  padding-top: 6rem;
+  padding-bottom: 3rem;
 }
 
 html,
