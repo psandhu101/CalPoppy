@@ -37,6 +37,11 @@ export default function App() {
                                 FAQ
                             </button>
                         </Link>
+                        <Link to="/maps">
+                            <button class="navbutton" type="button">
+                                Maps
+                            </button>
+                        </Link>
                         
                     </nav>
 
