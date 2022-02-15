@@ -9,7 +9,7 @@
 .scrollableY {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     overflow-y: auto;
 }
 
