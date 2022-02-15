@@ -4,6 +4,7 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.js";
 import SuggestedOptions from "./components/FAQ";
 import Home from "./components/Home";
+import Maps from "./components/Maps";
 import './style/custom.scss';
 import {} from "./style/navbar.css"
 
@@ -54,6 +55,7 @@ export default function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/chatbot" element={<Chatbot/>}/>
                 <Route path="/suggestions" element={<SuggestedOptions/>}/>
+                <Route path="/maps" element={<Maps/>}/>
             </Routes>
         </Router>
     </ThemeProvider>
