@@ -1,0 +1,111 @@
+@import "./colors.css";
+
+:root {
+    --roundCorner: 2rem;
+    --pointedCorner: 0.5rem;
+
+    --msgShadowDist: 0.5rem;
+    --msgShadowBlur: 0.25rem;
+
+    --feedbackMargin: 0.25rem;
+    --feedbackCorner: 0.75rem;
+}
+
+/*** animation styles ***/
+
+@keyframes animSpringOpacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes animSpringFontSize {
+    from {font-size: 5px;}
+    to {font-size: initial;}
+}
+
+/*** class styles ***/
+
+.msgWrapper {
+    width: max-width;
+    block-size: fit-content;
+    max-width: 70%;
+    margin-bottom: var(--feedbackMargin);
+    align-content: center;
+    word-wrap: break-word;
+
+    animation-name: animSpringOpacity;
+    animation-duration: 250ms;
+}
+
+.msgWrapperBot {
+    align-self: flex-start;
+}
+
+.msgWrapperUser {
+    align-self: flex-end;
+}
+
+/* basic formatting for a message text */
+.msg {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: inline-block;
+    padding: 1rem 0.75rem;
+    box-shadow: var(--msgShadowDist) var(--msgShadowDist) var(--msgShadowBlur) var(--sealGrayShadow);
+    /* border: 1px solid var(--kennedyGray); */
+    border-top-left-radius: var(--roundCorner);
+    border-top-right-radius: var(--roundCorner);
+    word-wrap: break-word;
+    /* max-width: fit-content; */
+
+    /* spring animation */
+    animation-name: animSpringFontSize;
+    animation-duration: 250ms;
+}
+
+/* formatting for messages from bot */
+.msgBot {
+    color: white;
+    background-color: var(--polyGreen);
+    text-align: left;
+    /* bevels chat bubbles with the bottom left corner more pointed */
+    border-bottom-left-radius: var(--pointedCorner);
+    border-bottom-right-radius: var(--roundCorner);
+    /* adds in space for feedback icons */
+    margin-left: var(--feedbackMargin) 0;
+}
+
+/* formatting for messages from user */
+.msgUser {
+    color: black;
+    background-color: white;
+    /* text-align: right; */
+    align-self: flex-end;
+    /* bevels chat bubbles with the bottom right corner more pointed */
+    border-bottom-left-radius: var(--roundCorner);
+    border-bottom-right-radius: var(--pointedCorner);
+}
+
+.feedbackIcon {
+    display: inline-block;
+    margin: 0 var(--feedbackMargin);
+    vertical-align: middle;
+    align-items: center;
+    border-color: transparent;
+    border-radius: var(--feedbackCorner);
+    background: none;
+    font-size: x-large;
+    /* border:  */
+    transition: fill 0.4s, transform 0.4s;
+}
+
+.feedbackIconPos:hover {
+    background-color: var(--polyGreen);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.feedbackIconNeg:hover {
+    background-color: red;
+    color: white;
+    transform: translateY(-2px);
+}

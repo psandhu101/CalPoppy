@@ -1,0 +1,36 @@
+:root {
+    /* primary colors */
+    --polyGreen: rgb(21, 71, 52);
+    --mustangGold: rgb(189, 139, 19);
+
+    /* secondary colors */
+    --stadiumGold: rgb(248, 224, 142);
+    --polyCanyon: rgb(242, 199, 92);
+    --dexterGreen: rgb(164, 214, 94);
+    --farmersMarket: rgb(58, 145, 63);
+    --skyBlue: rgb(181, 227, 216);
+    --surfBlue: rgb(92, 184, 178);
+    --serenity: rgb(211, 227, 244);
+    --morroBlue: rgb(171, 202, 233);
+    --missionBeige: rgb(228, 225, 209);
+    --pismoSand: rgb(202, 199, 167);
+    --coastSage: rgb(182, 204, 194);
+    --sycamore: rgb(120, 159, 144);
+    --kennedyGray: rgb(142, 144, 137);
+    --sealGray: rgb(84, 88, 90);
+
+    /* tertiary colors */
+    --heritageOrange: hsl(15, 100%, 61%);
+    --avocado: rgb(208, 223, 0);
+
+    --polyGreenShadow: rgba(21, 71, 52, 0.25);
+    --sealGrayShadow: rgba(84, 88, 90, 0.125);
+}
+
+.polyGreenBG {
+    background-color: var(--polyGreen);
+}
+
+.whiteBG {
+    background-color: white;
+}

@@ -4,6 +4,7 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.js";
 import SuggestedOptions from "./components/FAQ";
 import Home from "./components/Home";
+import './style/custom.scss';
 import {} from "./style/navbar.css"
 
 import {
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>  
         <Router>
-            <div class="topnav">
+            <div class="topnav sticky-top">
                 <div class="row">
                     <nav>
                         <img src="/logo192.png" height="46" alt="poppy logo"/>

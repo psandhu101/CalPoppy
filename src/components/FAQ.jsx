@@ -1,7 +1,7 @@
 
 import suggestions from "./faqs";
-import {aboutSPR, aboutCreators, helpMessage} from "./faqs"
-import '../style/faq.css'
+import {aboutSPR, aboutCreators, helpMessage} from "./faqs";
+import '../style/faq.css';
 
 // function sendMessage(suggestion){
 

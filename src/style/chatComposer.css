@@ -1,0 +1,52 @@
+:root {
+    --chatBarDist: 0;
+    --chatBarBlur: 2rem;
+}
+
+.menuBarStyle {
+    height: auto;
+    grid-area: "composer";
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: var(--chatBarDist) var(--chatBarDist) var(--chatBarBlur) var(--sealGrayShadow);
+}
+
+.contentStyle {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    margin: auto;
+    width: 100%;
+}
+
+.txtFieldStyle {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: #ebebeb;
+    border-radius: 30px;
+    max-height: 100px;
+    overflow-y: scroll;
+    border: 1px solid rgba(34, 34, 34, 0.2);
+}
+
+.sendButtonStyle {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: var(--polyGreen);
+    margin-left: 20px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonTextStyle {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}

@@ -1,0 +1,18 @@
+.whiteText {
+    color: white;
+}
+
+.sourceSans {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.scrollableY {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    /* overflow-x: hidden; */
+    overflow-y: auto;
+}
+
+.scrollable::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
