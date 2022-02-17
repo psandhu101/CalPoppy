@@ -19,7 +19,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>  
         <Router>
-            <div class="topnav">
+            <div class="topnav sticky-top">
                 <div class="row">
                     <nav>
                         <img src="/logo192.png" height="46" alt="poppy logo"/>
