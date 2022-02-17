@@ -1,10 +1,10 @@
-    /** @jsxImportSource @emotion/react */
-    import { useEffect, useState } from "react";
-    import ChatComposer from "./ChatComposer";
-    import ChatWindow from "./ChatWindow";
-    import HeaderNav from "./HeaderNav";
-    import axios from "axios";
-    import "../style/chatbot.css";
+/** @jsxImportSource @emotion/react */
+import { useEffect, useState } from "react";
+import ChatComposer from "./ChatComposer";
+import ChatWindow from "./ChatWindow";
+import HeaderNav from "./HeaderNav";
+// import axios from "axios";
+import "../style/chatbot.css";
 
 export default function Chatbot(props) {
     const SENDER_USER = "user";
@@ -79,12 +79,14 @@ export default function Chatbot(props) {
             (message) => message.timestamp === id
         );
         if (answerIndex === -1) return;
-        const payload = {
-            sentiment: isPositive ? "positive" : "negative",
-            question: conversation[answerIndex - 1].text,
-            answer: conversation[answerIndex].text,
-        };
-        axios.post("log/query", payload);
+        // const payload = {
+        //     sentiment: isPositive ? "positive" : "negative",
+        //     question: conversation[answerIndex - 1].text,
+        //     answer: conversation[answerIndex].text,
+        // };
+        // axios.post("log/query", payload);
+
+        // useEffect(() => {}, []);
     }
 
     return (

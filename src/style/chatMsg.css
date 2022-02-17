@@ -104,7 +104,7 @@
     transition: fill 0.4s, transform 0.4s;
 }
 
-.feedbackIconPos:hover {
+.feedbackIconPos:focus {
     background-color: var(--polyGreen);
     color: white;
     transform: translateY(-2px);
