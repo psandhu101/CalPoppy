@@ -32,7 +32,6 @@
     margin-bottom: var(--feedbackMargin);
     align-content: center;
     word-break: break-word;
-    word-wrap: break-word;
 
     animation-name: animSpringOpacity;
     animation-duration: 250ms;
