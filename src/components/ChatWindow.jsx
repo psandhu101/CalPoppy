@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import MessageBubble from "./MessageBubble";
 import SuggestedOptions from "./FAQ";
 import GreetingCard from "./GreetingCard";
@@ -17,14 +17,14 @@ onFeedbackGiven,
 const chatWindowRef = useRef(null);
 
 // Scroll to the bottom of the chat window every time a new message is sent
-useEffect(() => {
-    if (!chatWindowRef.current || suggestionsOpen) return;
-    chatWindowRef.current.scrollTo({
-    top: chatWindowRef.current.scrollHeight,
-    left: 0,
-    behavior: "smooth",
-    });
-});
+// useEffect(() => {
+//     if (!chatWindowRef.current || suggestionsOpen) return;
+//     chatWindowRef.current.scrollTo({
+//     top: chatWindowRef.current.scrollHeight,
+//     left: 0,
+//     behavior: "smooth",
+//     });
+// });
 
 /**
  * Create message bubbles from the current conversation
@@ -37,6 +37,7 @@ const conversationElements = conversation.length ? (
         timestamp={msg.timestamp}
         showFeedback={msg.responseType === "answer"}
         senderID={msg.sender !== "user"}
+        feedback={msg.feedback}
         onFeedbackGiven={onFeedbackGiven}
     />
     ))

@@ -15,6 +15,7 @@ export default function Chatbot(props) {
     const [conversation, setConversation] = useState([]);
     const [responseCount, setResponseCount] = useState(0); // AI mocking
     const [initialResponse, setInitialResponse] = useState(0);
+    const [feedbackReceived, setFeedbackReceived] = useState(0);
 
     /**
      * Toggles the suggestions
@@ -27,15 +28,15 @@ export default function Chatbot(props) {
      * add it to the conversation.
      */
     useEffect(() => {
-        if (initialResponse === 0){
+        if (initialResponse === 0) {
 
-            if ((sessionStorage.getItem("responseCount")) != null){
+            if ((sessionStorage.getItem("responseCount")) != null) {
                 var hmm = parseInt(sessionStorage.getItem("responseCount"));
             }
             else {
                 hmm = 0;
             }
-            if (hmm === responseCount){
+            if (hmm === responseCount) {
                 setInitialResponse(1);
             }
             else {
@@ -50,7 +51,7 @@ export default function Chatbot(props) {
         }
         if (query === "") return;
 
-        
+
         // let payload = { message: query };
 
         /* --------------------------------------------------------*/
@@ -71,7 +72,7 @@ export default function Chatbot(props) {
                     text,
                     sender: SENDER_BOT,
                     timestamp: Date.now() + i,
-                    responseType: i === 0 ? "answer" : "followUp",
+                    responseType: i === 0 ? "answer" : "followUp"
                 }));
                 setQuery("");
                 setConversation([...conversation, ...answerMessages]);
@@ -93,12 +94,12 @@ export default function Chatbot(props) {
             { text: message, sender: SENDER_USER, timestamp: Date.now() },
         ]);
         setQuery(message);
-        if (sessionStorage.getItem("user") == null){
-          sessionStorage.setItem("user", message);
+        if (sessionStorage.getItem("user") == null) {
+            sessionStorage.setItem("user", message);
         }
         else {
-          var temp = sessionStorage.getItem("user");
-          sessionStorage.setItem("user", temp + "    " + message);
+            var temp = sessionStorage.getItem("user");
+            sessionStorage.setItem("user", temp + "    " + message);
         }
         sessionStorage.setItem("responseCount", responseCount + 1);
 
@@ -112,6 +113,10 @@ export default function Chatbot(props) {
         let answerIndex = conversation.findIndex(
             (message) => message.timestamp === id
         );
+
+        conversation[answerIndex].feedback = isPositive;
+        setFeedbackReceived(feedbackReceived + 1);
+
         if (answerIndex === -1) return;
         // const payload = {
         //     sentiment: isPositive ? "positive" : "negative",

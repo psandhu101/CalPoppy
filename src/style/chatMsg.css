@@ -98,13 +98,13 @@
     transition: fill 0.4s, transform 0.4s;
 }
 
-.feedbackIconPos:focus {
+.feedbackIconPos {
     background-color: var(--polyGreen);
     color: white;
     transform: translateY(-2px);
 }
 
-.feedbackIconNeg:hover {
+.feedbackIconNeg {
     background-color: red;
     color: white;
     transform: translateY(-2px);
