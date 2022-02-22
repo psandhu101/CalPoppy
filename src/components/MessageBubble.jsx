@@ -24,10 +24,14 @@ export default function MessageBubble({
             {/* feedback buttons */}
             {senderID && showFeedback && (
                 <>
-                    <button type="button" className={` feedbackIcon ${typeof feedback !== "undefined" && feedback ? "feedbackIconPos" : ""} `} onClick={() => onFeedbackGiven(timestamp, true)}>
+                    <button type="button"
+                        className={` feedbackIcon ${typeof feedback !== "undefined" && feedback ? "feedbackIconPos" : ""} `}
+                        onClick={() => onFeedbackGiven(timestamp, true)}>
                         <i class="bi bi-hand-thumbs-up"></i>
                     </button>
-                    <button type="button" className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `} onClick={() => onFeedbackGiven(timestamp, false)}>
+                    <button type="button"
+                        className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `}
+                        onClick={() => onFeedbackGiven(timestamp, false)}>
                         <i class="bi bi-hand-thumbs-down"></i>
                     </button>
                 </>

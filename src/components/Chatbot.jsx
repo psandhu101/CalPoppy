@@ -31,17 +31,18 @@ export default function Chatbot(props) {
         if (initialResponse === 0) {
 
             if ((sessionStorage.getItem("responseCount")) != null) {
-                var hmm = parseInt(sessionStorage.getItem("responseCount"));
+                var messageCount = parseInt(sessionStorage.getItem("responseCount"));
             }
             else {
-                hmm = 0;
+                messageCount = 0;
             }
-            if (hmm === responseCount) {
+
+            if (messageCount === responseCount) {
                 setInitialResponse(1);
             }
             else {
                 var data = sessionStorage.getItem("user");
-                const myArray = data.split("    ");
+                const myArray = data.split("%<data-break>%");
                 setConversation([
                     ...conversation,
                     { text: myArray[responseCount], sender: SENDER_USER, timestamp: Date.now() },
@@ -99,7 +100,7 @@ export default function Chatbot(props) {
         }
         else {
             var temp = sessionStorage.getItem("user");
-            sessionStorage.setItem("user", temp + "    " + message);
+            sessionStorage.setItem("user", temp + "%<data-break>%" + message);
         }
         sessionStorage.setItem("responseCount", responseCount + 1);
 
