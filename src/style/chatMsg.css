@@ -26,11 +26,12 @@
 /*** class styles ***/
 
 .msgWrapper {
-    width: fit-content;
+    width: max-width;
     block-size: fit-content;
     max-width: 70%;
     margin-bottom: var(--feedbackMargin);
     align-content: center;
+    word-break: break-word;
 
     animation-name: animSpringOpacity;
     animation-duration: 250ms;
@@ -53,6 +54,8 @@
     /* border: 1px solid var(--kennedyGray); */
     border-top-left-radius: var(--roundCorner);
     border-top-right-radius: var(--roundCorner);
+    word-wrap: break-word;
+    /* max-width: fit-content; */
 
     /* spring animation */
     animation-name: animSpringFontSize;
@@ -80,15 +83,6 @@
     /* bevels chat bubbles with the bottom right corner more pointed */
     border-bottom-left-radius: var(--roundCorner);
     border-bottom-right-radius: var(--pointedCorner);
-}
-
-.bubbleHover {
-    @media (hover: hover) and (pointer: fine) {
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px var(--sealGrayShadow);
-        }
-    }
 }
 
 .feedbackIcon {

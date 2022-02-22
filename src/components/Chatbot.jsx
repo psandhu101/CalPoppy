@@ -14,6 +14,7 @@ export default function Chatbot(props) {
     const [query, setQuery] = useState("");
     const [conversation, setConversation] = useState([]);
     const [responseCount, setResponseCount] = useState(0); // AI mocking
+    const [initialResponse, setInitialResponse] = useState(0);
 
     /**
      * Toggles the suggestions
@@ -21,19 +22,42 @@ export default function Chatbot(props) {
     let onSuggestionClick = () => {
         setSuggestionsOpen((s) => !s);
     };
-
     /**
      * Every time the user sends a new question, get the answer from the API and
      * add it to the conversation.
      */
     useEffect(() => {
+        if (initialResponse === 0){
+
+            if ((sessionStorage.getItem("responseCount")) != null){
+                var hmm = parseInt(sessionStorage.getItem("responseCount"));
+            }
+            else {
+                hmm = 0;
+            }
+            if (hmm === responseCount){
+                setInitialResponse(1);
+            }
+            else {
+                var data = sessionStorage.getItem("user");
+                const myArray = data.split("    ");
+                setConversation([
+                    ...conversation,
+                    { text: myArray[responseCount], sender: SENDER_USER, timestamp: Date.now() },
+                ]);
+                setQuery(myArray[responseCount]);
+            }
+        }
         if (query === "") return;
+
+        
         // let payload = { message: query };
 
         /* --------------------------------------------------------*/
         /* AI mock */
         function mockResponse() {
             let resp = "Placeholder response " + responseCount;
+            //sessionStorage.setItem("responseCount", responseCount + 1);
             setResponseCount(responseCount + 1);
             return [{ text: resp }];
         }
@@ -58,7 +82,7 @@ export default function Chatbot(props) {
         }
 
         postMessage();
-    }, [query, conversation, responseCount]);
+    }, [query, conversation, responseCount, initialResponse]);
 
     /**
      * Adds the user's message to the conversation, passes message to the bot
@@ -69,7 +93,17 @@ export default function Chatbot(props) {
             { text: message, sender: SENDER_USER, timestamp: Date.now() },
         ]);
         setQuery(message);
+        if (sessionStorage.getItem("user") == null){
+          sessionStorage.setItem("user", message);
+        }
+        else {
+          var temp = sessionStorage.getItem("user");
+          sessionStorage.setItem("user", temp + "    " + message);
+        }
+        sessionStorage.setItem("responseCount", responseCount + 1);
+
     };
+
     /**
      * Handles user feedback about chatbot answer accuracy.
      */
