@@ -23,7 +23,7 @@ export default function HeaderNav({ onSuggestionClick, suggestionsOpen }) {
     <header className="chatHeader">
 
       <h2 className="chatHeaderTitle">
-        {suggestionsOpen ? "FAQs" : "Swanton Pacific Ranch Chat" }
+        {suggestionsOpen ? "How to Use Poppy" : "Swanton Pacific Ranch Chat" }
       </h2>
 
       {suggestionsToggle}
