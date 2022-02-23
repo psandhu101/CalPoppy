@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useRef } from "react";
 import MessageBubble from "./MessageBubble";
-import SuggestedOptions from "./FAQ";
+import ChatInstructions from "./ChatInstructions"
 import GreetingCard from "./GreetingCard";
 import "../style/chatWindow.css";
 import "../style/text.css";
@@ -46,10 +46,11 @@ const conversationElements = conversation.length ? (
 );
 return (
     <div className="ChatWindow scrollableY windowStyles" ref={chatWindowRef}>
+    {/* toggles the How to Use Poppy instructions page */}
     {suggestionsOpen ? (
-        <SuggestedOptions
+        <ChatInstructions
         onSend={onSend}
-        onSuggestionClick={onSuggestionClick}
+        onSuggestionClick={onSuggestionClick} 
         />
     ) : (
         conversationElements
