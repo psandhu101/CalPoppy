@@ -31,7 +31,7 @@
     max-width: 70%;
     margin-bottom: var(--feedbackMargin);
     align-content: center;
-    word-wrap: break-word;
+    word-break: break-word;
 
     animation-name: animSpringOpacity;
     animation-duration: 250ms;
@@ -98,13 +98,13 @@
     transition: fill 0.4s, transform 0.4s;
 }
 
-.feedbackIconPos:hover {
+.feedbackIconPos {
     background-color: var(--polyGreen);
     color: white;
     transform: translateY(-2px);
 }
 
-.feedbackIconNeg:hover {
+.feedbackIconNeg {
     background-color: red;
     color: white;
     transform: translateY(-2px);
