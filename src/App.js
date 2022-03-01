@@ -22,7 +22,7 @@ export default function App() {
             <div class="topnav sticky-top">
                 <div class="row">
                     <nav>
-                        <img src="/logo192.png" height="46" alt="poppy logo"/>
+                        <img src="images/spr_logo.png" height="46" alt="poppy logo"/>
                         <Link to="/">
                             <button class="navbutton" type="button">
                                 Home

@@ -16,3 +16,4 @@ Features include:
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open the app in your browser: `http://localhost:3000`
+6. Update the hosting server 'npm run deploy'
