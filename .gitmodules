@@ -1,0 +1,3 @@
+[submodule "KGQA"]
+	path = KGQA
+	url = https://github.com/mathurma/KGQA
