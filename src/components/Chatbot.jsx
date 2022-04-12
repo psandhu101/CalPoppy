@@ -28,6 +28,9 @@ export default function Chatbot(props) {
      * add it to the conversation.
      */
     useEffect(() => {
+        console.log("Effect triggered")
+
+        /* Runs on page refresh
         if (initialResponse === 0) {
 
             if ((sessionStorage.getItem("responseCount")) != null) {
@@ -50,41 +53,78 @@ export default function Chatbot(props) {
                 setQuery(myArray[responseCount]);
             }
         }
+        */
         if (query === "") return;
 
 
-        // let payload = { message: query };
+        //let payload = { message: query };
 
         /* --------------------------------------------------------*/
         /* AI mock */
-        function mockResponse() {
-            let resp = "Placeholder response " + responseCount;
+        // function mockResponse() {
+        //     let resp = "Placeholder response " + responseCount;
+        //     //sessionStorage.setItem("responseCount", responseCount + 1);
+        //     setResponseCount(responseCount + 1);
+        //     return [{ text: resp }];
+        // }
+        /* --------------------------------------------------------*/
+
+
+        async function AIResponse(question){
+
+            console.log("Before Fetch", question)
+            let response = await fetch("/api_call", {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(question)
+            })
+            let data = await response.json()
+            //Data is the AI response from Matthew.
+            let resp = data.sentences + responseCount;
             //sessionStorage.setItem("responseCount", responseCount + 1);
             setResponseCount(responseCount + 1);
-            return [{ text: resp }];
+            return [{ text: resp }]
+
         }
-        /* --------------------------------------------------------*/
+
+         function sleep(ms) {
+             return new Promise(resolve => setTimeout(resolve, ms));
+        }
 
         async function postMessage() {
             try {
                 // const response = await axios.post("api/webhooks/rest/webhook", payload);
                 // const answerMessages = response.data.map(({ text }, i) => ({
-                const answerMessages = mockResponse().map(({ text }, i) => ({
+                console.log("-1")
+
+                const AIAns = await AIResponse(query);
+                console.log("0")
+
+                const answerMessages =  AIAns.map(({ text }, i) => ({
                     text,
                     sender: SENDER_BOT,
                     timestamp: Date.now() + i,
                     responseType: i === 0 ? "answer" : "followUp"
                 }));
-                setQuery("");
-                setConversation([...conversation, ...answerMessages]);
+                console.log("1")
+
+                setQuery(""); //TRIGGER
+                console.log("2")
+
+                setConversation([...conversation, ...answerMessages]); //
+                console.log("3")
+
             } catch (err) {
+                console.log("THIS IS BAD")
                 console.error(err);
                 return;
             }
         }
-
+        console.log("Call post")
         postMessage();
-    }, [query, conversation, responseCount, initialResponse]);
+    }, [query]);
 
     /**
      * Adds the user's message to the conversation, passes message to the bot
@@ -95,15 +135,16 @@ export default function Chatbot(props) {
             { text: message, sender: SENDER_USER, timestamp: Date.now() },
         ]);
         setQuery(message);
-        if (sessionStorage.getItem("user") == null) {
-            sessionStorage.setItem("user", message);
-        }
-        else {
-            var temp = sessionStorage.getItem("user");
-            sessionStorage.setItem("user", temp + "%<data-break>%" + message);
-        }
-        sessionStorage.setItem("responseCount", responseCount + 1);
-
+        /* Launches on chat refresh
+        // if (sessionStorage.getItem("user") == null) {
+        //     sessionStorage.setItem("user", message);
+        // }
+        // else {
+        //     var temp = sessionStorage.getItem("user");
+        //     sessionStorage.setItem("user", temp + "%<data-break>%" + message);
+        // }
+        // sessionStorage.setItem("responseCount", responseCount + 1);
+        */
     };
 
     /**
