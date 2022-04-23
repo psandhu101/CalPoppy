@@ -4,6 +4,16 @@ import "../style/maps.css";
 export default function Maps() {
     return (
         <div className="MapPage">
+            {/* maybe add drop-down to navigate through maps, but unnecessary right now
+            example:
+                interactive
+                vegetation
+                    flowers
+                    trees
+                structures
+                    pre-fire
+                    post-fire
+                */}
             <h1 className="mapTitle">Swanton Pacific Ranch Maps</h1>
             <text className="mapText">The interactive map below provides different views of the ranch. This includes several layers with different toggable map elements. A more comprehensive interactive map will be made available at a later date.</text>
             <iframe title="CalPoly SPR" class ="map"
