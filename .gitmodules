@@ -1,0 +1,3 @@
+[submodule "flask-server/--force"]
+	path = flask-server/--force
+	url = https://github.com/mathurma/KGQA
