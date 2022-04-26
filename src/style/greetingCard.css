@@ -1,14 +1,19 @@
 /*** animation styles ***/
 
 @keyframes animCardStyle {
-    from {
+    0% {
         opacity: 0;
         width: 50%;
         transform: translate3d(0, 300px, 0);
     }
-    to {
+    /* 50% {
+        opacity: 0.5;
+        width: 75%;
+        transform: translate3d(0, 150px, 0);
+    } */
+    100% {
         opacity: 1;
-        width: 70%;
+        width: auto;
         transform: translate3d(0, 0, 0);
     }
 }
@@ -20,7 +25,7 @@
     }
     to {
         opacity: 1;
-        font-size: 20px;
+        font-size: auto;
     }
 }
 
@@ -60,7 +65,7 @@
     text-align: center;
 
     animation-name: animTitleStyle;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 
 .descriptionStyle {
