@@ -23,10 +23,10 @@ export default function App() {
             <div class="topnav sticky-top">
                 <div class="row">
                     <nav>
-                        <img src={logo} height="46" alt="poppy logo"/>
                         <Link to="/">
-                            <button class="navbutton" type="button">
-                                Home
+                            <button class="navbutton" type="button" style={{padding: 0}}>
+                                {/* Home */}
+                                <img src={logo} height="46" alt="poppy logo"/>
                             </button>
                         </Link>
                         <Link to="/chatbot">
@@ -34,14 +34,24 @@ export default function App() {
                                 Chat
                             </button>
                         </Link>
-                        <Link to="/suggestions">
-                            <button class="navbutton" type="button">
-                                FAQ
-                            </button>
-                        </Link>
                         <Link to="/maps">
                             <button class="navbutton" type="button">
                                 Maps
+                            </button>
+                        </Link>
+                        <Link to="/suggestions">
+                            <button class="navbutton" type="button">
+                                About
+                            </button>
+                        </Link>
+                        <Link to="/">
+                            <button class="navbutton" type="button">
+                                Contact
+                            </button>
+                        </Link>
+                        <Link to="/">
+                            <button class="navbutton" type="button">
+                                Donate
                             </button>
                         </Link>
                         
