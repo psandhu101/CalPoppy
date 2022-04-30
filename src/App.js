@@ -2,9 +2,11 @@ import Chatbot from "./components/Chatbot";
 import "./axios-config.js";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.js";
-import SuggestedOptions from "./components/FAQ";
+import About from "./components/About";
 import Home from "./components/Home";
 import Maps from "./components/Maps";
+import Contact from "./components/Contact";
+import PageNotFound from "./components/PageNotFound";
 import logo from "./images/logo192.png"
 import './style/custom.scss';
 import {} from "./style/navbar.css"
@@ -39,17 +41,17 @@ export default function App() {
                                 Maps
                             </button>
                         </Link>
-                        <Link to="/suggestions">
+                        <Link to="/about">
                             <button class="navbutton" type="button">
                                 About
                             </button>
                         </Link>
-                        <Link to="/">
+                        <Link to="/contact">
                             <button class="navbutton" type="button">
                                 Contact
                             </button>
                         </Link>
-                        <Link to="/">
+                        <Link to="/404">
                             <button class="navbutton" type="button">
                                 Donate
                             </button>
@@ -65,8 +67,11 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/chatbot" element={<Chatbot/>}/>
-                <Route path="/suggestions" element={<SuggestedOptions/>}/>
+                <Route path="/about" element={<About/>}/>
                 <Route path="/maps" element={<Maps/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                {/* <Route path="/donate" element={<Donate/>}/> */}
+                <Route path="/404" element={<PageNotFound/>}/>
             </Routes>
         </Router>
     </ThemeProvider>
