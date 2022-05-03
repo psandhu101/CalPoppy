@@ -28,7 +28,7 @@ export default function App() {
                         <Link to="/">
                             <button class="navbutton" type="button" style={{padding: 0}}>
                                 {/* Home */}
-                                <img src={logo} height="46" alt="poppy logo"/>
+                                <img src={logo} className="home_logo" alt="poppy logo"/>
                             </button>
                         </Link>
                         <Link to="/chatbot">
@@ -41,6 +41,7 @@ export default function App() {
                                 Maps
                             </button>
                         </Link>
+
                         <Link to="/about">
                             <button class="navbutton" type="button">
                                 About
