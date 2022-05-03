@@ -23,7 +23,6 @@ export default function App() {
     <ThemeProvider theme={theme}>  
         <Router>
             <div class="topnav sticky-top">
-                <div class="row">
                     <nav>
                         <Link to="/">
                             <button class="navbutton" type="button" style={{padding: 0}}>
@@ -62,8 +61,6 @@ export default function App() {
 
                     {/* A <Routes> looks through its children <Route>s and
                         renders the first one that matches the current URL. */}
-                    
-                </div>
             </div>
             <Routes>
                 <Route path="/" element={<Home/>}/>
