@@ -1,6 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import "../style/maps.css";
 
+/* UNFINISHED
+  * may need to properly embed interactive map from Classic Viewer
+  */
+
 export default function Maps() {
     return (
         <div className="MapPage">
@@ -20,7 +24,7 @@ export default function Maps() {
             src="https://calpoly.maps.arcgis.com/apps/instant/basic/index.html?appid=154965d4fc4245e0ab96e94e63252f15"></iframe>
             <hr className="divline"></hr>
             <h1 className="mapTitle">Other Maps</h1>
-            <text className="mapText">Downloadable maps coming soon.</text>
+            <text className="mapText">More maps coming soon.</text>
         </div>
         
     )
