@@ -40,10 +40,9 @@ export default function App() {
                                 Maps
                             </button>
                         </Link>
-
                         <Link to="/about">
                             <button class="navbutton" type="button">
-                                About
+                                Learn More
                             </button>
                         </Link>
                         <Link to="/contact">
@@ -51,17 +50,18 @@ export default function App() {
                                 Contact
                             </button>
                         </Link>
+                        {/* later change to /Donate */}
                         <Link to="/404">
                             <button class="navbutton" type="button">
-                                Donate
+                                {/* donation and support tab */}
+                                Help Poppy Grow
                             </button>
                         </Link>
-                        
                     </nav>
-
-                    {/* A <Routes> looks through its children <Route>s and
-                        renders the first one that matches the current URL. */}
             </div>
+
+            {/* A <Routes> looks through its children <Route>s and
+                renders the first one that matches the current URL. */}
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/chatbot" element={<Chatbot/>}/>
