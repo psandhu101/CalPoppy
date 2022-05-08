@@ -5,13 +5,8 @@ from KGQA import statement_intake
 
 app = Flask(__name__)
 
-#Members API Route
-@app.route("/members")
-def members():
-    return {"members":["Member1", "Member2"]}
-
-@app.route("/api_call", methods=["POST"])
-def api_call():
+@app.route("api/get_ai_response", methods=["POST"])
+def get_ai_response():
     user_query = request.get_json()
     #print("In API CALL: ", user_query)
     return {"sentences":[str(statement_intake.main(["Chatbot query", user_query]))]}
