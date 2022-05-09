@@ -7,11 +7,13 @@
   /* Style the links inside the navigation bar */
 .navbutton{
     padding: 10px 15px;
+    padding: 12px 15px;
     background-color: #203e2f;
     color: white;
     width:max-content;
+    align-self: center;
     text-align:center;
-    border: 1px solid #203e2f;
+    border: 0px solid #203e2f;
     transition-duration: 0.4s;
 }
 

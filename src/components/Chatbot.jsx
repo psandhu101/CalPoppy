@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import ChatComposer from "./ChatComposer";
 import ChatWindow from "./ChatWindow";
-import HeaderNav from "./HeaderNav";
+import ChatHeader from "./ChatHeader";
 // import axios from "axios";
 import "../style/chatbot.css";
 
@@ -172,7 +172,7 @@ export default function Chatbot(props) {
 
     return (
         <main className="Chatbot chatbotStyle">
-            <HeaderNav
+            <ChatHeader
                 onSuggestionClick={onSuggestionClick}
                 suggestionsOpen={suggestionsOpen}
             />

@@ -1,4 +1,4 @@
-import '../style/faq.css';
+import '../style/about.css';
 
 export default function ChatInstructions() {
   return (

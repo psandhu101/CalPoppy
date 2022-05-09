@@ -3,7 +3,7 @@ import { HelpCircle, XCircle } from "react-feather";
 import useEscape from "../hooks/useEscape";
 import "../style/chatHeader.css";
 
-export default function HeaderNav({ onSuggestionClick, suggestionsOpen }) {
+export default function ChatHeader({ onSuggestionClick, suggestionsOpen }) {
 
   useEscape(() => {
     suggestionsOpen && onSuggestionClick();

@@ -1,13 +1,9 @@
 
 import suggestions from "./faqs";
 import {aboutSPR, aboutCreators, helpMessage} from "./faqs";
-import '../style/faq.css';
+import '../style/about.css';
 
-// function sendMessage(suggestion){
-
-// }
-
-export default function SuggestedOptions() {
+const About = () => {
   return (
     <div class="container">
       <div class="row text-white center-block">
@@ -64,3 +60,5 @@ export default function SuggestedOptions() {
     </div>
   );
   }
+
+  export default About;
