@@ -25,8 +25,8 @@ export default function Home() {
             </Row>
             <Row style={{filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}>
                 <Col>
-                <Link to="/suggestions" marginLeft='50rem' marginRight='10rem'>
-                        <Button variant='primary' id='btn-small' class='rounded-1 text-nowrap'>FAQ</Button>
+                <Link to="/about" marginLeft='50rem' marginRight='10rem'>
+                        <Button variant='primary' id='btn-small' class='rounded-1 text-nowrap'>About</Button>
                     </Link>
                 </Col>
             </Row>

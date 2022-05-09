@@ -9,6 +9,12 @@
   height: 100%;
 }
 
+.home_logo {
+  height: 3rem;
+  width: auto;
+  align-self: flex-start;
+}
+
 #btn-large{
   @include button-size(2rem, 3rem, 5rem, 5rem);
 }
@@ -44,5 +50,13 @@ html,
 body,
 #root {
   margin: 0;
+  padding: 0;
   height: 100%;
+}
+
+nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-flow: row nowrap;
 }
