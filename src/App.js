@@ -50,7 +50,7 @@ export default function App() {
                                 Contact
                             </button>
                         </Link>
-                        {/* later change to /Donate */}
+                        {/* later change link to /Donate */}
                         <Link to="/404">
                             <button class="navbutton" type="button">
                                 {/* donation and support tab */}
