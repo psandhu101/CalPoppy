@@ -3,8 +3,8 @@
 @keyframes animCardStyle {
     from {
         opacity: 0;
-        width: 50%;
-        transform: translate3d(0, 300px, 0);
+        width: 70%;
+        transform: translate3d(0px, 50px, 0px);
     }
     to {
         opacity: 1;
@@ -16,18 +16,18 @@
 @keyframes animTitleStyle {
     from {
         opacity: 0;
-        font-size: 10px;
+        font-size: 30px;
     }
     to {
         opacity: 1;
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
 @keyframes animDescStyle {
     from {
         opacity: 0;
-        font-size: 8px;
+        font-size: 16px;
     }
     to {
         opacity: 1;
@@ -45,7 +45,7 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 
     animation-name: animCardStyle;
-    animation-duration: 1s;
+    animation-duration: 0.1s;
 }
 
 .logoStyle {
@@ -60,7 +60,7 @@
     text-align: center;
 
     animation-name: animTitleStyle;
-    animation-duration: 1s;
+    animation-duration: 0.1s;
 }
 
 .descriptionStyle {

@@ -2,19 +2,33 @@
 import "../style/donate.css";
 import '../style/faq.css';
 
+import {Image, Button, Container, Row, Col} from 'react-bootstrap';
+/** @jsxImportSource @emotion/react */
+
 export default function Donate() {
-    return (
-        <div class="container">
-            <div class="row text-white center-block">
-                <div class="col" align="center">
-                    <div class="bubble">
-                        <div class="card-body">
-                            <h4 class="card-title">Help Poppy Grow!</h4>
-                            <h6>Donate here</h6>
-                        </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    )
+  const titleText = "Help Poppy Grow!";
+  const supportText = `You can support immediate future growth by donating to the Swanton Pacific Ranch Recovery Fund.`;
+  const descriptionText = `Please note in the special requests text box that your donation is for Poppy and its student researchers.`;
+  const description = descriptionText.split("\n").map((text, i) => (
+    <p key={i} className="descriptionStyle">
+      {text}
+    </p>
+      ));
+
+  const support = supportText.split("\n").map((text, i) => (
+    <p key={i} className="descriptionStyle">
+      {text}
+    </p>
+  ));
+  return (
+    <div className="cardStyles">
+          <h2 className="titleStyle">{titleText}</h2>
+          {support}
+            <p align="center">
+            <Button variant='primary' size="lg" class='rounded-1 text-nowrap btnStyle' href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=401.644.&sort=1">SPR Ranch Recovery Fund</Button>
+            </p>
+        {description}
+
+    </div>
+  );
 }

@@ -6,6 +6,8 @@ import SuggestedOptions from "./components/FAQ";
 import Home from "./components/Home";
 import Maps from "./components/Maps";
 import Donate from "./components/Donate";
+import Contact from "./components/Contact";
+
 // import logo from "./images/logo192.png"
 import logo from "./images/spr_sp_logo.png"
 import './style/custom.scss';
@@ -26,24 +28,28 @@ export default function App() {
                 <div class="row">
                     <nav>
                         <Link to="/">
-                            <img src={logo} class="navLogo"   height="48" alt="poppy logo"/>
-                            <button class="navbutton" type="button">
-                                Home
+                            <button class="navbuttonLogo" type="button">
+                            <img src={logo}  height="46" alt="poppy logo"/>
                             </button>
                         </Link>
                         <Link to="/chatbot">
-                            <button height="100" class="navbutton" type="button">
-                                Chat
-                            </button>
-                        </Link>
-                        <Link to="/suggestions">
                             <button class="navbutton" type="button">
-                                FAQ
+                                Chat
                             </button>
                         </Link>
                         <Link to="/maps">
                             <button class="navbutton" type="button">
                                 Maps
+                            </button>
+                        </Link>
+                        <Link to="/suggestions">
+                            <button class="navbutton" type="button">
+                                About
+                            </button>
+                        </Link>
+                        <Link to="/contact">
+                            <button class="navbutton" type="button">
+                                Contact
                             </button>
                         </Link>
                         <Link to="/donate">
@@ -64,6 +70,7 @@ export default function App() {
                 <Route path="/chatbot" element={<Chatbot/>}/>
                 <Route path="/suggestions" element={<SuggestedOptions/>}/>
                 <Route path="/maps" element={<Maps/>}/>
+                <Route path="/contact" element={<Contact/>}/>
                 <Route path="/donate" element={<Donate/>}/>
             </Routes>
         </Router>
