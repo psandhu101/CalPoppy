@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import '../style/greetingCard.css';
-import logoSrc from "../images/logo512.png"
+import logoSrc from "../images/spr_logo.png"
 
 export default function GreetingCard() {
   const titleText = "Welcome to Swanton Poppy Chat!";

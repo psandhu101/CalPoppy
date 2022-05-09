@@ -5,7 +5,9 @@ import theme from "./theme.js";
 import SuggestedOptions from "./components/FAQ";
 import Home from "./components/Home";
 import Maps from "./components/Maps";
-import logo from "./images/logo192.png"
+import Donate from "./components/Donate";
+// import logo from "./images/logo192.png"
+import logo from "./images/spr_logo2.png"
 import './style/custom.scss';
 import {} from "./style/navbar.css"
 
@@ -23,7 +25,7 @@ export default function App() {
             <div class="topnav sticky-top">
                 <div class="row">
                     <nav>
-                        <img src={logo} height="46" alt="poppy logo"/>
+                        <img src={logo} height="46" background-color="white" alt="poppy logo"/>
                         <Link to="/">
                             <button class="navbutton" type="button">
                                 Home
@@ -44,6 +46,11 @@ export default function App() {
                                 Maps
                             </button>
                         </Link>
+                        <Link to="/donate">
+                            <button class="navbutton" type="button">
+                                Donate
+                            </button>
+                        </Link>
                         
                     </nav>
 
@@ -57,6 +64,7 @@ export default function App() {
                 <Route path="/chatbot" element={<Chatbot/>}/>
                 <Route path="/suggestions" element={<SuggestedOptions/>}/>
                 <Route path="/maps" element={<Maps/>}/>
+                <Route path="/donate" element={<Donate/>}/>
             </Routes>
         </Router>
     </ThemeProvider>
