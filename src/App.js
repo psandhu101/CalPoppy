@@ -25,14 +25,14 @@ export default function App() {
             <div class="topnav sticky-top">
                 <div class="row">
                     <nav>
-                        <img src={logo} height="46" background-color="white" alt="poppy logo"/>
                         <Link to="/">
+                            <img src={logo} class="navLogo"   height="48" alt="poppy logo"/>
                             <button class="navbutton" type="button">
                                 Home
                             </button>
                         </Link>
                         <Link to="/chatbot">
-                            <button class="navbutton" type="button">
+                            <button height="100" class="navbutton" type="button">
                                 Chat
                             </button>
                         </Link>
@@ -51,7 +51,7 @@ export default function App() {
                                 Donate
                             </button>
                         </Link>
-                        
+                            
                     </nav>
 
                     {/* A <Routes> looks through its children <Route>s and

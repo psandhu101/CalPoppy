@@ -6,7 +6,7 @@
   
   /* Style the links inside the navigation bar */
 .navbutton{
-    padding: 10px 15px;
+    padding: 13.5px 15px;
     background-color: #203e2f;
     color: white;
     width:max-content;
@@ -20,3 +20,10 @@
     border-color: #296e2b; 
     color: white;
   }
+
+  
+.navLogo {
+  margin: 2.5px;
+  padding: 3px;
+  vertical-align: top;
+}
