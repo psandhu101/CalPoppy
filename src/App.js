@@ -2,9 +2,11 @@ import Chatbot from "./components/Chatbot";
 import "./axios-config.js";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.js";
-import SuggestedOptions from "./components/FAQ";
+import About from "./components/About";
 import Home from "./components/Home";
 import Maps from "./components/Maps";
+import Contact from "./components/Contact";
+import PageNotFound from "./components/PageNotFound";
 import logo from "./images/logo192.png"
 import './style/custom.scss';
 import {} from "./style/navbar.css"
@@ -21,12 +23,11 @@ export default function App() {
     <ThemeProvider theme={theme}>  
         <Router>
             <div class="topnav sticky-top">
-                <div class="row">
                     <nav>
-                        <img src={logo} height="46" alt="poppy logo"/>
                         <Link to="/">
-                            <button class="navbutton" type="button">
-                                Home
+                            <button class="navbutton" type="button" style={{padding: 0}}>
+                                {/* Home */}
+                                <img src={logo} className="home_logo" alt="poppy logo"/>
                             </button>
                         </Link>
                         <Link to="/chatbot">
@@ -34,29 +35,41 @@ export default function App() {
                                 Chat
                             </button>
                         </Link>
-                        <Link to="/suggestions">
-                            <button class="navbutton" type="button">
-                                FAQ
-                            </button>
-                        </Link>
                         <Link to="/maps">
                             <button class="navbutton" type="button">
                                 Maps
                             </button>
                         </Link>
-                        
+                        <Link to="/about">
+                            <button class="navbutton" type="button">
+                                Learn More
+                            </button>
+                        </Link>
+                        <Link to="/contact">
+                            <button class="navbutton" type="button">
+                                Contact
+                            </button>
+                        </Link>
+                        {/* later change link to /Donate */}
+                        <Link to="/404">
+                            <button class="navbutton" type="button">
+                                {/* donation and support tab */}
+                                Help Poppy Grow
+                            </button>
+                        </Link>
                     </nav>
-
-                    {/* A <Routes> looks through its children <Route>s and
-                        renders the first one that matches the current URL. */}
-                    
-                </div>
             </div>
+
+            {/* A <Routes> looks through its children <Route>s and
+                renders the first one that matches the current URL. */}
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/chatbot" element={<Chatbot/>}/>
-                <Route path="/suggestions" element={<SuggestedOptions/>}/>
+                <Route path="/about" element={<About/>}/>
                 <Route path="/maps" element={<Maps/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                {/* <Route path="/donate" element={<Donate/>}/> */}
+                <Route path="/404" element={<PageNotFound/>}/>
             </Routes>
         </Router>
     </ThemeProvider>
