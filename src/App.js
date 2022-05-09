@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import Maps from "./components/Maps";
 import Donate from "./components/Donate";
 // import logo from "./images/logo192.png"
-import logo from "./images/spr_logo2.png"
+import logo from "./images/spr_sp_logo.png"
 import './style/custom.scss';
 import {} from "./style/navbar.css"
 
