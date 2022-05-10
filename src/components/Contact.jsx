@@ -1,5 +1,3 @@
-import "../style/donate.css";
-import '../style/faq.css';
 
 const Contact = () => {
     return (
