@@ -1,10 +1,16 @@
 import "../style/donate.css";
 import '../style/faq.css';
 
+const Contact = () => {
+    return (
+        <div>
+            <h1>Poppy the Chatbot</h1>
+            swantonpoppycp@gmail.com
 
-export default function GreetingCard() {
-
-  return (
-          <h2 align="center"> Contact In Progress</h2>
-  );
+            <h1>Cal Poppy Program</h1>
+            Jeanine
+        </div>
+    )
 }
+
+export default Contact;
