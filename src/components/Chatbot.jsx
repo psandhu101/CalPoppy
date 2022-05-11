@@ -89,7 +89,7 @@ export default function Chatbot(props) {
 
         }
 
-         function sleep(ms) {
+        function sleep(ms) {
              return new Promise(resolve => setTimeout(resolve, ms));
         }
 
