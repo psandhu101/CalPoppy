@@ -1,3 +1,5 @@
+/* chat tab: bottom bar */
+
 /** @jsxImportSource @emotion/react */
 import { useEffect, useRef } from "react";
 import { Send } from "react-feather";
