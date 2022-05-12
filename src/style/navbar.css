@@ -4,19 +4,35 @@
     overflow: hidden;
   }
   
-  /* Style the links inside the navigation bar */
-.navbutton{
-    padding: 10px 15px;
+
+.navbuttonLogo{
+    padding: 2.5px 2px;
     background-color: #203e2f;
     color: white;
     width:max-content;
     text-align:center;
     border: 1px solid #203e2f;
     transition-duration: 0.4s;
+    vertical-align: top;
+
+    
+}
+  /* Style the links inside the navigation bar */
+.navbutton{
+    padding: 13.5px 15px;
+    background-color: #203e2f;
+    color: white;
+    width:max-content;
+    align-self: center;
+    text-align:center;
+    border: 0px solid #203e2f;
+    transition-duration: 0.4s;
 }
 
-.navbutton:hover {
+.navbutton:hover, .navbuttonLogo:hover{
     background-color: #296e2b; 
     border-color: #296e2b; 
     color: white;
   }
+
+  
