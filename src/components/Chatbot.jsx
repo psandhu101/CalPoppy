@@ -81,16 +81,10 @@ export default function Chatbot(props) {
                 },
                 body: JSON.stringify(question)
             })
+            // Data is the AI response from Matthew.
             let data = await response.json()
-            //Data is the AI response from Matthew.
-            // assuming AI returns empty string only when no response available
-            // !!! MAY NEED TO CHANGE IN FUTURE !!!
-            if (data) {
-                let resp = data.sentences + responseCount;
-            }
-            else {
-                let resp = AI_NO_ANS;
-            }
+            // assuming data
+            let resp = (data.blah)? (data.blah + responseCount) : AI_NO_ANS
             //sessionStorage.setItem("responseCount", responseCount + 1);
             setResponseCount(responseCount + 1);
             return [{ text: resp }]
