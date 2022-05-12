@@ -27,7 +27,5 @@ jobs:
       with:
         deliverables: app.yaml 
         project_id: seraphic-bliss-298801
-        credentials: AIzaSyBrdx6A2TRFV0Gqg3G-QAYT2P4PWa-Vc9U
-
-    - name: Test
-      run: curl "${{ steps.deploy.outputs.url }}"
+        credentials: ${{ secrets.GCP_CREDENTIALS }}
+        
