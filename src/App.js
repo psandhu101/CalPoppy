@@ -7,12 +7,13 @@ import Home from "./components/Home";
 import Maps from "./components/Maps";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
-import logo from "./images/logo192.png"
+import logo from "./images/spr_sp_logo.png"
+
 import './style/custom.scss';
 import {} from "./style/navbar.css"
 
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
   Link
