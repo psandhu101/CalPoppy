@@ -9,6 +9,7 @@ import "../style/chatbot.css";
 export default function Chatbot(props) {
     const SENDER_USER = "user";
     const SENDER_BOT = "bot";
+    const AI_NO_ANS = "Sorry, I cannot answer that question! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com for more info.";
 
     const [suggestionsOpen, setSuggestionsOpen] = useState(false);
     const [query, setQuery] = useState("");
@@ -82,7 +83,14 @@ export default function Chatbot(props) {
             })
             let data = await response.json()
             //Data is the AI response from Matthew.
-            let resp = data.sentences + responseCount;
+            // assuming AI returns empty string only when no response available
+            // !!! MAY NEED TO CHANGE IN FUTURE !!!
+            if (data) {
+                let resp = data.sentences + responseCount;
+            }
+            else {
+                let resp = AI_NO_ANS;
+            }
             //sessionStorage.setItem("responseCount", responseCount + 1);
             setResponseCount(responseCount + 1);
             return [{ text: resp }]
