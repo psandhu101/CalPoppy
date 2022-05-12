@@ -1,0 +1,37 @@
+  /*** animation styles ***/
+
+
+.cardStyles {
+    justify-content: center;
+    align-self: center;
+    margin: 0 10%;
+    padding: 5%;
+    border-radius: 15px;
+    background: 203e2f;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    width: 70%;
+    animation-name: animCardStyle;
+    animation-duration: 1s;
+    /* Change to be 20 px from the top */
+}
+
+.btnStyle {
+    /* padding: 25px;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: auto; */
+}
+
+.titleStyle {
+    text-align: center;
+    animation-name: animTitleStyle;
+    animation-duration: 1s;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.descriptionStyle {
+    font-size: 16px;
+    text-align: center;
+}
