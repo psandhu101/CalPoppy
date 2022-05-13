@@ -26,7 +26,7 @@ export default function App() {
             <div class="topnav sticky-top">
                     <nav>
                         <Link to="/">
-                            <button class="navbutton" type="button" style={{padding: 0}}>
+                            <button class="navbutton" type="button" style={{padding: 1.5}}>
                                 {/* Home */}
                                 <img src={logo} className="home_logo" alt="poppy logo"/>
                             </button>
