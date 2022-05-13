@@ -9,7 +9,7 @@ import "../style/chatbot.css";
 export default function Chatbot(props) {
     const SENDER_USER = "user";
     const SENDER_BOT = "bot";
-    const AI_NO_ANS = "Sorry, I cannot answer that question! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com for more info.";
+    const AI_NO_ANS = "Sorry, I cannot answer that question at the moment! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com to give feedback. Thank you for helping Poppy grow!";
 
     const [suggestionsOpen, setSuggestionsOpen] = useState(false);
     const [query, setQuery] = useState("");
