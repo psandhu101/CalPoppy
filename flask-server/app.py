@@ -5,7 +5,7 @@ from KGQA import statement_intake
 
 app = Flask(__name__)
 
-@app.route("api/get_ai_response", methods=["POST"])
+@app.route("/api/get_ai_response", methods=["POST"])
 def get_ai_response():
     user_query = request.get_json()
     #print("In API CALL: ", user_query)
