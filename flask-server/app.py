@@ -9,7 +9,9 @@ app = Flask(__name__)
 def get_ai_response():
     user_query = request.get_json()
     #print("In API CALL: ", user_query)
-    return {"sentences":[str(statement_intake.main(["Chatbot query", user_query]))]}
+    resp = {"sentences":[str(statement_intake.main(["Chatbot query", user_query]))]}
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    return resp
     
 
 if __name__ == "__main__":
