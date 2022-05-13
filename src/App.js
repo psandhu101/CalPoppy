@@ -6,7 +6,6 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Maps from "./components/Maps";
 import Contact from "./components/Contact";
-import Donate from "./components/Donate";
 import PageNotFound from "./components/PageNotFound";
 import logo from "./images/spr_sp_logo.png"
 
@@ -53,7 +52,7 @@ export default function App() {
                             </button>
                         </Link>
                         {/* later change link to /Donate */}
-                        <Link to="/donate">
+                        <Link to="/404">
                             <button class="navbutton" type="button">
                                 {/* donation and support tab */}
                                 Help Poppy Grow
@@ -70,7 +69,6 @@ export default function App() {
                 <Route path="/about" element={<About/>}/>
                 <Route path="/maps" element={<Maps/>}/>
                 <Route path="/contact" element={<Contact/>}/>
-                <Route path="/donate" element={<Donate/>}/> 
                 <Route path="/404" element={<PageNotFound/>}/>
             </Routes>
         </Router>
