@@ -15,30 +15,32 @@
 // limitations under the License.
 
 'use strict';
+
+// sample function from https://github.com/googleapis/nodejs-text-to-speech/blob/HEAD/samples/synthesize.js
 async function synthesizeText(text, outputFile) {
-  // [START tts_synthesize_text]
-  const textToSpeech = require('@google-cloud/text-to-speech');
-  const fs = require('fs');
-  const util = require('util');
+    // [START tts_synthesize_text]
+    const textToSpeech = require('@google-cloud/text-to-speech');
+    const fs = require('fs');
+    const util = require('util');
 
-  const client = new textToSpeech.TextToSpeechClient();
+    const client = new textToSpeech.TextToSpeechClient();
 
-  /**
-   * TODO(developer): Uncomment the following lines before running the sample.
-   */
-  // const text = 'Text to synthesize, eg. hello';
-  // const outputFile = 'Local path to save audio file to, e.g. output.mp3';
+    /**
+     * TODO(developer): Uncomment the following lines before running the sample.
+     */
+    // const text = 'Text to synthesize, eg. hello';
+    // const outputFile = 'Local path to save audio file to, e.g. output.mp3';
 
-  const request = {
-    input: {text: text},
-    voice: {languageCode: 'en-US', ssmlGender: 'FEMALE'},
-    audioConfig: {audioEncoding: 'MP3'},
-  };
-  const [response] = await client.synthesizeSpeech(request);
-  const writeFile = util.promisify(fs.writeFile);
-  await writeFile(outputFile, response.audioContent, 'binary');
-  console.log(`Audio content written to file: ${outputFile}`);
-  // [END tts_synthesize_text]
+    const request = {
+        input: {text: text},
+        voice: {languageCode: 'en-US', ssmlGender: 'FEMALE'},
+        audioConfig: {audioEncoding: 'MP3'},
+    };
+    const [response] = await client.synthesizeSpeech(request);
+    const writeFile = util.promisify(fs.writeFile);
+    await writeFile(outputFile, response.audioContent, 'binary');
+    console.log(`Audio content written to file: ${outputFile}`);
+    // [END tts_synthesize_text]
 }
 
 
@@ -67,7 +69,9 @@ async function synthesizeText(text, outputFile) {
  * at https://cloud.google.com/speech/docs.
  */
 
- function streamingMicRecognize(encoding, sampleRateHertz, languageCode) {
+
+// sample function from https://github.com/googleapis/nodejs-speech/blob/HEAD/samples/recognize.js
+function streamingMicRecognize(encoding, sampleRateHertz, languageCode) {
     // [START speech_transcribe_streaming_mic]
     const recorder = require('node-record-lpcm16');
   
@@ -122,4 +126,4 @@ async function synthesizeText(text, outputFile) {
   
     console.log('Listening, press Ctrl+C to stop.');
     // [END speech_transcribe_streaming_mic]
-  }
+}
