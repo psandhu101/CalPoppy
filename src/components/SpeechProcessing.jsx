@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+/******* TEXT TO SPEECH *******/
+
 // Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,6 +48,8 @@ async function synthesizeText(text, outputFile) {
 
 
 
+
+/******* SPEECH TO TEXT *******/
 
 // Copyright 2017 Google LLC
 //
@@ -123,7 +127,8 @@ function streamingMicRecognize(encoding, sampleRateHertz, languageCode) {
       .stream()
       .on('error', console.error)
       .pipe(recognizeStream);
-  
+
+    // TODO: stop when no input instead of with ctrl+c
     console.log('Listening, press Ctrl+C to stop.');
     // [END speech_transcribe_streaming_mic]
 }
