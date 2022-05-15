@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-'use strict';
+'use strict';                       // only allows use of declared variables
 
 // sample function from https://github.com/googleapis/nodejs-text-to-speech/blob/HEAD/samples/synthesize.js
 async function synthesizeText(text, outputFile) {
