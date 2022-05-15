@@ -1,18 +1,38 @@
   /*** animation styles ***/
+@keyframes animCardDonateStyle {
+    from {
+        opacity: 0;
+        transform: translate3d(0em, 5em, 0em);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
 
 
-.cardStyles {
+@keyframes animTitleDonateStyle {
+    from {
+        opacity: 0;
+        font-size: 2em;
+    }
+    to {
+        opacity: 1;
+        font-size: 2em;
+    }
+}
+
+.cardDonateStyles {
     justify-content: center;
     align-self: center;
-    margin: 0 10%;
-    padding: 5%;
-    border-radius: 15px;
+    margin: 1% 0% 0% 0%;
+    padding: 3%;
+    border-radius: 1em;
     background: 203e2f;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    width: 70%;
-    animation-name: animCardStyle;
+    width: 50%;
+    animation-name: animCardDonateStyle;
     animation-duration: 1s;
-    /* Change to be 20 px from the top */
 }
 
 .btnStyle {
@@ -23,15 +43,16 @@
     height: auto; */
 }
 
-.titleStyle {
+.titleDonateStyle {
     text-align: center;
-    animation-name: animTitleStyle;
+    animation-name: animTitleDonateStyle;
     animation-duration: 1s;
-    font-size: 30px;
+    font-size: 2em;
+    /* font-weight: bold; */
     padding-bottom: 20px;
 }
 
-.descriptionStyle {
-    font-size: 16px;
+.descriptionDonateStyle {
+    font-size: 1em;
     text-align: center;
 }

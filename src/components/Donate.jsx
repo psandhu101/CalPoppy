@@ -16,19 +16,25 @@ export default function Donate() {
       ));
 
   const support = supportText.split("\n").map((text, i) => (
-    <p key={i} className="descriptionStyle">
+    <p key={i} className="descriptionDonateStyle">
       {text}
     </p>
   ));
   return (
-    <div className="cardStyles">
-          <h2 className="titleStyle">{titleText}</h2>
-          {support}
-            <p align="center">
-            <Button variant='primary' size="lg" class='rounded-1 text-nowrap btnStyle' href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=401.644.&sort=1">SPR Ranch Recovery Fund</Button>
-            </p>
-        {description}
+    <Container>
+      <Row className="justify-content-center">
+        <Col align="center">
+          <div align="center" className="cardDonateStyles">
+                <h2 className="titleDonateStyle">{titleText}</h2>
+                {support}
+                  <p align="center">
+                  <Button variant='primary' size="lg" class='rounded-1 text-nowrap btnStyle' href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=401.644.&sort=1" target="_blank">SPR Ranch Recovery Fund</Button>
+                  </p>
+              {description}
 
-    </div>
+          </div>
+      </Col>
+    </Row>
+    </Container>
   );
 }
