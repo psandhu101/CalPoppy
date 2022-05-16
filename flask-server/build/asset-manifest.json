@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.90f32f81.chunk.css",
+    "main.js": "/static/js/main.c2c16aa9.chunk.js",
+    "main.js.map": "/static/js/main.c2c16aa9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d4a14d57.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d4a14d57.js.map",
+    "static/css/2.67d44514.chunk.css": "/static/css/2.67d44514.chunk.css",
+    "static/js/2.dcbd0aa9.chunk.js": "/static/js/2.dcbd0aa9.chunk.js",
+    "static/js/2.dcbd0aa9.chunk.js.map": "/static/js/2.dcbd0aa9.chunk.js.map",
+    "static/js/3.7133a41b.chunk.js": "/static/js/3.7133a41b.chunk.js",
+    "static/js/3.7133a41b.chunk.js.map": "/static/js/3.7133a41b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.67d44514.chunk.css.map": "/static/css/2.67d44514.chunk.css.map",
+    "static/css/main.90f32f81.chunk.css.map": "/static/css/main.90f32f81.chunk.css.map",
+    "static/js/2.dcbd0aa9.chunk.js.LICENSE.txt": "/static/js/2.dcbd0aa9.chunk.js.LICENSE.txt",
+    "static/media/home.scss": "/static/media/poppymtn2.4fffe3a3.jpg",
+    "static/media/spr_logo.f4211a78.png": "/static/media/spr_logo.f4211a78.png",
+    "static/media/spr_sp_logo.f7f2a2fe.png": "/static/media/spr_sp_logo.f7f2a2fe.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d4a14d57.js",
+    "static/css/2.67d44514.chunk.css",
+    "static/js/2.dcbd0aa9.chunk.js",
+    "static/css/main.90f32f81.chunk.css",
+    "static/js/main.c2c16aa9.chunk.js"
+  ]
+}

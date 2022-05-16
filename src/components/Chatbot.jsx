@@ -73,7 +73,7 @@ export default function Chatbot(props) {
         async function AIResponse(question){
 
             console.log("Before Fetch", question)
-            let response = await fetch("https://swantonpoppy.org/api/get_ai_response", {
+            let response = await fetch("/api_call", {
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json"
