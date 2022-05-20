@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 import ChatComposer from "./ChatComposer";
 import ChatWindow from "./ChatWindow";
 import ChatHeader from "./ChatHeader";
+import funfacts from "./facts.js";
 // import axios from "axios";
 import "../style/chatbot.css";
 
 export default function Chatbot(props) {
     const SENDER_USER = "user";
     const SENDER_BOT = "bot";
+
     const AI_NO_ANS = "Sorry, I cannot answer that question at the moment! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com to give feedback. Thank you for helping Poppy grow!";
+    const FUN_FACT_COUNT = 4;
 
     const [suggestionsOpen, setSuggestionsOpen] = useState(false);
     const [query, setQuery] = useState("");
@@ -84,7 +87,9 @@ export default function Chatbot(props) {
             // Data is the AI response from Matthew.
             let data = await response.json()
             // assuming data
-            let resp = (data.sentences)? (data.sentences + responseCount) : AI_NO_ANS
+            let resp = (data.sentences) ?
+                (data.sentences + responseCount) :
+                (AI_NO_ANS + " " + funfacts[Math.random() * FUN_FACT_COUNT])
             //sessionStorage.setItem("responseCount", responseCount + 1);
             setResponseCount(responseCount + 1);
             return [{ text: resp }]
