@@ -86,8 +86,9 @@ export default function Chatbot(props) {
             })
             // Data is the AI response from Matthew.
             let data = await response.json()
-            // assuming data
-            let resp = (data.sentences) ? (data.sentences + responseCount) : (AI_NO_ANS + " " + funfacts[Math.random() * FUN_FACT_COUNT])
+            // assuming data evaluates to false if empty string
+            let resp = (data.sentences) ? (data.sentences + responseCount) : (AI_NO_ANS)
+            // let resp = (data.sentences) ? (data.sentences + responseCount) : (AI_NO_ANS + " " + funfacts[Math.random() * FUN_FACT_COUNT])
             //sessionStorage.setItem("responseCount", responseCount + 1);
             setResponseCount(responseCount + 1);
             return [{ text: resp }]
