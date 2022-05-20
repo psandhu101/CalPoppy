@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && (rm -r flask-server/build || ) && mv build flask-server/build",
+    "build": "react-scripts build && (rm -r flask-server/build || true) && mv build flask-server/build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
