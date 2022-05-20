@@ -37,5 +37,4 @@ jobs:
       with:
         deliverables: app.yaml
         project_id: seraphic-bliss-298801
-        working_directory: flask-server/
         credentials: ${{ secrets.GCP_CREDENTIALS }}
