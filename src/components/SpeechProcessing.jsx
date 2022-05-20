@@ -88,28 +88,28 @@ function streamingMicRecognize(encoding, sampleRateHertz, languageCode) {
     /**
      * TODO(developer): Uncomment the following lines before running the sample.
      */
-    // const encoding = 'Encoding of the audio file, e.g. LINEAR16';
-    // const sampleRateHertz = 16000;
-    // const languageCode = 'BCP-47 language code, e.g. en-US';
+    const encoding = 'Encoding of the audio file, e.g. LINEAR16';
+    const sampleRateHertz = 16000;
+    const languageCode = 'BCP-47 language code, e.g. en-US';
 
     const request = {
-      config: {
-        encoding: encoding,
-        sampleRateHertz: sampleRateHertz,
-        languageCode: languageCode,
-      },
-      interimResults: false, // If you want interim results, set this to true
+        config: {
+            encoding: encoding,
+            sampleRateHertz: sampleRateHertz,
+            languageCode: languageCode,
+        },
+        interimResults: false, // If you want interim results, set this to true
     };
 
     // Create a recognize stream
     const recognizeStream = client
-      .streamingRecognize(request)
-      .on('error', console.error)
-      .on('data', data =>
+        .streamingRecognize(request)
+        .on('error', console.error)
+        .on('data', data =>
         process.stdout.write(
-          data.results[0] && data.results[0].alternatives[0]
-            ? `Transcription: ${data.results[0].alternatives[0].transcript}\n`
-            : '\n\nReached transcription time limit, press Ctrl+C\n'
+            data.results[0] && data.results[0].alternatives[0]
+                ? `Transcription: ${data.results[0].alternatives[0].transcript}\n`
+                : '\n\nReached transcription time limit, press Ctrl+C\n'
         )
     );
 
