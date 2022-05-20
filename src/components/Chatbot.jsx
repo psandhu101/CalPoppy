@@ -80,7 +80,15 @@ export default function Chatbot(props) {
                 },
                 body: JSON.stringify(question)
             })
+
+            console.log("Data before json", response)
+            console.log("Data sendetnec", response.sentences)
+            console.log("response . data", response.data)
+            //console.log("response . data2", response.data.sentences)
             let data = await response.json()
+            console.log("Data after json", data)
+            console.log("Sentence after json", data.sentences)
+	    
             //Data is the AI response from Matthew.
             let resp = data.sentences + responseCount;
             //sessionStorage.setItem("responseCount", responseCount + 1);
