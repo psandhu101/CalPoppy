@@ -1,6 +1,5 @@
 
-import suggestions from "./faqs";
-import {aboutSPR, aboutCreators, helpMessage} from "./faqs";
+import {suggestions, aboutSPR, aboutCreators, disclaimer} from "./aboutTxt";
 import '../style/about.css';
 
 const About = () => {
@@ -47,12 +46,8 @@ const About = () => {
         <div class="col" align="center">
           <div class="bubble">
             <div class="card-body">
-              <h4 class="card-title">Want to Help?</h4>
-              <h6><br/>{helpMessage[0]}<br/>
-                  {helpMessage[1]}<p/>
-                  {helpMessage[2]}<br/>
-                  {helpMessage[3]}
-              </h6>
+              <h4 class="card-title">Disclaimer</h4>
+              <h6>{ disclaimer }</h6>
             </div> 
           </div> 
         </div>
