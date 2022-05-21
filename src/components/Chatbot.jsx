@@ -12,7 +12,8 @@ export default function Chatbot(props) {
     const SENDER_USER = "user";
     const SENDER_BOT = "bot";
 
-    const AI_NO_ANS = "Sorry, I cannot answer that question at the moment! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com to give feedback. Thank you for helping Poppy grow! Here is a fun fact about SPR: ";
+    const AI_NO_ANS = "Sorry, I cannot answer that question at the moment! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com to give feedback. Thank you for helping Poppy grow!";
+    const FUN_FACT_STR = "Here is a fun fact about SPR: ";
     const FUN_FACT_COUNT = 5;
 
     const [suggestionsOpen, setSuggestionsOpen] = useState(false);
@@ -89,10 +90,16 @@ export default function Chatbot(props) {
             let data = await response.json()
             let fact = Math.floor(Math.random() * FUN_FACT_COUNT)
             // assuming data evaluates to false if empty string
-            let resp = (data.sentences[0]) ? (data.sentences + responseCount) : (AI_NO_ANS + funfacts[fact])
+            // let resp = (data.sentences[0]) ? (data.sentences + responseCount) : [AI_NO_ANS, funfacts[fact]]
+            if (data.sentences[0]) {
+                setResponseCount(responseCount + 1);
+                return [{ text: data.sentences + responseCount }]
+            }
+            else {
+                return [{ text: AI_NO_ANS}, { text: FUN_FACT_STR + funfacts[fact]}]
+            }
             //sessionStorage.setItem("responseCount", responseCount + 1);
-            setResponseCount(responseCount + 1);
-            return [{ text: resp }]
+            // return [{ text: resp }]
 
         }
 
