@@ -6,13 +6,14 @@ import ChatHeader from "./ChatHeader";
 import funfacts from "./facts.js";
 // import axios from "axios";
 import "../style/chatbot.css";
+import { findAllByDisplayValue } from "@testing-library/react";
 
 export default function Chatbot(props) {
     const SENDER_USER = "user";
     const SENDER_BOT = "bot";
 
-    const AI_NO_ANS = "Sorry, I cannot answer that question at the moment! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com to give feedback. Thank you for helping Poppy grow!";
-    const FUN_FACT_COUNT = 4;
+    const AI_NO_ANS = "Sorry, I cannot answer that question at the moment! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com to give feedback. Thank you for helping Poppy grow! Here is a fun fact about SPR: ";
+    const FUN_FACT_COUNT = 5;
 
     const [suggestionsOpen, setSuggestionsOpen] = useState(false);
     const [query, setQuery] = useState("");
@@ -86,9 +87,9 @@ export default function Chatbot(props) {
             })
             // Data is the AI response from Matthew.
             let data = await response.json()
+            let fact = Math.floor(Math.random() * FUN_FACT_COUNT)
             // assuming data evaluates to false if empty string
-            let resp = (data.sentences) ? (data.sentences + responseCount) : (AI_NO_ANS)
-            // let resp = (data.sentences) ? (data.sentences + responseCount) : (AI_NO_ANS + " " + funfacts[Math.random() * FUN_FACT_COUNT])
+            let resp = (data.sentences[0]) ? (data.sentences + responseCount) : (AI_NO_ANS + funfacts[fact])
             //sessionStorage.setItem("responseCount", responseCount + 1);
             setResponseCount(responseCount + 1);
             return [{ text: resp }]

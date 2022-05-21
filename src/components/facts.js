@@ -5,3 +5,5 @@ const funfacts = [
     "fun fact 4",
     "fun fact 5",
 ];
+
+export default funfacts;
