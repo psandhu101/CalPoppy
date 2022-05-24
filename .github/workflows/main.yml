@@ -37,6 +37,6 @@ jobs:
       id: deploy
       uses: google-github-actions/deploy-appengine@v0.2.0
       with:
-        deliverables: app.yaml
+        deliverables: ./flask-server/app.yaml
         project_id: seraphic-bliss-298801
         credentials: ${{ secrets.GCP_CREDENTIALS }}
