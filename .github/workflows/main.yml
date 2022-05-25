@@ -45,5 +45,7 @@ jobs:
     - name: Deploy app to GAE 🚀
       run: |
           ls
+          ls KGQA
+          ls
           gcloud app deploy
           
