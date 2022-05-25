@@ -40,7 +40,8 @@ jobs:
        
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v0
-      
+      with:
+        deliverables: app.yaml KGQA  
     - name: Deploy app to GAE 🚀
       run: |
           ls
