@@ -33,6 +33,9 @@ jobs:
     - name: Run build
       run: CI=false npm run build
       
+    - name: Update KQGA Submodule
+      run: git submodule update --init --recursive
+      
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:
