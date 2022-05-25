@@ -32,12 +32,15 @@ jobs:
 
     - name: Run build
       run: CI=false npm run build
-        
-    - name: Deploy to App Engine
-      uses: google-github-actions/setup-gcloud@v0
+      
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v0'
       with:
-        project_id: seraphic-bliss-298801
-        credentials: ${{ secrets.GCP_CREDENTIALS }}
+       credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+       
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v0
+      
     - name: Deploy app to GAE 🚀
       run: |
           ls
