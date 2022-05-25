@@ -34,7 +34,6 @@ jobs:
       run: CI=false npm run build
         
     - name: Deploy to App Engine
-      id: deploy
       uses: google-github-actions/setup-gcloud@v0.2.0
       with:
         project_id: seraphic-bliss-298801
@@ -42,7 +41,5 @@ jobs:
     - name: Deploy app to GAE 🚀
       run: |
           ls
-          gcloud auth login
-          gcloud config set account swantonpoppycp@gmail.com
           gcloud app deploy
           
