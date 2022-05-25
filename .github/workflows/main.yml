@@ -33,6 +33,9 @@ jobs:
     - name: Run build
       run: CI=false npm run build
       
+    - name: Update KQGA Submodule
+      run: git submodule update --init --recursive
+      
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:
@@ -40,8 +43,7 @@ jobs:
        
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v0
-      with:
-        deliverables: app.yaml KGQA  
+
     - name: Deploy app to GAE 🚀
       run: |
           ls
