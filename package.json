@@ -5,6 +5,7 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@emotion/react": "^11.1.4",
+    "@google-cloud/text-to-speech": "^3.4.0",
     "@react-spring/web": "^9.0.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
