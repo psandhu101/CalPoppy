@@ -52,6 +52,14 @@ const About = () => {
               <h6>
                 <br/>{aboutHayes[0]}
               </h6>
+
+              <h5>
+                <br/>Dr. Franz J. Kurfess<br/>
+              </h5>
+              <img src={kurfess} width="50%" /><br/>
+              <h6>
+                <br/>{aboutKurfess[0]}<br/>{aboutKurfess[1]}
+              </h6>
             </div> 
           </div>
         </div>
