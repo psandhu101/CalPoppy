@@ -1,7 +1,4 @@
-const email = {
-  swanton: "swantonpoppycp@gmail.com",
-  jeanine: "jmscaramo@calpoly.edu",
-};
+import { email } from "./contactTxt";
 
 const suggestions = [
   "How big is Swanton Pacific Ranch?",
@@ -29,12 +26,11 @@ remotely updated, creative outreach tool for researchers and the public, requiri
 
 const aboutCreators = [`Poppy was brought to you by Cal Poly students from many different majors, disciplines, backgrounds. 
 She is still a work in progress, so if you find any issues you would like to report, please contact:`, 
-"Poppy Software Team", email.swanton];
+"Poppy Software Team", email.poppy];
 
 const helpMessage = ["Poppy needs your help to ensure that she can stay up and running to educate future generations on SPR's rich history!", 
-"Interested in donating? Contact:", "Jeanine Scaramozzino", email.swanton];
+"Interested in donating? Contact:", "Jeanine Scaramozzino", email.poppy];
 
-const disclaimer = `Reasonable effort has been made to accurately and fairly represent the content shared through the Poppy interface. If you have comments, concerns or clarification on the content please email ${ email.swanton }.`
+const disclaimer = `Reasonable effort has been made to accurately and fairly represent the content shared through the Poppy interface. If you have comments, concerns or clarification on the content please email ${ email.poppy }.`
 
-export default email;
-export {suggestions, aboutSPR, aboutCreators, helpMessage, disclaimer};
+export { suggestions, aboutSPR, aboutCreators, helpMessage, disclaimer };
