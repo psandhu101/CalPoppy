@@ -2,9 +2,10 @@
 
 /** @jsxImportSource @emotion/react */
 import { useEffect, useRef } from "react";
-import { Send } from "react-feather";
+import { Send, Mic } from "react-feather";
 import "../style/chatComposer.css";
 import "../style/text.css";
+import { synthesizeText } from "./SpeechProcessing";
 
 export default function ChatComposer({ onSend }) {
 
@@ -41,13 +42,17 @@ return (
     <div className="menuBarStyle ChatComposer">
     <div className="contentStyle">
         <div
-        className="scrollableY txtFieldStyle"
-        ref={textFieldRef}
-        contentEditable="true"
+            className="scrollableY txtFieldStyle"
+            ref={textFieldRef}
+            contentEditable="true"
         ></div>
         <button className="sendButtonStyle" onClick={() => sendMessage()}>
-        <Send size={20} />
-        <p className="buttonTextStyle">Send</p>
+            <Send size={20} />
+            <p className="buttonTextStyle">Send</p>
+        </button>
+        <button>
+            <Mic size={20} />
+            <p className="buttonTextStyle">Speak</p>
         </button>
     </div>
     </div>

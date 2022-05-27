@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import '../style/chatMsg.css';
 import '../style/colors.css';
+import { Volume2 } from 'react-feather';
 
 export default function MessageBubble({
     text,
@@ -35,6 +36,12 @@ export default function MessageBubble({
                         <i class="bi bi-hand-thumbs-down"></i>
                     </button>
                 </>
+            )}
+            {/* play bot message */}
+            {senderID (
+                <button type="button">
+                    <Volume2 size={20} />
+                </button>
             )}
         </div>
     );
