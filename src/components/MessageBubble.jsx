@@ -38,7 +38,7 @@ export default function MessageBubble({
                 </>
             )}
             {/* play bot message */}
-            {senderID (
+            {senderID && true (
                 <button type="button">
                     <Volume2 size={20} />
                 </button>
