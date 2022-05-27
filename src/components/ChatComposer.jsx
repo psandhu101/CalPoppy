@@ -50,7 +50,7 @@ return (
             <Send size={20} />
             <p className="buttonTextStyle">Send</p>
         </button>
-        <button>
+        <button className="sendButtonStyle">
             <Mic size={20} />
             <p className="buttonTextStyle">Speak</p>
         </button>
