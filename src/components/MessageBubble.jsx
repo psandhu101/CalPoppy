@@ -2,6 +2,7 @@
 import '../style/chatMsg.css';
 import '../style/colors.css';
 import { Volume2 } from 'react-feather';
+import { synthesizeText } from './SpeechProcessing';
 
 export default function MessageBubble({
     text,
@@ -22,27 +23,29 @@ export default function MessageBubble({
                 {text}
             </p>
             <br></br>
-            {/* feedback buttons */}
-            {senderID && showFeedback && (
-                <>
-                    <button type="button"
-                        className={` feedbackIcon ${typeof feedback !== "undefined" && feedback ? "feedbackIconPos" : ""} `}
-                        onClick={() => onFeedbackGiven(timestamp, true)}>
-                        <i class="bi bi-hand-thumbs-up"></i>
+            <div className=" feedbackOpts ">
+                {/* feedback buttons */}
+                {senderID && showFeedback && (
+                    <>
+                        <button type="button"
+                            className={` feedbackIcon ${typeof feedback !== "undefined" && feedback ? "feedbackIconPos" : ""} `}
+                            onClick={() => onFeedbackGiven(timestamp, true)}>
+                            <i class="bi bi-hand-thumbs-up"></i>
+                        </button>
+                        <button type="button"
+                            className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `}
+                            onClick={() => onFeedbackGiven(timestamp, false)}>
+                            <i class="bi bi-hand-thumbs-down"></i>
+                        </button>
+                    </>
+                )}
+                {/* play bot message */}
+                {senderID && (
+                    <button type="button" className="feedbackIcon" onClick={() => synthesizeText(text)}>
+                        <Volume2 />
                     </button>
-                    <button type="button"
-                        className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `}
-                        onClick={() => onFeedbackGiven(timestamp, false)}>
-                        <i class="bi bi-hand-thumbs-down"></i>
-                    </button>
-                </>
-            )}
-            {/* play bot message */}
-            {senderID && (
-                <button type="button">
-                    <Volume2 size={20} />
-                </button>
-            )}
+                )}
+            </div>
         </div>
     );
 }
