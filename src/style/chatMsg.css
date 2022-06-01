@@ -86,16 +86,14 @@
 }
 
 .feedbackOpts {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .feedbackIcon {
-    display: inline-block;
     margin: 0 var(--feedbackMargin);
     vertical-align: middle;
-    align-self: center;
     border-color: transparent;
     border-radius: var(--feedbackCorner);
     background: none;

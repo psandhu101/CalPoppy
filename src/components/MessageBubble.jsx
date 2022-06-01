@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import '../style/chatMsg.css';
 import '../style/colors.css';
-import { Volume2 } from 'react-feather';
 import { synthesizeText } from './SpeechProcessing';
 
 export default function MessageBubble({
@@ -23,29 +22,32 @@ export default function MessageBubble({
                 {text}
             </p>
             <br></br>
-            <div className=" feedbackOpts ">
-                {/* feedback buttons */}
-                {senderID && showFeedback && (
-                    <>
-                        <button type="button"
+
+            {/* extra bot buttons */}
+            {senderID && (
+                <div className=" feedbackOpts ">
+                    {/* feedback buttons */}
+                    {showFeedback && (
+                        <div>
+                            <button type="button"
                             className={` feedbackIcon ${typeof feedback !== "undefined" && feedback ? "feedbackIconPos" : ""} `}
                             onClick={() => onFeedbackGiven(timestamp, true)}>
-                            <i class="bi bi-hand-thumbs-up"></i>
-                        </button>
-                        <button type="button"
-                            className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `}
-                            onClick={() => onFeedbackGiven(timestamp, false)}>
-                            <i class="bi bi-hand-thumbs-down"></i>
-                        </button>
-                    </>
-                )}
-                {/* play bot message */}
-                {senderID && (
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </button>
+                            <button type="button"
+                                className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `}
+                                onClick={() => onFeedbackGiven(timestamp, false)}>
+                                <i class="bi bi-hand-thumbs-down"></i>
+                            </button>
+                        </div>
+                    )}
+
+                    {/* play bot message */}
                     <button type="button" className="feedbackIcon" onClick={() => synthesizeText(text)}>
-                        <Volume2 />
+                        <i class="bi bi-megaphone"></i>
                     </button>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 }
