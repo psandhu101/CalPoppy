@@ -10,6 +10,8 @@
 
 # production
 /build
+/venv
+flask-server/venv/**
 
 # misc
 .DS_Store
