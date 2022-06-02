@@ -19,7 +19,7 @@
 'use strict';                       // only allows use of declared variables
 
 // sample function from https://github.com/googleapis/nodejs-text-to-speech/blob/HEAD/samples/synthesize.js
-async function synthesizeText(text) {
+async function synthesizeText(text, outputFile) {
     // [START tts_synthesize_text]
     const textToSpeech = require('@google-cloud/text-to-speech');
     const fs = require('fs');
@@ -31,7 +31,7 @@ async function synthesizeText(text) {
      * TODO(developer): Uncomment the following lines before running the sample.
      */
     // const text = 'Text to synthesize, eg. hello';
-    const outputFile = '../../speech/botOutput.mp3';
+    // const outputFile = 'Local path to save audio file to, e.g. output.mp3';
 
     const request = {
         input: {text: text},

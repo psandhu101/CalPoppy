@@ -2,6 +2,7 @@
 import '../style/chatMsg.css';
 import '../style/colors.css';
 import { synthesizeText } from './SpeechProcessing';
+import { poppyDir } from '../App';
 
 export default function MessageBubble({
     text,
@@ -11,10 +12,25 @@ export default function MessageBubble({
     onFeedbackGiven,
     feedback,
     timestamp,
-}) {
+    }) {
+
+    const playMsg = (text) => {
+        const path = require('path');
+
+        // output file for audio
+        // maybe add ogg files later since those are smaller
+        const outputFile = path.join(poppyDir, "msg.mp3");
+
+        // call TTS synthesize function from Google's API
+        synthesizeText(text, outputFile);
+
+        // play audio file
+        <audio autoplay>
+            <source src={{ outputFile }} type="audio/mpeg" />
+        </audio>
+    }
 
     return (
-
         /* wrapper div for messages */
         <div className={`msgWrapper ${senderID ? "msgWrapperBot" : "msgWrapperUser"} `}>
             {/* actual message text */}
@@ -42,8 +58,8 @@ export default function MessageBubble({
                         </div>
                     )}
 
-                    {/* play bot message */}
-                    <button type="button" className="feedbackIcon" onClick={() => synthesizeText(text)}>
+                    {/* play bot message -- can be expanded to user msgs as well */}
+                    <button type="button" className="feedbackIcon" onClick={() => playMsg(text)}>
                         <i class="bi bi-megaphone"></i>
                     </button>
                 </div>
