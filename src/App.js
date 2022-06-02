@@ -19,6 +19,23 @@ import {
   Link
 } from "react-router-dom";
 
+export const poppyDir = () => {
+    const fs = require('fs');
+    const os = require('os');
+    const path = require('path');
+
+    // creates temp dir for entire web app
+    const tmpDirOS = os.tmpdir();
+    return fs.mkdtemp(path.join(tmpDirOS, "poppy-"), (err, tmpDir) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(`Temp dir for Poppy created at ${tmpDir}`);
+        }
+    });
+}
+
 export default function App() {
   return (
     <ThemeProvider theme={theme}>  
