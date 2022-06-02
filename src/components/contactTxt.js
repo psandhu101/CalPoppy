@@ -17,4 +17,4 @@ const contactJMS = [
     `If you have questions about the Cal Poppy Research Program, started in 2013, please contact the Principle Investigator, Jeanine Scaramozzino,  at ${ email.jms }.`,
 ];
 
-export { email, contactPoppy, contactJMS };
+export { email, libguide, contactPoppy, contactJMS };
