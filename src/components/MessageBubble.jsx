@@ -19,6 +19,7 @@ export default function MessageBubble({
 
         // output file for audio
         // maybe add ogg files later since those are smaller
+        console.log(poppyDir);
         const outputFile = path.join(poppyDir, "msg.mp3");
 
         // call TTS synthesize function from Google's API
