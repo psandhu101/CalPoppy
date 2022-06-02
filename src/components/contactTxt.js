@@ -3,6 +3,11 @@ const email = {
     jms: "jmscaramo@calpoly.edu",
 };
 
+const libguide = {
+    swanton: "https://guides.lib.calpoly.edu/swanton",
+    calpoppy: "https://guides.lib.calpoly.edu/calpoppy",
+};
+
 const contactPoppy = [
     `If you have questions, feedback, corrections, etc.  about Poppy please email ${ email.poppy } and a team member will get back to you.`
 ]
