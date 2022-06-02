@@ -22,13 +22,11 @@ Features include:
 How To Update Front end to match master instructions: 
 Note: Ensure to only pull the src folder, changes were made to flask-server, package.json, and other files to make the project compatible to deploy to Google Cloud App Engine.
 Steps:
-1. Check out the gcloud config brach 
-2. Pull the src folder from master into gcloud-config
+1. Check out the gcloud config branch: `git checkout gcloud-config`
+2. Pull the src folder from master into gcloud-config: `git checkout master -- src`
 3. Add, Commit, and push the changes to gcloud-config to trigger the Github Actions workflow to update the website on Google Cloud App Engine
 Commands for steps:
-git checkout gcloud-config
-git checkout master -- src
-git add src
-*You can run git status here to check that only files in src are the Changes to be committed *
-git commit -m "Pulled Master frontend"
-git push
+`git add src`
+*You can run git status here to check that only files in src are the Changes to be committed*
+`git commit -m "Pulled Master frontend"
+git push`
