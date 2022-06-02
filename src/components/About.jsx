@@ -3,7 +3,6 @@ import {suggestions, aboutSPR, aboutCreators, aboutHayes, aboutKurfess, disclaim
 import '../style/about.css';
 import hayes from "../images/hayes_grey.jpeg";
 import kurfess from "../images/kurfess_franz.jpeg";
-import { Link } from "react-feather";
 import { libguide } from "./contactTxt";
 
 const About = () => {
@@ -34,7 +33,7 @@ const About = () => {
                 <br/>{aboutSPR[0]}<p/>
                 <br/>{aboutSPR[1]}<br/>
                 <br/>{aboutSPR[2]}<br/>
-                <a href=`${ libguide.swanton }` target="_blank">{aboutSPR[3]}<a>
+                <a href={`${libguide.swanton}`} target="_blank" style={{color:"white"}}>{aboutSPR[3]}</a>
               </h6>
             </div> 
           </div>
