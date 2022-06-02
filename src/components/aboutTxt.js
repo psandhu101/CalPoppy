@@ -1,4 +1,4 @@
-import { email } from "./contactTxt";
+import { email, libguide } from "./contactTxt";
 
 const suggestions = [
   "How big is Swanton Pacific Ranch?",
@@ -22,7 +22,10 @@ sharing the rich history and research opportunities of Swanton Pacific Ranch has
 much of the ranch (including many landmarks and a lot of physical data) in late summer 2020, the necessity to preserve and spread 
 knowledge of the ranch has become a priority. So, a plan was devised to provide access to this information through an interactive, 
 remotely updated, creative outreach tool for researchers and the public, requiring no mediation...and Poppy the Chatbot was born!
-`];
+`,
+`To find more resources about SPR, check out this libguide:`,
+`${ libguide.swanton }`,
+];
 
 const aboutCreators = [
   `Poppy was brought to you by Cal Poly students from many different majors, disciplines, backgrounds. 
