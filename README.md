@@ -8,6 +8,7 @@ Features include:
 
 - A simplistic chat interface where users send messages to the Swanton Virtual Assistant
 - FAQs that direct visitors toward interesting historical stories about the ranch.
+- A simple interactive map to learn about different locations on the ranch.
 
 ## Getting Started
 
@@ -17,11 +18,10 @@ Features include:
 4. Start the backend server (see section below)
 5. Start the development server (in a new terminal in the main directory): `npm start`
 6. Open the app in your browser: `http://localhost:3000`
-7. Update the hosting server 'npm run deploy'
 
 ### Running the backend
 
-(Note that `python` may have to be replaced with `python3`)
+> (Note that `python` may have to be replaced with `python3`)
 
 1. Navigate to folder: `cd flask-server`
 2. Update submodule if KGQA is empty: `git submodule update --init --recursive`
@@ -57,6 +57,6 @@ If the submodule won't update, try removing it and then adding it again:
 2. Pull the src folder from master into gcloud-config: `git checkout master -- src`
 3. Add, Commit, and push the changes to gcloud-config to trigger the Github Actions workflow to update the website on Google Cloud App Engine
     * `git add src`
-    > You can run git status here to check that only files in src are the Changes to be committed
+    > You can run `git status` here to check that only files in src are the Changes to be committed
     * `git commit -m "Pulled Master frontend"`
     * `git push`
