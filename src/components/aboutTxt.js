@@ -24,7 +24,6 @@ knowledge of the ranch has become a priority. So, a plan was devised to provide 
 remotely updated, creative outreach tool for researchers and the public, requiring no mediation...and Poppy the Chatbot was born!
 `,
 `To find more resources about SPR, check out this libguide:`,
-`${ libguide.swanton }`,
 ];
 
 const aboutCreators = [

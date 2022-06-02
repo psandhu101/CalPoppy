@@ -33,7 +33,7 @@ const About = () => {
                 <br/>{aboutSPR[0]}<p/>
                 <br/>{aboutSPR[1]}<br/>
                 <br/>{aboutSPR[2]}<br/>
-                <a href={`${libguide.swanton}`} target="_blank" style={{color:"white"}}>{aboutSPR[3]}</a>
+                <a href={`${libguide.swanton}`} target="_blank" style={{color:"white"}}>{libguide.swanton}</a>
               </h6>
             </div> 
           </div>
