@@ -27,7 +27,7 @@ Steps:
 3. Add, Commit, and push the changes to gcloud-config to trigger the Github Actions workflow to update the website on Google Cloud App Engine
 
 Commands for steps:
-`git add src`
+* `git add src`
 *You can run git status here to check that only files in src are the Changes to be committed*
-`git commit -m "Pulled Master frontend"
-git push`
+* `git commit -m "Pulled Master frontend"
+* git push`
