@@ -3,6 +3,7 @@ import {suggestions, aboutSPR, aboutCreators, aboutHayes, aboutKurfess, disclaim
 import '../style/about.css';
 import hayes from "../images/hayes_grey.jpeg";
 import kurfess from "../images/kurfess_franz.jpeg";
+import { libguide } from "./contactTxt";
 
 const About = () => {
   return (
@@ -28,7 +29,12 @@ const About = () => {
           <div class="bubble">
             <div class="card-body">
               <h4 class="card-title">About Swanton Pacific Ranch</h4>
-              <h6><br/>{aboutSPR[0]}<p/><br/>{aboutSPR[1]}</h6>
+              <h6>
+                <br/>{aboutSPR[0]}<p/>
+                <br/>{aboutSPR[1]}<br/>
+                <br/>{aboutSPR[2]}<br/>
+                <a href={`${libguide.swanton}`} target="_blank" style={{color:"white"}}>{libguide.swanton}</a>
+              </h6>
             </div> 
           </div>
         </div>
