@@ -25,6 +25,7 @@ Steps:
 1. Check out the gcloud config branch: `git checkout gcloud-config`
 2. Pull the src folder from master into gcloud-config: `git checkout master -- src`
 3. Add, Commit, and push the changes to gcloud-config to trigger the Github Actions workflow to update the website on Google Cloud App Engine
+
 Commands for steps:
 `git add src`
 *You can run git status here to check that only files in src are the Changes to be committed*
