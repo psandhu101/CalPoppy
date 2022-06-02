@@ -10,7 +10,6 @@
 
 # production
 /build
-/venv
 flask-server/venv/**
 
 # misc
