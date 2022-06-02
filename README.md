@@ -20,7 +20,7 @@ Features include:
 
 
 How To Update Front end to match master instructions: 
-Note: Ensure to only pull the src folder, changes were made to flask-server, package.json, and other files to make the project compatible to deploy to Google Cloud App Engine.
+> Note: Ensure to only pull the src folder, changes were made to flask-server, package.json, and other files to make the project compatible to deploy to Google Cloud App Engine.
 Steps:
 1. Check out the gcloud config branch: `git checkout gcloud-config`
 2. Pull the src folder from master into gcloud-config: `git checkout master -- src`
