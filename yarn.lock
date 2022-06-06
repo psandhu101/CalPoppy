@@ -10904,6 +10904,11 @@
   "resolved" "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.6.tgz"
   "version" "3.0.6"
 
+"simple-keyboard@^3.4.109":
+  "integrity" "sha512-PtqpdU7CH7oNzDfs226i/ViCm6r7d1OfC4ALP5LubnxQdRGv4xOyscUewQpx57/62q1zvgD2rQt6cO33532QOw=="
+  "resolved" "https://registry.npmjs.org/simple-keyboard/-/simple-keyboard-3.4.109.tgz"
+  "version" "3.4.109"
+
 "simple-swizzle@^0.2.2":
   "integrity" "sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo="
   "resolved" "https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz"
