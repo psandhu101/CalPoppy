@@ -1,4 +1,5 @@
 import '../style/about.css';
+import {Link} from "react-router-dom";
 
 export default function ChatInstructions() {
   return (
@@ -8,7 +9,7 @@ export default function ChatInstructions() {
             Simply type your question into the keyboard and press enter
             or ask Poppy your question aloud!<p/>
             <h4>Don't know what to ask?</h4>
-            Visit the FAQ page for a list of suggested questions to help get you started!<p/>
+            Visit the <Link to="/about"  style={{ color: '#FFF' }}>About page</Link> for a list of suggested questions to help get you started!<p/>
             <h4>How to use the feedback feature:</h4>
             Please use the thumbs up/thumbs down buttons below each Poppy response to let us 
             know whether or not Poppy answered your question appropriately! <p/>

@@ -1,16 +1,19 @@
-runtime: python38
+entrypoint: gunicorn -b :$PORT main:app 
+runtime: python38 
 
-env_variables:
-  none_of: "your_business"
 
 handlers:
-# frontend
-- url: /static
-  static_dir: build/static
-- url: /(.*\.(json|ico|js|html))$
-  static_files: build/\1
-  upload: build/.*\.(json|ico|js|html)$
+  # Serve all static files with url ending with a file extension
+  - url: /(.*\..+)$
+    static_files: build/\1
+    upload: build/(.*\..+)$
+  - url : /api_call
+    script: main.app 
+      #  static_files: build/index.html
+      #  upload: index.html
+  # Catch all handler to index.html
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always
 
-# backend
-- url: /.*
-  script: auto

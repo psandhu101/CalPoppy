@@ -62,13 +62,14 @@ export default function App() {
             </div>
 
             {/* A <Routes> looks through its children <Route>s and
-                renders the first one that matches the current URL. */}
+                renders the first one that matches the current URL.*/}
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/chatbot" element={<Chatbot/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/maps" element={<Maps/>}/>
                 <Route path="/contact" element={<Contact/>}/>
+                {/* <Route path="/donate" element={<Donate/>}/> */}
                 <Route path="/404" element={<PageNotFound/>}/>
             </Routes>
         </Router>
