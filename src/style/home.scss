@@ -58,5 +58,6 @@ nav {
   display: flex;
   margin: 0;
   padding: 0;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  width: fit-content;
 }
