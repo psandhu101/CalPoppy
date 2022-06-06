@@ -5,12 +5,24 @@ import { useEffect, useRef, useState } from "react";
 import { Send } from "react-feather";
 import "../style/chatComposer.css";
 import "../style/text.css";
+import Keyboard from 'simple-keyboard';
+import 'simple-keyboard/build/css/index.css';
 
 export default function ChatComposer({ onSend }) {
 
     const [keyboard, setKeyboard] = useState(false);
 
     let textFieldRef = useRef(null);
+
+    // keyboard functions (straight from documentation)
+    function onChange(input){
+        document.querySelector(".input").value = input;
+        console.log("Input changed", input);
+    }
+
+    function onKeyPress(button){
+        console.log("Button pressed", button);
+    }
 
     // Takes the message from the content editable field and sends it out
     function sendMessage() {
@@ -59,7 +71,10 @@ export default function ChatComposer({ onSend }) {
                 </div>
             </div>
 
-            
+            const keyboard = new Keyboard({
+                onChange: input => onChange(input),
+                onKeyPress: button => onKeyPress(button)
+            });
         </div>
     );
 }
