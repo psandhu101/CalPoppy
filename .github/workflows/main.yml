@@ -33,6 +33,9 @@ jobs:
     - name: Run build
       run: CI=false npm run build
       
+    - name: Pull KGQA Master
+      run: git submodule update --remote
+      
     - name: Update KQGA Submodule
       run: git submodule update --init --recursive
       
