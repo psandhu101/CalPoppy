@@ -41,13 +41,17 @@ return (
     <div className="menuBarStyle ChatComposer">
     <div className="contentStyle">
         <div
-        className="scrollableY txtFieldStyle"
-        ref={textFieldRef}
-        contentEditable="true"
-        ></div>
+            className="scrollableY txtFieldStyle"
+            ref={textFieldRef}
+            contentEditable="true"
+        >
+        </div>
+        <button className="sendButtonStyle">
+            <i class="bi bi-keyboard"></i>
+        </button>
         <button className="sendButtonStyle" onClick={() => sendMessage()}>
-        <Send size={20} />
-        <p className="buttonTextStyle">Send</p>
+            <Send size={20} />
+            <p className="buttonTextStyle">Send</p>
         </button>
     </div>
     </div>
