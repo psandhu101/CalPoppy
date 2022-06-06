@@ -1,12 +1,14 @@
 /* chat tab: bottom bar */
 
 /** @jsxImportSource @emotion/react */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Send } from "react-feather";
 import "../style/chatComposer.css";
 import "../style/text.css";
 
 export default function ChatComposer({ onSend }) {
+
+    const [keyboard, setKeyboard] = useState(false);
 
     let textFieldRef = useRef(null);
 
@@ -38,22 +40,26 @@ export default function ChatComposer({ onSend }) {
     });
 
     return (
-        <div className="menuBarStyle ChatComposer">
-        <div className="contentStyle">
-            <div
-                className="scrollableY txtFieldStyle"
-                ref={textFieldRef}
-                contentEditable="true"
-            >
+        <div>
+            <div className="menuBarStyle ChatComposer">
+                <div className="contentStyle">
+                    <div
+                        className="scrollableY txtFieldStyle"
+                        ref={textFieldRef}
+                        contentEditable="true"
+                    >
+                    </div>
+                    <button className="sendButtonStyle" onClick={() => setKeyboard(!keyboard)}>
+                        <i class="bi bi-keyboard"></i>
+                    </button>
+                    <button className="sendButtonStyle" onClick={() => sendMessage()}>
+                        <Send size={20} />
+                        <p className="buttonTextStyle">Send</p>
+                    </button>
+                </div>
             </div>
-            <button className="sendButtonStyle">
-                <i class="bi bi-keyboard"></i>
-            </button>
-            <button className="sendButtonStyle" onClick={() => sendMessage()}>
-                <Send size={20} />
-                <p className="buttonTextStyle">Send</p>
-            </button>
-        </div>
+
+            
         </div>
     );
 }
