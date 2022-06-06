@@ -54,7 +54,7 @@ export default function ChatComposer({ onSend }) {
     return (
         <div>
             <div className="menuBarStyle ChatComposer">
-                <div className="contentStyle">
+                <div className={ `contentStyle ${keyboard ? "contentStyleWithKey" : "" } ` }>
                     <div
                         className="scrollableY txtFieldStyle"
                         ref={textFieldRef}
