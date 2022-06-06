@@ -5,8 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import { Send } from "react-feather";
 import "../style/chatComposer.css";
 import "../style/text.css";
-import Keyboard from 'simple-keyboard';
-import 'simple-keyboard/build/css/index.css';
+import React, { Component } from 'react';
+import Keyboard from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
 
 export default function ChatComposer({ onSend }) {
 
