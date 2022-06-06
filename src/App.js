@@ -24,41 +24,41 @@ export default function App() {
     <ThemeProvider theme={theme}>  
         <Router>
             <div class="topnav sticky-top">
-                    <nav>
-                        <Link to="/">
-                            <button class="navbutton" type="button" style={{padding: 1.5}}>
-                                {/* Home */}
-                                <img src={logo} className="home_logo" alt="poppy logo"/>
-                            </button>
-                        </Link>
-                        <Link to="/chatbot">
-                            <button class="navbutton" type="button">
-                                Chat
-                            </button>
-                        </Link>
-                        <Link to="/maps">
-                            <button class="navbutton" type="button">
-                                Maps
-                            </button>
-                        </Link>
-                        <Link to="/about">
-                            <button class="navbutton" type="button">
-                                Learn More
-                            </button>
-                        </Link>
-                        <Link to="/contact">
-                            <button class="navbutton" type="button">
-                                Contact
-                            </button>
-                        </Link>
-                        {/* later change link to /Donate */}
-                        <Link to="/404">
-                            <button class="navbutton" type="button">
-                                {/* donation and support tab */}
-                                Help Poppy Grow
-                            </button>
-                        </Link>
-                    </nav>
+                <nav>
+                    <Link to="/">
+                        <button class="navbutton" type="button" style={{padding: 1.5}}>
+                            {/* Home */}
+                            <img src={logo} className="home_logo" alt="poppy logo"/>
+                        </button>
+                    </Link>
+                    <Link to="/chatbot">
+                        <button class="navbutton" type="button">
+                            Chat
+                        </button>
+                    </Link>
+                    <Link to="/maps">
+                        <button class="navbutton" type="button">
+                            Maps
+                        </button>
+                    </Link>
+                    <Link to="/about">
+                        <button class="navbutton" type="button">
+                            Learn More
+                        </button>
+                    </Link>
+                    <Link to="/contact">
+                        <button class="navbutton" type="button">
+                            Contact
+                        </button>
+                    </Link>
+                    {/* later change link to /Donate */}
+                    <Link to="/404">
+                        <button class="navbutton" type="button">
+                            {/* donation and support tab */}
+                            Help Poppy Grow
+                        </button>
+                    </Link>
+                </nav>
             </div>
 
             {/* A <Routes> looks through its children <Route>s and
