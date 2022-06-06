@@ -29,8 +29,8 @@ export default function ChatComposer({ onSend }) {
     function sendMessage() {
         const emptyField = /^\s*$/g;
         if (
-        !textFieldRef.current ||
-        emptyField.test(textFieldRef.current.innerText)
+            !textFieldRef.current ||
+            emptyField.test(textFieldRef.current.innerText)
         )
         return;
         let message = textFieldRef.current.innerText.trim();
@@ -43,10 +43,10 @@ export default function ChatComposer({ onSend }) {
         const textField = textFieldRef.current;
         if (!textField) return;
         const onEnter = (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            sendMessage();
-        }
+            if (e.key === "Enter") {
+                e.preventDefault();
+                sendMessage();
+            }
         };
         textField.addEventListener("keypress", onEnter);
         return () => textField.removeEventListener("keypress", onEnter);
