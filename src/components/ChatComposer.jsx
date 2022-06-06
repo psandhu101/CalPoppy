@@ -11,18 +11,35 @@ import 'react-simple-keyboard/build/css/index.css';
 export default function ChatComposer({ onSend }) {
 
     const [keyboard, setKeyboard] = useState(false);
+    state = {
+        layoutName: "default",
+        input: ""
+    };
 
     let textFieldRef = useRef(null);
 
     // keyboard functions (straight from documentation)
-    function onChange(input){
-        document.querySelector(".input").value = input;
+    onChange = input => {
+        this.setState({ input });
         console.log("Input changed", input);
-    }
+    };
 
-    function onKeyPress(button){
+    onKeyPress = button => {
         console.log("Button pressed", button);
-    }
+
+        /**
+         * If you want to handle the shift and caps lock buttons
+         */
+        if (button === "{shift}" || button === "{lock}") this.handleShift();
+    };
+
+    handleShift = () => {
+        const layoutName = this.state.layoutName;
+
+        this.setState({
+            layoutName: layoutName === "default" ? "shift" : "default"
+        });
+    };
 
     // Takes the message from the content editable field and sends it out
     function sendMessage() {
