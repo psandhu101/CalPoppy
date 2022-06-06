@@ -72,10 +72,10 @@ export default function ChatComposer({ onSend }) {
                 </div>
             </div>
 
-            const keyboard = new Keyboard({
-                onChange: input => onChange(input),
-                onKeyPress: button => onKeyPress(button)
-            });
+            <Keyboard
+                onChange={this.onChange}
+                onKeyPress={this.onKeyPress}
+            />
         </div>
     );
 }
