@@ -22,7 +22,6 @@
     "react-scripts": "^4.0.0",
     "react-transition-group": "^4.4.1",
     "sass": "^1.49.0",
-    "simple-keyboard": "^3.4.109",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
