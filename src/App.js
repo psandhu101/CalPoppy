@@ -20,63 +20,69 @@ import {
 } from "react-router-dom";
 
 export default function App() {
-  return (
-    <ThemeProvider theme={theme}>  
-        <Router>
-            <div class="topnav sticky-top">
-                <nav style={{ justifyContent: "space-between" }}>
-                    <div style={{ verticalAlign: "center" }}>
-                        <Link to="/">
-                            <button class="navbutton" type="button" style={{padding: 1.5}}>
-                                {/* Home */}
-                                <img src={logo} className="home_logo" alt="poppy logo"/>
-                            </button>
-                        </Link>
-                    </div>
-                    <div style={{ justifyContent: "flex-end", flexFlow: "row wrap" }}>
-                        <Link to="/chatbot">
-                            <button class="navbutton" type="button">
-                                Chat
-                            </button>
-                        </Link>
-                        <Link to="/maps">
-                            <button class="navbutton" type="button">
-                                Maps
-                            </button>
-                        </Link>
-                        <Link to="/about">
-                            <button class="navbutton" type="button">
-                                Learn More
-                            </button>
-                        </Link>
-                        <Link to="/contact">
-                            <button class="navbutton" type="button">
-                                Contact
-                            </button>
-                        </Link>
-                        {/* later change link to /Donate */}
-                        <Link to="/404">
-                            <button class="navbutton" type="button">
-                                {/* donation and support tab */}
-                                Help Poppy Grow
-                            </button>
-                        </Link>
-                    </div>
-                </nav>
-            </div>
 
-            {/* A <Routes> looks through its children <Route>s and
-                renders the first one that matches the current URL.*/}
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/chatbot" element={<Chatbot/>}/>
-                <Route path="/about" element={<About/>}/>
-                <Route path="/maps" element={<Maps/>}/>
-                <Route path="/contact" element={<Contact/>}/>
-                {/* <Route path="/donate" element={<Donate/>}/> */}
-                <Route path="/404" element={<PageNotFound/>}/>
-            </Routes>
-        </Router>
-    </ThemeProvider>
-  );
+    const [ breakpoint, setBreakpoint ] = useState(window.innerWidth)
+    const checkWidth = () => {
+        const wid = document.getElementById("nav").style.width;
+    }
+
+    return (
+        <ThemeProvider theme={theme}>  
+            <Router>
+                <div class="topnav sticky-top">
+                    <nav id="nav">
+                        {/* <div> */}
+                            <Link to="/">
+                                <button class="navbutton" type="button" style={{padding: 1.5}}>
+                                    {/* Home */}
+                                    <img src={logo} className="home_logo" alt="poppy logo"/>
+                                </button>
+                            </Link>
+                        {/* </div> */}
+                        <span>
+                            <Link to="/chatbot">
+                                <button class="navbutton" type="button">
+                                    Chat
+                                </button>
+                            </Link>
+                            <Link to="/maps">
+                                <button class="navbutton" type="button">
+                                    Maps
+                                </button>
+                            </Link>
+                            <Link to="/about">
+                                <button class="navbutton" type="button">
+                                    Learn More
+                                </button>
+                            </Link>
+                            <Link to="/contact">
+                                <button class="navbutton" type="button">
+                                    Contact
+                                </button>
+                            </Link>
+                            {/* later change link to /Donate */}
+                            <Link to="/404">
+                                <button class="navbutton" type="button">
+                                    {/* donation and support tab */}
+                                    Help Poppy Grow
+                                </button>
+                            </Link>
+                        </span>
+                    </nav>
+                </div>
+
+                {/* A <Routes> looks through its children <Route>s and
+                    renders the first one that matches the current URL.*/}
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/chatbot" element={<Chatbot/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/maps" element={<Maps/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    {/* <Route path="/donate" element={<Donate/>}/> */}
+                    <Route path="/404" element={<PageNotFound/>}/>
+                </Routes>
+            </Router>
+        </ThemeProvider>
+    );
 }
