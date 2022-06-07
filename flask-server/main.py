@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/api_call", methods=["POST"])
 def api_call():
     user_query = request.get_json()
-    resp = {"sentences": str(main(["Chatbot query", user_query]))}
+    resp = {"sentences": str(main.main(["Chatbot query", user_query]))}
     return resp
     
 
