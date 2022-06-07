@@ -56,11 +56,15 @@ export default function ChatComposer({ onSend }) {
             !textFieldRef.current ||
             emptyField.test(textFieldRef.current.innerText)
         ) {
-            onSend(input);
-            console.log("keyboard:", keyboard);
-            setInput("");
+            if (onscreenKey && input) {
+                // using onscreen keyboard
+                onSend(input);
+                setInput("");
+                keyboard.current.clearInput();
+            }
             return;
         }
+        // using physical keyboard
         let message = textFieldRef.current.innerText.trim();
         textFieldRef.current.innerText = "";
         onSend(message);
