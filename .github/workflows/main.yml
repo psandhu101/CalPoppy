@@ -50,5 +50,4 @@ jobs:
           ls KGQA
           ls
           gcloud app deploy
-          cat main.py
           
