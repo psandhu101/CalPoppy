@@ -20,8 +20,11 @@ import {
 } from "react-router-dom";
 
 export default function App() {
-
-    const [ breakpoint, setBreakpoint ] = useState(window.innerWidth)
+    const usualNavWidth = 540;
+    const [ breakpoint, setBreakpoint ] = useState( {
+        size: "small",
+        width: window.innerWidth
+    });
     const checkWidth = () => {
         const wid = document.getElementById("nav").style.width;
     }
