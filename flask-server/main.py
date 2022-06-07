@@ -10,6 +10,7 @@ app = Flask(__name__)
 def api_call():
     user_query = request.get_json()
     resp = {"sentences": str(KGQA.main.main(["Chatbot query", user_query]))}
+    
     return resp
     
 
