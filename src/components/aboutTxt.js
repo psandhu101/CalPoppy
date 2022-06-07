@@ -1,4 +1,4 @@
-import { email } from "./contactTxt";
+import { email, libguide } from "./contactTxt";
 
 const suggestions = [
   "How big is Swanton Pacific Ranch?",
