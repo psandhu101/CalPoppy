@@ -48,10 +48,6 @@ export default function ChatComposer({ onSend }) {
     // Takes the message from the content editable field and sends it out
     function sendMessage() {
         const emptyField = /^\s*$/g;
-        if (onscreenKey) {
-           console.log("input (send msg): ", input); 
-        }
-        console.log("text field (send msg): ", textFieldRef);
         if (
             !textFieldRef.current ||
             emptyField.test(textFieldRef.current.innerText)
@@ -73,7 +69,6 @@ export default function ChatComposer({ onSend }) {
     // Send Message on Enter Pressed
     useEffect(() => {
         const textField = textFieldRef.current;
-        console.log("text field: ", textField);
         if (!textField) {return};
         const onEnter = (e) => {
             if (e.key === "Enter") {
