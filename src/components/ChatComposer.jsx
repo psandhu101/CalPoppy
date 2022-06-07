@@ -97,7 +97,7 @@ export default function ChatComposer({ onSend }) {
                     }
                     {onscreenKey && (
                         <input
-                            className="scrollablyY txtFieldStyle"
+                            className="scrollableY txtFieldStyle"
                             value={input}
                             onChange={onChangeInput}
                         />
