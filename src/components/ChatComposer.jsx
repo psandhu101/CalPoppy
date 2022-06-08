@@ -10,8 +10,6 @@ import 'react-simple-keyboard/build/css/index.css';
 
 export default function ChatComposer({ onSend }) {
 
-    let textFieldRef = useRef(null);
-
     // keyboard functionality
     const [onscreenKey, setOnscreenKey] = useState(false);
     const [input, setInput] = useState("");
@@ -20,7 +18,6 @@ export default function ChatComposer({ onSend }) {
 
     const onChange = input => {
         setInput(input);
-        // textFieldRef.current.innerText = input;
         console.log("Input changed", input);
     };
 
@@ -29,87 +26,53 @@ export default function ChatComposer({ onSend }) {
         setLayout(newLayoutName);
     };
 
-    const onKeyPress = (button, input) => {
+    const onKeyPress = (button, e) => {
         console.log("Button pressed", button);
 
-        /**
-         * If you want to handle the shift and caps lock buttons
-         */
         if (button === "{shift}" || button === "{lock}") handleShift();
-        if (button === "{enter}") sendMessage(input);
+        if (button === "{enter}") sendMessage(e);
     };
 
-    const onChangeInput = event => {
-        const input = event.target.value;
-        setInput(input);
-        keyboard.current.setInput(input);
+    const onChangeInput = ({target}) => {
+        setInput(target.value);
+        console.log("set input to", input)
+        if (onscreenKey) {
+            keyboard.current.setInput(input);
+        }
     };
 
     // Takes the message from the content editable field and sends it out
-    function sendMessage() {
-        const emptyField = /^\s*$/g;
-        if (
-            !textFieldRef.current ||
-            emptyField.test(textFieldRef.current.innerText)
-        ) {
-            if (onscreenKey && input) {
-                // using onscreen keyboard
-                onSend(input);
-                setInput("");
+    function sendMessage(e) {
+        e.preventDefault();
+
+        if (input) {
+            onSend(input);
+            setInput("");
+            if (onscreenKey) {
                 keyboard.current.clearInput();
             }
-            return;
-        }
-        // using physical keyboard
-        let message = textFieldRef.current.innerText.trim();
-        textFieldRef.current.innerText = "";
-        onSend(message);
-    }
-
-    // Send Message on Enter Pressed
-    useEffect(() => {
-        const textField = textFieldRef.current;
-        if (!textField) {return};
-        const onEnter = (e) => {
-            if (e.key === "Enter") {
-                e.preventDefault();
-                sendMessage();
-            }
-        };
-
-        if (!onscreenKey) {
-            textField.addEventListener("keypress", onEnter);
-            return () => textField.removeEventListener("keypress", onEnter);
+            
         }
         return;
-    });
+    }
 
     return (
         <div>
             <div className="menuBarStyle ChatComposer">
-                <div className="contentStyle">
-                    {!onscreenKey && 
-                        <div
-                            className="scrollableY txtFieldStyle"
-                            ref={textFieldRef}
-                            contentEditable="true"
-                        ></div>
-                    }
-                    {onscreenKey && (
-                        <input
-                            className="scrollableY txtFieldStyle"
-                            value={input}
-                            onChange={onChangeInput}
-                        />
-                    )}
-                    <button className="sendButtonStyle" onClick={() => setOnscreenKey(!onscreenKey)}>
+                <form className="contentStyle" onSubmit={sendMessage}>
+                    <input
+                        className="scrollableY txtFieldStyle"
+                        value={input}
+                        onChange={onChangeInput}
+                    />
+                    <button type="button" className="sendButtonStyle" onClick={() => {console.log("input:", input); setOnscreenKey(!onscreenKey)}}>
                         <i class="bi bi-keyboard"></i>
                     </button>
-                    <button className="sendButtonStyle" onClick={() => sendMessage()}>
+                    <button type="submit" className="sendButtonStyle">
                         <Send size={20} />
                         <p className="buttonTextStyle">Send</p>
                     </button>
-                </div>
+                </form>
             </div>
 
             {onscreenKey && (
@@ -120,7 +83,6 @@ export default function ChatComposer({ onSend }) {
                     onKeyPress={onKeyPress}
                 />
             )}
-            
         </div>
     );
 }
