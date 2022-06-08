@@ -62,19 +62,7 @@ export default function Chatbot(props) {
         */
         if (query === "") return;
 
-
         //let payload = { message: query };
-
-        /* --------------------------------------------------------*/
-        /* AI mock */
-        // function mockResponse() {
-        //     let resp = "Placeholder response " + responseCount;
-        //     //sessionStorage.setItem("responseCount", responseCount + 1);
-        //     setResponseCount(responseCount + 1);
-        //     return [{ text: resp }];
-        // }
-        /* --------------------------------------------------------*/
-
 
         async function AIResponse(question){
 
@@ -88,19 +76,16 @@ export default function Chatbot(props) {
             })
             // Data is the AI response from Matthew.
             let data = await response.json()
-            let fact = Math.floor(Math.random() * FUN_FACT_COUNT)
             // assuming data evaluates to false if empty string
-            // let resp = (data.sentences[0]) ? (data.sentences + responseCount) : [AI_NO_ANS, funfacts[fact]]
             if (data.sentences[0]) {
                 setResponseCount(responseCount + 1);
+                // currently will also print out error messages from AI
                 return [{ text: data.sentences + responseCount }]
             }
-            else {
-                return [{ text: AI_NO_ANS}, { text: FUN_FACT_STR + funfacts[fact]}]
-            }
-            //sessionStorage.setItem("responseCount", responseCount + 1);
-            // return [{ text: resp }]
-
+            // @todo add error message handling
+            // no-response and fun fact
+            let fact = Math.floor(Math.random() * FUN_FACT_COUNT)
+            return [{ text: AI_NO_ANS}, { text: FUN_FACT_STR + funfacts[fact]}]
         }
 
         function sleep(ms) {
