@@ -1,7 +1,7 @@
 /* chat tab: bottom bar */
 
 /** @jsxImportSource @emotion/react */
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Send } from "react-feather";
 import "../style/chatComposer.css";
 import "../style/text.css";
