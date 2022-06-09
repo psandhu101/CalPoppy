@@ -18,7 +18,7 @@ export default function ChatComposer({ onSend }) {
 
     const onChange = input => {
         setInput(input);
-        console.log("Input changed", input);
+        // console.log("Input changed", input);
     };
 
     const handleShift = () => {
@@ -27,7 +27,7 @@ export default function ChatComposer({ onSend }) {
     };
 
     const onKeyPress = (button, e) => {
-        console.log("Button pressed", button);
+        // console.log("Button pressed", button);
 
         if (button === "{shift}" || button === "{lock}") handleShift();
         if (button === "{enter}") sendMessage(e);
