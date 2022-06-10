@@ -2,7 +2,7 @@
 .topnav {
     background-color: #203e2f;
     overflow: hidden;
-  }
+}
   
 
 .navbuttonLogo{
@@ -30,14 +30,14 @@
 }
 
 .navbuttonLarge {
-  padding: 26px 30px;
-  font-size: 32px;
+    padding: 26px 30px;
+    font-size: 32px;
 }
 
 .navbutton:hover, .navbuttonLogo:hover{
     background-color: #296e2b; 
     border-color: #296e2b; 
     color: white;
-  }
+}
 
   
