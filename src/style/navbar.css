@@ -29,6 +29,11 @@
     transition-duration: 0.4s;
 }
 
+.navbuttonLarge {
+  padding: 26px 30px;
+  font-size: 32px;
+}
+
 .navbutton:hover, .navbuttonLogo:hover{
     background-color: #296e2b; 
     border-color: #296e2b; 

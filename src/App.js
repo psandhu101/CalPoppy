@@ -48,7 +48,11 @@ export default function App() {
                     <nav id="nav">
                         {/* <div> */}
                             <Link to="/">
-                                <button class="navbutton" type="button" style={{padding: 1.5}}>
+                                <button
+                                    class={` navbutton ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } `}
+                                    type="button"
+                                    style={{padding: 1.5}}
+                                >
                                     {/* Home */}
                                     <img src={logo} className="home_logo" alt="poppy logo"/>
                                 </button>
@@ -56,28 +60,43 @@ export default function App() {
                         {/* </div> */}
                         <span>
                             <Link to="/chatbot">
-                                <button class="navbutton" type="button">
+                                <button
+                                    class={` navbutton ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } `}
+                                    type="button"
+                                >
                                     Chat
                                 </button>
                             </Link>
                             <Link to="/maps">
-                                <button class="navbutton" type="button">
+                                <button
+                                    class={` navbutton ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } `}
+                                    type="button"
+                                >
                                     Maps
                                 </button>
                             </Link>
                             <Link to="/about">
-                                <button class="navbutton" type="button">
+                                <button
+                                    class={` navbutton ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } `}
+                                    type="button"
+                                >
                                     Learn More
                                 </button>
                             </Link>
                             <Link to="/contact">
-                                <button class="navbutton" type="button">
+                                <button
+                                    class={` navbutton ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } `}
+                                    type="button"
+                                >
                                     Contact
                                 </button>
                             </Link>
                             {/* later change link to /Donate */}
                             <Link to="/404">
-                                <button class="navbutton" type="button">
+                                <button
+                                    class={` navbutton ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } `}
+                                    type="button"
+                                >
                                     {/* donation and support tab */}
                                     Help Poppy Grow
                                 </button>
