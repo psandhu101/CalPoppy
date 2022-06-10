@@ -41,7 +41,7 @@ export default function App() {
                 "default",                                              // regular
             screenWidth: window.innerWidth
         });
-        console.log("Screen size", breakpoint.screenWidth);
+        console.log("Screen size", breakpoint.size);
     }
 
     useEffect(() => {
