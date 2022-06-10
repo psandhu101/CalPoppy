@@ -25,31 +25,20 @@ export default function App() {
         size:
             (window.innerWidth < usualNavWidth) ? "small" :             // mobile
             (window.innerWidth > (usualNavWidth * 3)) ? "large" :       // kiosk
-            "mid",                                                      // regular
+            "default",                                                  // regular
         screenWidth: window.innerWidth
     });
 
     const checkWidth = () => {
         const navWidth = document.getElementById("nav").style.width;
 
-        if (breakpoint.screenWidth < navWidth) {
-            setBreakpoint({
-                size: "small",
-                screenWidth: window.innerWidth
-            })
-        }
-        else if (breakpoint.screenWidth > (usualNavWidth * 3)) {
-            setBreakpoint({
-                size: "large",
-                screenWidth: window.innerWidth
-            })
-        }
-        else {
-            setBreakpoint({
-                size: "mid",
-                screenWidth: window.innerWidth
-            })
-        }
+        setBreakpoint({
+            size:
+                (window.innerWidth < navWidth) ? "small" :              // mobile
+                (window.innerWidth > (navWidth * 3)) ? "large" :        // kiosk
+                "default",                                              // regular
+            screenWidth: window.innerWidth
+        });
     }
 
     return (
