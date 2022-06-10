@@ -7,7 +7,8 @@ import Home from "./components/Home";
 import Maps from "./components/Maps";
 import Contact from "./components/Contact";
 import PageNotFound from "./components/PageNotFound";
-import logo from "./images/spr_sp_logo.png"
+import logo from "./images/spr_sp_logo.png";
+import { useState, useEffect } from "react";
 
 import './style/custom.scss';
 import {} from "./style/navbar.css"
@@ -41,6 +42,14 @@ export default function App() {
         });
     }
 
+    useEffect(() => {
+        window.addEventListener("resize", checkWidth);
+
+        return() => {
+            window.removeEventListener("resize", checkWidth);
+        }
+    }, [checkWidth])
+
     return (
         <ThemeProvider theme={theme}>  
             <Router>
@@ -49,7 +58,10 @@ export default function App() {
                         {/* <div> */}
                             <Link to="/">
                                 <button
-                                    class={` navbutton ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } `}
+                                    class={`
+                                        navbutton
+                                        ${ breakpoint.screenWidth === "large" ? "navbuttonLarge" : "" } 
+                                    `}
                                     type="button"
                                     style={{padding: 1.5}}
                                 >
