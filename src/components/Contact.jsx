@@ -9,7 +9,7 @@ const Contact = () => {
 
             <h1>Cal Poppy Program</h1>
             { contactJMS[0] } <br /><br /> { contactJMS[1] }
-            <a href={`${libguide.calpoppy}`} target="_blank">{libguide.calpoppy}</a>
+            <a href={`${libguide.calpoppy}`} target="_blank" rel="noreferrer">{libguide.calpoppy}</a>
              
         </div>
     )
