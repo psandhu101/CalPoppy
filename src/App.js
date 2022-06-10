@@ -30,18 +30,27 @@ export default function App() {
         screenWidth: window.innerWidth,
         screenHeight: window.innerHeight
     });
+    const [ displayNavMobile, setDisplayNavMobile ] = useState(false);
+    const [ textNavMobile, setTextNavMobile ] = useState("Menu");
 
     const checkWidth = () => {
-        const navWidth = document.getElementById("nav").style.width;
+        // not working rn, using default nav width to calculate
+        // const navWidth = document.getElementById("nav").style.width;
 
         setBreakpoint({
             size:
-                (window.innerWidth < navWidth) ? "small" :              // mobile
+                (window.innerWidth < usualNavWidth) ? "small" :              // mobile
                 (window.innerWidth > (usualNavWidth * 3)) ? "large" :   // kiosk
                 "default",                                              // regular
             screenWidth: window.innerWidth
         });
         console.log("Screen size", breakpoint.size);
+    }
+
+    const onClickNavMobile = () => {
+        setDisplayNavMobile(!displayNavMobile);
+        setTextNavMobile((textNavMobile === "Menu") ? "Close" : "Menu");
+        console.log("Mobile display?", displayNavMobile);
     }
 
     useEffect(() => {
@@ -57,65 +66,76 @@ export default function App() {
             <Router>
                 <div class="topnav sticky-top">
                     <nav id="nav">
-                        {/* <div> */}
-                            <Link to="/">
+                        <Link to="/">
+                            <button
+                                class={`
+                                    navbutton
+                                    ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } 
+                                `}
+                                type="button"
+                                style={{padding: 1.5}}
+                            >
+                                {/* Home */}
+                                <img src={logo} className="home_logo" alt="poppy logo"/>
+                            </button>
+                        </Link>
+                        <div className={` ${ (breakpoint.size === "small") ? "topnavMobile" : "" } `}>
+                            {breakpoint.size === "small" && (
                                 <button
-                                    class={`
-                                        navbutton
-                                        ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } 
-                                    `}
+                                    class="navbutton navbuttonDisplay"
                                     type="button"
-                                    style={{padding: 1.5}}
+                                    onClick={onClickNavMobile}
                                 >
-                                    {/* Home */}
-                                    <img src={logo} className="home_logo" alt="poppy logo"/>
+                                    {textNavMobile}
                                 </button>
-                            </Link>
-                        {/* </div> */}
-                        <span className={` ${ breakpoint.size === "small" ? "topnavMobile" : "" } `}>
-                            <Link to="/chatbot">
-                                <button
-                                    class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
-                                    type="button"
-                                >
-                                    Chat
-                                </button>
-                            </Link>
-                            <Link to="/maps">
-                                <button
-                                    class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
-                                    type="button"
-                                >
-                                    Maps
-                                </button>
-                            </Link>
-                            <Link to="/about">
-                                <button
-                                    class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
-                                    type="button"
-                                >
-                                    Learn More
-                                </button>
-                            </Link>
-                            <Link to="/contact">
-                                <button
-                                    class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
-                                    type="button"
-                                >
-                                    Contact
-                                </button>
-                            </Link>
-                            {/* later change link to /Donate */}
-                            <Link to="/404">
-                                <button
-                                    class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
-                                    type="button"
-                                >
-                                    {/* donation and support tab */}
-                                    Help Poppy Grow
-                                </button>
-                            </Link>
-                        </span>
+                            )}
+                            {((breakpoint.size !== "small") || displayNavMobile) && (
+                                <div className={` ${ (breakpoint.size === "small") ? "topnavMobile" : "" } `}>
+                                    <Link to="/chatbot">
+                                        <button
+                                            class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
+                                            type="button"
+                                        >
+                                            Chat
+                                        </button>
+                                    </Link>
+                                    <Link to="/maps">
+                                        <button
+                                            class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
+                                            type="button"
+                                        >
+                                            Maps
+                                        </button>
+                                    </Link>
+                                    <Link to="/about">
+                                        <button
+                                            class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
+                                            type="button"
+                                        >
+                                            Learn More
+                                        </button>
+                                    </Link>
+                                    <Link to="/contact">
+                                        <button
+                                            class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
+                                            type="button"
+                                        >
+                                            Contact
+                                        </button>
+                                    </Link>
+                                    {/* later change link to /Donate */}
+                                    <Link to="/404">
+                                        <button
+                                            class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
+                                            type="button"
+                                        >
+                                            {/* donation and support tab */}
+                                            Help Poppy Grow
+                                        </button>
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
                     </nav>
                 </div>
 

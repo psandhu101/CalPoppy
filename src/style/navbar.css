@@ -1,4 +1,3 @@
-
 .topnav {
     background-color: #203e2f;
     overflow: hidden;
@@ -6,7 +5,9 @@
 
 .topnavMobile {
     display: flex;
-    flex-flow:  column nowrap;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .navbuttonLogo{
@@ -17,9 +18,7 @@
     text-align:center;
     border: 1px solid #203e2f;
     transition-duration: 0.4s;
-    vertical-align: top;
-
-    
+    vertical-align: top;    
 }
   /* Style the links inside the navigation bar */
 .navbutton{
@@ -31,6 +30,10 @@
     text-align:center;
     border: 0px solid #203e2f;
     transition-duration: 0.4s;
+}
+
+.navbuttonDisplay {
+    align-self: flex-start;
 }
 
 .navbuttonLarge {
