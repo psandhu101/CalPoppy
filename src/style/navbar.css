@@ -3,7 +3,11 @@
     background-color: #203e2f;
     overflow: hidden;
 }
-  
+
+.topnavMobile {
+    display: flex;
+    flex-flow:  column nowrap;
+}
 
 .navbuttonLogo{
     padding: 2.5px 2px;
