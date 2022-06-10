@@ -7,8 +7,13 @@ import funfacts from "./facts.js";
 // import axios from "axios";
 import "../style/chatbot.css";
 import { findAllByDisplayValue } from "@testing-library/react";
+import { Navigate } from 'react-router-dom';
 
-export default function Chatbot(props) {
+export const suggested = (query) => {
+    return <Navigate to="/chatbot"/>
+}
+
+export function Chatbot(props) {
     const SENDER_USER = "user";
     const SENDER_BOT = "bot";
 
@@ -194,7 +199,9 @@ export default function Chatbot(props) {
                 onSuggestionClick={onSuggestionClick}
                 onFeedbackGiven={onFeedbackGiven}
             />
+            
             {!suggestionsOpen && <ChatComposer onSend={sendMessage} />}
         </main>
     );
 }
+

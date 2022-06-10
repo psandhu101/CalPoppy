@@ -3,6 +3,7 @@ import {suggestions, aboutSPR, aboutCreators, aboutHayes, aboutKurfess, disclaim
 import '../style/about.css';
 import hayes from "../images/hayes_grey.jpeg";
 import kurfess from "../images/kurfess_franz.jpeg";
+import { suggested } from "./Chatbot";
 import { libguide } from "./contactTxt";
 
 const About = () => {
@@ -15,7 +16,7 @@ const About = () => {
               <h4 class="card-title">Suggested Questions</h4>
               <h6>Click on any of the questions to ask Poppy!</h6>
               <div class="btn-group-vertical">
-                <button onClick="sendMessage(suggestions[0])" type="button" class="roundbutton">{suggestions[0]}</button>
+                <button onClick={() => suggested(suggestions[0])} type="button" class="roundbutton">{suggestions[0]}</button>
                 <button onClick="sendMessage(suggestions[1])" type="button" class="roundbutton">{suggestions[1]}</button>
                 <button onClick="sendMessage(suggestions[2])" type="button" class="roundbutton">{suggestions[2]}</button>
                 <button onClick="sendMessage(suggestions[3])" type="button" class="roundbutton">{suggestions[3]}</button>
