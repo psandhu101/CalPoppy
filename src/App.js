@@ -27,7 +27,8 @@ export default function App() {
             (window.innerWidth < usualNavWidth) ? "small" :             // mobile
             (window.innerWidth > (usualNavWidth * 3)) ? "large" :       // kiosk
             "default",                                                  // regular
-        screenWidth: window.innerWidth
+        screenWidth: window.innerWidth,
+        screenHeight: window.innerHeight
     });
 
     const checkWidth = () => {
@@ -36,7 +37,7 @@ export default function App() {
         setBreakpoint({
             size:
                 (window.innerWidth < navWidth) ? "small" :              // mobile
-                (window.innerWidth > (navWidth * 3)) ? "large" :        // kiosk
+                (window.innerWidth > (usualNavWidth * 3)) ? "large" :   // kiosk
                 "default",                                              // regular
             screenWidth: window.innerWidth
         });
