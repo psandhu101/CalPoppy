@@ -33,7 +33,7 @@ const About = () => {
                 <br/>{aboutSPR[0]}<p/>
                 <br/>{aboutSPR[1]}<br/>
                 <br/>{aboutSPR[2]}<br/>
-                <a href={`${libguide.swanton}`} target="_blank" style={{color:"white"}}>{libguide.swanton}</a>
+                <a href={`${libguide.swanton}`} target="_blank" rel="noreferrer" style={{color:"white"}}>{libguide.swanton}</a>
               </h6>
             </div> 
           </div>
@@ -53,7 +53,7 @@ const About = () => {
               <h5>
                 <br/>Dr. Grey Hayes<br/>
               </h5>
-              <img src={hayes} width="50%" /><br/>
+              <img src={hayes} width="50%" alt="Dr. Grey Hayes" /><br/>
               {aboutHayes[1]}
               <h6>
                 <br/>{aboutHayes[0]}
@@ -62,7 +62,7 @@ const About = () => {
               <h5>
                 <br/>Dr. Franz J. Kurfess<br/>
               </h5>
-              <img src={kurfess} width="50%" /><br/>
+              <img src={kurfess} width="50%" alt="Dr. Franz J. Kurfess" /><br/>
               <h6>
                 <br/>{aboutKurfess[0]}<br/>{aboutKurfess[1]}
               </h6>
