@@ -19,8 +19,8 @@ export default function Chatbot(props) {
     const [suggestionsOpen, setSuggestionsOpen] = useState(false);
     const [query, setQuery] = useState("");
     const [conversation, setConversation] = useState([]);
-    const [responseCount, setResponseCount] = useState(0); // AI mocking
-    const [initialResponse, setInitialResponse] = useState(0);
+    // const [responseCount, setResponseCount] = useState(0); // AI mocking
+    // const [initialResponse, setInitialResponse] = useState(0);
     const [feedbackReceived, setFeedbackReceived] = useState(0);
 
     /**
@@ -92,7 +92,7 @@ export default function Chatbot(props) {
             // assuming data evaluates to false if empty string
             // let resp = (data.sentences[0]) ? (data.sentences + responseCount) : [AI_NO_ANS, funfacts[fact]]
             if (data.sentences[0]) {
-                setResponseCount(responseCount + 1);
+                // setResponseCount(responseCount + 1);
                 return [{ text: data.sentences }]
             }
             else {
@@ -124,11 +124,7 @@ export default function Chatbot(props) {
                 }));
                 console.log("1")
 
-                // setQuery(""); //TRIGGER
-                // console.log("2")
-
                 setConversation([...conversation, ...answerMessages]); //
-                // console.log("3")
                 console.log("2")
 
             } catch (err) {
@@ -139,7 +135,7 @@ export default function Chatbot(props) {
         }
         console.log("Call post")
         postMessage();
-    }, [query]);
+    }, [conversation, query]);
 
     /**
      * Adds the user's message to the conversation, passes message to the bot
