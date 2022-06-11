@@ -1,5 +1,5 @@
-import { contactIntro, contactJMS } from "./contactTxt"
-import { libguide } from "./contactTxt";
+import { libguide, calPoppyResearch, contactIntro, contactJMS, creatorIntro } from "./contactTxt"
+import "../style/home.scss";
 
 const Contact = () => {
     return (
@@ -9,11 +9,15 @@ const Contact = () => {
             <a href={`${libguide.calpoppy}`} target="_blank" rel="noreferrer">{ contactIntro[1] }</a>
             { contactIntro[2] }
             
-            <br /><br />
+            <br /><hr className="divline"></hr>
 
             <h1>Creators</h1>
-            { contactJMS[0] } <br /><br /> { contactJMS[1] }
-            <a href={`${libguide.calpoppy}`} target="_blank" rel="noreferrer">{libguide.calpoppy}</a>
+            { creatorIntro[0] } <br /><br />
+
+            <h2>Cal Poppy Research Team</h2> <br />
+            <h4>{ calPoppyResearch.scaramozzino }</h4>
+            { contactJMS[0] } <br /><br />
+            {/* <h4>{ calPoppyResearch.kurfess }</h4> */}
              
         </div>
     )
