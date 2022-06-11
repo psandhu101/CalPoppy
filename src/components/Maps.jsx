@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import "../style/maps.css";
 import "../style/esriIcons.css";
+import "../style/home.scss";
 
 /* UNFINISHED
   * may need to properly embed interactive map from Classic Viewer

@@ -33,19 +33,9 @@ const aboutCreators = [
   email.poppy,
 ];
 
-const aboutHayes = [
-  "Since 1986, Dr. Grey Hayes has focused on agroecology and natural systems ecology and conservation along California’s central coast.  In addition to “spare time” work managing organic orchards and advising many groups about ecosystem management and conservation, Dr. Hayes is currently Education and Research Coordinator for Swanton Pacific Ranch.  Swanton Pacific Ranch is a field station on a working ranch focusing on delivering hands-on skills and education to students from California Polytechnic State University, San Luis Obispo.",
-  "Image taken by Frans Lanting"
-]
-
-const aboutKurfess = [
-  "Franz J. Kurfess joined the Computer Science Department of California Polytechnic State University in the summer of 2000, after a short stay with Concordia University in Montreal, Canada, and a longer stay with the New Jersey Institute of Technology. Before that, he spent some time with the University of Ulm, Germany, as a Postdoc at the International Computer Science Institute in Berkeley, CA, and at the Technical University in Munich, where he obtained his M.S. and Ph.D. in Computer Science.",
-  `In addition to his faculty position at Cal Poly, he was the interim chair for the Computer Science and Software Engineering department in 2016-2017, and the chair of the Academic Senate Committee on Research, Scholarly and Creative Activities from 2007-2014. He is the coordinator of the Human-Computer Interaction lab, and teaches courses in the areas of Artificial Intelligence, Knowledge-Based Systems, User-Centered Design and Development, and Human-Computer Interaction. His main areas of research are Artificial Intelligence and Human-Computer Interaction, with particular interest in the usability and interaction aspects of knowledge-intensive systems. He is currently investigating a framework for the analysis of "interaction spaces", consisting of the physical space where interaction between humans and computational systems takes place, and a conceptual space delineated between the shared communication channels, symbol systems, vocabularies and languages, and the conceptual model of the domain and the world. So far, the main burden has been on humans to accommodate the limitations of computational systems concerning such interactions. Expanding interaction to situations where robots (or computational systems in general) have to communicate with other robots, it becomes much more critical to have a coherent framework for interaction in place that does not rely on human flexibility.`
-]
-
 const helpMessage = ["Poppy needs your help to ensure that she can stay up and running to educate future generations on SPR's rich history!", 
 "Interested in donating? Contact:", "Jeanine Scaramozzino", email.poppy];
 
 const disclaimer = `Reasonable effort has been made to accurately and fairly represent the content shared through the Poppy interface. If you have comments, concerns or clarification on the content please email ${ email.poppy }.`
 
-export { suggestions, aboutSPR, aboutCreators, aboutHayes, aboutKurfess, helpMessage, disclaimer };
+export { suggestions, aboutSPR, aboutCreators, helpMessage, disclaimer };

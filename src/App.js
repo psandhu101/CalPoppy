@@ -6,6 +6,7 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Maps from "./components/Maps";
 import Contact from "./components/Contact";
+import Donate from "./components/Donate";
 import PageNotFound from "./components/PageNotFound";
 import logo from "./images/spr_sp_logo.png";
 import { useState, useEffect } from "react";
@@ -124,7 +125,7 @@ export default function App() {
                                         </button>
                                     </Link>
                                     {/* later change link to /Donate */}
-                                    <Link to="/404">
+                                    <Link to="/Donate">
                                         <button
                                             class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
                                             type="button"
@@ -139,18 +140,18 @@ export default function App() {
                     </nav>
                 </div>
 
-                {/* A <Routes> looks through its children <Route>s and
-                    renders the first one that matches the current URL.*/}
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/chatbot" element={<Chatbot/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path="/maps" element={<Maps/>}/>
-                    <Route path="/contact" element={<Contact/>}/>
-                    {/* <Route path="/donate" element={<Donate/>}/> */}
-                    <Route path="/404" element={<PageNotFound/>}/>
-                </Routes>
-            </Router>
-        </ThemeProvider>
-    );
+            {/* A <Routes> looks through its children <Route>s and
+                renders the first one that matches the current URL. */}
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/chatbot" element={<Chatbot/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/maps" element={<Maps/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/donate" element={<Donate/>}/>
+                <Route path="/404" element={<PageNotFound/>}/>
+            </Routes>
+        </Router>
+    </ThemeProvider>
+  );
 }
