@@ -23,4 +23,8 @@ const contactJMS = [
     `If you have questions about the Cal Poppy Research Program, started in 2013, please contact the Principle Investigator, Jeanine Scaramozzino,  at ${ email.jms }, or refer to this libguide: `,
 ];
 
+const creatorIntro = [
+    `More than 50 Cal Poly undergraduate and graduate students, representing the College of Engineering (CENG), College of Agriculture, Food & Environmental Science (CAFES), College of Science & Mathematics (CSM), College of Architecture & Environmental Design (CAED), College of Liberal Arts (CLA), Orfalea College of Business (OCOB), and the Computer Science & Artificial Intelligence (CSAI) Club, have contributed to the creation of Poppy the Swanton Chatbot.`
+]
+
 export { email, libguide, contactIntro, contactPoppy, contactJMS };
