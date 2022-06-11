@@ -45,7 +45,7 @@ const aboutKurfess = [
 ]
 
 const poppy21_22 = {
-    advisors: {
+    advisor: {
         slivovsky: "Dr. Lynne Slivovsky, Computer Engineering Department (CPE)",
         kurfess: "Dr. Franz J. Kurfess, Computer Science Department (CSC)",
     },
@@ -54,6 +54,7 @@ const poppy21_22 = {
         chang: "Norman Chang, CPE Capstone & Senior Project",
         chekhanovsky: "Edik S. Chekhanovsky, CPE Capstone",
         mccoy: "Lolia O. McCoy, CPE Capstone & Senior Project",
+        nguyen: "Dan Nguyen, CSC Senior Project",
         thurman: "Matthew Thurman, CSC Master’s Degree",
         wesolowski: "Melissa J. Wesolowski, CPE Capstone & Senior Project",
     }
