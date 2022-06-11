@@ -6,6 +6,7 @@ const email = {
 const libguide = {
     swanton: "https://guides.lib.calpoly.edu/swanton",
     calpoppy: "https://guides.lib.calpoly.edu/calpoppy",
+    poppychatbot: "https://guides.lib.calpoly.edu/poppychatbot",
 };
 
 const contactIntro = [
@@ -39,12 +40,12 @@ const poppy21_22 = {
         kurfess: "Dr. Franz J. Kurfess, Computer Science Department (CSC)",
     },
     poppy: {
-        barruel: "Evangeline “Eva” Mae Pangan Barruel, CPE Capstone & Senior Project",
-        chang: "",
-        chekhanovsky: "",
-        mccoy: "",
-        thurman: "",
-        wesolowski: "",
+        barruel: `Evangeline “Eva” Mae Pangan Barruel, CPE Capstone & Senior Project`,
+        chang: "Norman Chang, CPE Capstone & Senior Project",
+        chekhanovsky: "Edik S. Chekhanovsky, CPE Capstone",
+        mccoy: "Lolia O. McCoy, CPE Capstone & Senior Project",
+        thurman: "Matthew Thurman, CSC Master’s Degree",
+        wesolowski: "Melissa J. Wesolowski, CPE Capstone & Senior Project",
     }
 }
 
