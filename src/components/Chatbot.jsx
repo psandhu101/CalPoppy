@@ -135,7 +135,7 @@ export default function Chatbot(props) {
         }
         console.log("Call post")
         postMessage();
-    }, [conversation, query]);
+    }, [query]);
 
     /**
      * Adds the user's message to the conversation, passes message to the bot
