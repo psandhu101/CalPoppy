@@ -1,0 +1,10 @@
+.contactImg {
+    float: left;
+    margin: 1% 2.5% 0 0;
+    max-width: 300px;
+}
+
+.imgCaption {
+    font-size: small;
+    color: var(--sealGray);
+}
