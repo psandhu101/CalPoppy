@@ -8,6 +8,12 @@ const libguide = {
     calpoppy: "https://guides.lib.calpoly.edu/calpoppy",
 };
 
+const contactIntro = [
+    `Poppy the Swanton Chatbot is part of a larger faculty research program called the `,
+    `Cal Poppy Research Project`,
+    ` at California Polytechnic State University, San Luis Obispo. Contact the Poppy Project Team at ${email.poppy} or the Cal Poppy Research Project PI, Jeanine M. Scaramozzino at ${email.jms}.`
+]
+
 const contactPoppy = [
     `If you have questions, feedback, corrections, etc.  about Poppy please email ${ email.poppy } and a team member will get back to you.`
 ]
@@ -17,4 +23,4 @@ const contactJMS = [
     `If you have questions about the Cal Poppy Research Program, started in 2013, please contact the Principle Investigator, Jeanine Scaramozzino,  at ${ email.jms }, or refer to this libguide: `,
 ];
 
-export { email, libguide, contactPoppy, contactJMS };
+export { email, libguide, contactIntro, contactPoppy, contactJMS };
