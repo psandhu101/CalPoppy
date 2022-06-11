@@ -17,20 +17,27 @@ const Contact = () => {
             <h1>Creators</h1>
             { creatorIntro[0] } <br /><br />
 
-            <h2>Cal Poppy Research Team</h2> <br />
-            <h4>{ calPoppyResearch.scaramozzino }</h4>
-            { aboutJMS[0] } <br /><br />
-            <h4>{ calPoppyResearch.kurfess }</h4>
-            <img src={kurfess} className="contactImg" alt="Dr. Franz J. Kurfess" />
-            {aboutKurfess[0]}<br/>{aboutKurfess[1]} <br /> <br />
-            <h4>{ calPoppyResearch.hayes }</h4>
-            <div className="contactImg">
-                <img src={hayes} className="contactImg" alt="Dr. Grey Hayes" /><br />
-                <text className="imgCaption">{aboutHayes[1]}</text>
-            </div>
-            {aboutHayes[0]}
 
-            <br /><br />
+            <h2>Cal Poppy Research Team</h2> <br />
+            <div className="inlineImg">
+                <div id="scaramozzino" className="inlineImgBlock">
+                    <h4>{ calPoppyResearch.scaramozzino }</h4>
+                    { aboutJMS[0] }
+                </div>
+                <div id="kurfess" className="inlineImgBlock">
+                    <h4>{ calPoppyResearch.kurfess }</h4>
+                    <img src={kurfess} className="contactImg" alt="Dr. Franz J. Kurfess" />
+                    {aboutKurfess[0]}<br/>{aboutKurfess[1]}
+                </div>
+                <div id="hayes" className="inlineImgBlock">
+                    <h4>{ calPoppyResearch.hayes }</h4>
+                    <div className="contactImg">
+                        <img src={hayes} className="contactImg" alt="Dr. Grey Hayes" /><br />
+                        <text className="imgCaption">{aboutHayes[1]}</text>
+                    </div>
+                    {aboutHayes[0]}
+                </div>
+            </div>
 
             <h2>Team Poppy 2021&ndash;2022</h2>
             <h4>Advisors</h4>
