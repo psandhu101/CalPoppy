@@ -33,19 +33,7 @@ export default function App() {
     const [ displayNavMobile, setDisplayNavMobile ] = useState(false);
     const [ textNavMobile, setTextNavMobile ] = useState("Menu");
 
-    const checkWidth = () => {
-        // not working rn, using default nav width to calculate
-        // const navWidth = document.getElementById("nav").style.width;
-
-        setBreakpoint({
-            size:
-                (window.innerWidth < usualNavWidth) ? "small" :              // mobile
-                (window.innerWidth > (usualNavWidth * 3)) ? "large" :   // kiosk
-                "default",                                              // regular
-            screenWidth: window.innerWidth
-        });
-        console.log("Screen size", breakpoint.size);
-    }
+    
 
     const onClickNavMobile = () => {
         setDisplayNavMobile(!displayNavMobile);
@@ -54,12 +42,26 @@ export default function App() {
     }
 
     useEffect(() => {
+        const checkWidth = () => {
+            // not working rn, using default nav width to calculate
+            // const navWidth = document.getElementById("nav").style.width;
+    
+            setBreakpoint({
+                size:
+                    (window.innerWidth < usualNavWidth) ? "small" :              // mobile
+                    (window.innerWidth > (usualNavWidth * 3)) ? "large" :   // kiosk
+                    "default",                                              // regular
+                screenWidth: window.innerWidth
+            });
+            console.log("Screen size", breakpoint.size);
+        }
+
         window.addEventListener("resize", checkWidth);
 
         return() => {
             window.removeEventListener("resize", checkWidth);
         }
-    }, [checkWidth])
+    })
 
     return (
         <ThemeProvider theme={theme}>  
