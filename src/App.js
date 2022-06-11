@@ -33,8 +33,6 @@ export default function App() {
     const [ displayNavMobile, setDisplayNavMobile ] = useState(false);
     const [ textNavMobile, setTextNavMobile ] = useState("Menu");
 
-    
-
     const onClickNavMobile = () => {
         setDisplayNavMobile(!displayNavMobile);
         setTextNavMobile((textNavMobile === "Menu") ? "Close" : "Menu");
