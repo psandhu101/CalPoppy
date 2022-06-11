@@ -1,8 +1,7 @@
 
-import {suggestions, aboutSPR, aboutCreators, aboutHayes, aboutKurfess, disclaimer} from "./aboutTxt";
+import {suggestions, aboutSPR, aboutCreators, disclaimer} from "./aboutTxt";
+import { aboutHayes } from "./contactTxt";
 import '../style/about.css';
-import hayes from "../images/hayes_grey.jpeg";
-import kurfess from "../images/kurfess_franz.jpeg";
 import { libguide } from "./contactTxt";
 
 const About = () => {
@@ -48,23 +47,6 @@ const About = () => {
               <h6><br/>{aboutCreators[0]}<p/>
                   {aboutCreators[1]}<br/>
                   {aboutCreators[2]}
-              </h6>
-
-              <h5>
-                <br/>Dr. Grey Hayes<br/>
-              </h5>
-              <img src={hayes} width="50%" alt="Dr. Grey Hayes" /><br/>
-              {aboutHayes[1]}
-              <h6>
-                <br/>{aboutHayes[0]}
-              </h6>
-
-              <h5>
-                <br/>Dr. Franz J. Kurfess<br/>
-              </h5>
-              <img src={kurfess} width="50%" alt="Dr. Franz J. Kurfess" /><br/>
-              <h6>
-                <br/>{aboutKurfess[0]}<br/>{aboutKurfess[1]}
               </h6>
             </div> 
           </div>

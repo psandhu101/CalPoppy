@@ -2,6 +2,7 @@ import { libguide, contactIntro, creatorIntro, aboutJMS, aboutKurfess, aboutHaye
 import "../style/home.scss";
 import "../style/contact.css";
 import kurfess from "../images/kurfess_franz.jpeg";
+import hayes from "../images/hayes_grey.jpeg";
 
 const Contact = () => {
     return (
@@ -21,7 +22,13 @@ const Contact = () => {
             { aboutJMS[0] } <br /><br />
             <h4>{ calPoppyResearch.kurfess }</h4>
             <img src={kurfess} className="contactImg" alt="Dr. Franz J. Kurfess" />
-            {aboutKurfess[0]}<br/>{aboutKurfess[1]}
+            {aboutKurfess[0]}<br/>{aboutKurfess[1]} <br /> <br />
+            <h4>{ calPoppyResearch.hayes }</h4>
+            <div className="contactImg">
+                <img src={hayes} className="contactImg" alt="Dr. Grey Hayes" /><br />
+                <text className="imgCaption">{aboutHayes[1]}</text>
+            </div>
+            {aboutHayes[0]}
              
         </div>
     )
