@@ -1,5 +1,5 @@
 .contactImg {
     float: left;
     margin: 1% 2.5% 0 0;
-    width: 25%;
+    max-width: 300px;
 }
