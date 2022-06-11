@@ -125,7 +125,7 @@ export default function App() {
                                         </button>
                                     </Link>
                                     {/* later change link to /Donate */}
-                                    <Link to="/404">
+                                    <Link to="/Donate">
                                         <button
                                             class={` navbutton ${ breakpoint.size === "large" ? "navbuttonLarge" : "" } `}
                                             type="button"
