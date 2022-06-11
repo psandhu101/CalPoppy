@@ -1,5 +1,7 @@
-import { libguide, calPoppyResearch, contactIntro, contactJMS, creatorIntro } from "./contactTxt"
+import { libguide, contactIntro, creatorIntro, aboutJMS, aboutKurfess, aboutHayes, calPoppyResearch, poppy21_22 } from "./contactTxt"
 import "../style/home.scss";
+import "../style/contact.css";
+import kurfess from "../images/kurfess_franz.jpeg";
 
 const Contact = () => {
     return (
@@ -16,8 +18,10 @@ const Contact = () => {
 
             <h2>Cal Poppy Research Team</h2> <br />
             <h4>{ calPoppyResearch.scaramozzino }</h4>
-            { contactJMS[0] } <br /><br />
-            {/* <h4>{ calPoppyResearch.kurfess }</h4> */}
+            { aboutJMS[0] } <br /><br />
+            <h4>{ calPoppyResearch.kurfess }</h4>
+            <img src={kurfess} className="contactImg" alt="Dr. Franz J. Kurfess" />
+            {aboutKurfess[0]}<br/>{aboutKurfess[1]}
              
         </div>
     )
