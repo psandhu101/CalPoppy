@@ -27,4 +27,33 @@ const creatorIntro = [
     `More than 50 Cal Poly undergraduate and graduate students, representing the College of Engineering (CENG), College of Agriculture, Food & Environmental Science (CAFES), College of Science & Mathematics (CSM), College of Architecture & Environmental Design (CAED), College of Liberal Arts (CLA), Orfalea College of Business (OCOB), and the Computer Science & Artificial Intelligence (CSAI) Club, have contributed to the creation of Poppy the Swanton Chatbot.`
 ]
 
-export { email, libguide, contactIntro, contactPoppy, contactJMS };
+const calPoppyResearchTeam = {
+    scaramozzino: "Jeanine M. Scaramozzino, Robert E. Kennedy Library, Cal Poly, Principal Investigator (PI) & Lead Cultivator",
+    kurfess: "Dr. Franz J. Kurfess, Computer Science Department, Cal Poly, Co-PI & Cultivator",
+    hayes: "Dr. Grey F. Hayes, Swanton Pacific Ranch, Cal Poly, Co-PI & Cultivator",
+}
+
+const poppy21_22 = {
+    advisors: {
+        slivovsky: "Dr. Lynne Slivovsky, Computer Engineering Department (CPE)",
+        kurfess: "Dr. Franz J. Kurfess, Computer Science Department (CSC)",
+    },
+    poppy: {
+        barruel: "Evangeline “Eva” Mae Pangan Barruel, CPE Capstone & Senior Project",
+        chang: "",
+        chekhanovsky: "",
+        mccoy: "",
+        thurman: "",
+        wesolowski: "",
+    }
+}
+
+export {
+    email,
+    libguide,
+    contactIntro,
+    contactPoppy,
+    contactJMS,
+    creatorIntro,
+    calPoppyResearchTeam
+};
