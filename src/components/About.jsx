@@ -1,6 +1,5 @@
 
 import {suggestions, aboutSPR, aboutCreators, disclaimer} from "./aboutTxt";
-import { aboutHayes } from "./contactTxt";
 import '../style/about.css';
 import { libguide } from "./contactTxt";
 

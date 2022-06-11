@@ -6,7 +6,9 @@ import ChatHeader from "./ChatHeader";
 import funfacts from "./facts.js";
 // import axios from "axios";
 import "../style/chatbot.css";
-import { findAllByDisplayValue } from "@testing-library/react";
+// import { findAllByDisplayValue } from "@testing-library/react";
+
+
 
 export default function Chatbot(props) {
     const SENDER_USER = "user";
@@ -103,9 +105,9 @@ export default function Chatbot(props) {
 
         }
 
-        function sleep(ms) {
-             return new Promise(resolve => setTimeout(resolve, ms));
-        }
+        // function sleep(ms) {
+        //      return new Promise(resolve => setTimeout(resolve, ms));
+        // }
 
         async function postMessage() {
             try {
@@ -124,7 +126,7 @@ export default function Chatbot(props) {
                 }));
                 console.log("1")
 
-                setConversation([...conversation, ...answerMessages]); //
+                setConversation(conversation => [...conversation, ...answerMessages]);
                 console.log("2")
 
             } catch (err) {
@@ -135,7 +137,7 @@ export default function Chatbot(props) {
         }
         console.log("Call post")
         postMessage();
-    }, [conversation, query]);
+    }, [query]);
 
     /**
      * Adds the user's message to the conversation, passes message to the bot

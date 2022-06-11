@@ -2,13 +2,13 @@
 import "../style/donate.css";
 import '../style/about.css';
 
-import {Image, Button, Container, Row, Col} from 'react-bootstrap';
+import {Button, Container, Row, Col} from 'react-bootstrap';
 
 export default function Donate() {
     const titleText = "Help Poppy Grow!";
     const supportText = `You can support immediate future growth by donating to the Swanton Pacific Ranch Recovery Fund.`;
     const descriptionText = `Please note in the special requests text box that your donation is for Poppy and its student researchers.`;
-    const fundingText = `These projects are based upon work supported by the Research, Scholarly & Creative Activities Program awarded by the Cal Poly division of Research, Economic Development & Graduate Education as well as the Cal Poly College of Engineering CPConnect Grant Enabling Interdisciplinary Project-Based Learning, the Warren J. Baker Endowment for Excellence in Project-Based Learning, the Robert D. Koob Endowment for Student Success, the Cal Poly Construction Management Department, and the College of Science and Mathematics.`
+    const fundingText = `These projects are based upon work supported by the Research, Scholarly & Creative Activities Program awarded by the Cal Poly division of Research, Economic Development & Graduate Education as well as the Cal Poly College of Engineering CPConnect Grant Enabling Interdisciplinary Project-Based Learning, the Warren J. Baker Endowment for Excellence in Project-Based Learning, the Robert D. Koob Endowment for Student Success, the Cal Poly Construction Management Department, and the College of Science and Mathematics.`;
 
     const description = descriptionText.split("\n").map((text, i) => (
         <p key={i} className="descriptionStyle">
@@ -22,11 +22,11 @@ export default function Donate() {
         </p>
     ));
 
-    const funding = fundingText.split("\n").map((text, i) => {
+    const funding = fundingText.split("\n").map((text, i) => (
         <p key={i} className="descriptionStyle">
             {text}
         </p>
-    });
+    ));
     
     return (
         <Container>
@@ -41,7 +41,7 @@ export default function Donate() {
                             {description}
                     </div>
                     <div align="center" className="cardDonateStyles">
-                        {fundingText}
+                        {funding}
                     </div>
                 </Col>
             </Row>
