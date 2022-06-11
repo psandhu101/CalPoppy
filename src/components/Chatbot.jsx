@@ -93,7 +93,7 @@ export default function Chatbot(props) {
             // let resp = (data.sentences[0]) ? (data.sentences + responseCount) : [AI_NO_ANS, funfacts[fact]]
             if (data.sentences[0]) {
                 setResponseCount(responseCount + 1);
-                return [{ text: data.sentences + responseCount }]
+                return [{ text: data.sentences }]
             }
             else {
                 return [{ text: AI_NO_ANS}, { text: FUN_FACT_STR + funfacts[fact]}]
@@ -124,11 +124,12 @@ export default function Chatbot(props) {
                 }));
                 console.log("1")
 
-                setQuery(""); //TRIGGER
-                console.log("2")
+                // setQuery(""); //TRIGGER
+                // console.log("2")
 
                 setConversation([...conversation, ...answerMessages]); //
-                console.log("3")
+                // console.log("3")
+                console.log("2")
 
             } catch (err) {
                 console.log("THIS IS BAD")
