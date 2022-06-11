@@ -124,7 +124,7 @@ export default function Chatbot(props) {
                 }));
                 console.log("1")
 
-                setConversation([...conversation, ...answerMessages]); //
+                setConversation(conversation => [...conversation, ...answerMessages]); //
                 console.log("2")
 
             } catch (err) {
@@ -135,7 +135,7 @@ export default function Chatbot(props) {
         }
         console.log("Call post")
         postMessage();
-    }, [conversation, query]);
+    }, [query]);
 
     /**
      * Adds the user's message to the conversation, passes message to the bot
