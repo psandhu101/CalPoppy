@@ -1,5 +1,4 @@
 {
-  "homepage": "http://swantonpoppycp.github.io/CalPoppy",
   "name": "swanton-chat-bot",
   "version": "0.1.0",
   "private": true,
@@ -12,7 +11,6 @@
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.3",
-    "gh-pages": "^3.2.3",
     "node-sass": "^6.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^2.1.1",
@@ -22,6 +20,7 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.0",
+    "react-simple-keyboard": "^3.4.146",
     "react-transition-group": "^4.4.1",
     "sass": "^1.49.0",
     "web-vitals": "^0.2.4"
@@ -30,9 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

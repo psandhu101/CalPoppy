@@ -3,18 +3,24 @@ import { useEffect, useState } from "react";
 import ChatComposer from "./ChatComposer";
 import ChatWindow from "./ChatWindow";
 import ChatHeader from "./ChatHeader";
+import funfacts from "./facts.js";
 // import axios from "axios";
 import "../style/chatbot.css";
+import { findAllByDisplayValue } from "@testing-library/react";
 
 export default function Chatbot(props) {
     const SENDER_USER = "user";
     const SENDER_BOT = "bot";
 
+    const AI_NO_ANS = "Sorry, I cannot answer that question at the moment! Please contact Jeanine Scaramozzino at swantonpoppycp@gmail.com to give feedback. Thank you for helping Poppy grow!";
+    const FUN_FACT_STR = "Here is a fun fact about SPR: ";
+    const FUN_FACT_COUNT = 5;
+
     const [suggestionsOpen, setSuggestionsOpen] = useState(false);
     const [query, setQuery] = useState("");
     const [conversation, setConversation] = useState([]);
-    const [responseCount, setResponseCount] = useState(0); // AI mocking
-    const [initialResponse, setInitialResponse] = useState(0);
+    // const [responseCount, setResponseCount] = useState(0); // AI mocking
+    // const [initialResponse, setInitialResponse] = useState(0);
     const [feedbackReceived, setFeedbackReceived] = useState(0);
 
     /**
@@ -80,16 +86,24 @@ export default function Chatbot(props) {
                 },
                 body: JSON.stringify(question)
             })
+            // Data is the AI response from Matthew.
             let data = await response.json()
-            //Data is the AI response from Matthew.
-            let resp = data.sentences + responseCount;
+            let fact = Math.floor(Math.random() * FUN_FACT_COUNT)
+            // assuming data evaluates to false if empty string
+            // let resp = (data.sentences[0]) ? (data.sentences + responseCount) : [AI_NO_ANS, funfacts[fact]]
+            if (data.sentences[0]) {
+                // setResponseCount(responseCount + 1);
+                return [{ text: data.sentences }]
+            }
+            else {
+                return [{ text: AI_NO_ANS}, { text: FUN_FACT_STR + funfacts[fact]}]
+            }
             //sessionStorage.setItem("responseCount", responseCount + 1);
-            setResponseCount(responseCount + 1);
-            return [{ text: resp }]
+            // return [{ text: resp }]
 
         }
 
-         function sleep(ms) {
+        function sleep(ms) {
              return new Promise(resolve => setTimeout(resolve, ms));
         }
 
@@ -110,11 +124,8 @@ export default function Chatbot(props) {
                 }));
                 console.log("1")
 
-                setQuery(""); //TRIGGER
-                console.log("2")
-
                 setConversation([...conversation, ...answerMessages]); //
-                console.log("3")
+                console.log("2")
 
             } catch (err) {
                 console.log("THIS IS BAD")
@@ -124,7 +135,7 @@ export default function Chatbot(props) {
         }
         console.log("Call post")
         postMessage();
-    }, [query]);
+    }, [conversation, query]);
 
     /**
      * Adds the user's message to the conversation, passes message to the bot

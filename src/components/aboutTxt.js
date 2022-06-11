@@ -1,3 +1,5 @@
+import { email } from "./contactTxt";
+
 const suggestions = [
   "How big is Swanton Pacific Ranch?",
   "Where did Swanton get its name?",
@@ -20,14 +22,20 @@ sharing the rich history and research opportunities of Swanton Pacific Ranch has
 much of the ranch (including many landmarks and a lot of physical data) in late summer 2020, the necessity to preserve and spread 
 knowledge of the ranch has become a priority. So, a plan was devised to provide access to this information through an interactive, 
 remotely updated, creative outreach tool for researchers and the public, requiring no mediation...and Poppy the Chatbot was born!
-`];
+`,
+`To find more resources about SPR, check out this libguide:`,
+];
 
-const aboutCreators = [`Poppy was brought to you by Cal Poly students from many different majors, disciplines, backgrounds. 
-She is still a work in progress, so if you find any issues you would like to report, please contact:`, 
-"Poppy Software Team", "swantonpoppycp@gmail.com"];
+const aboutCreators = [
+  `Poppy was brought to you by Cal Poly students from many different majors, disciplines, backgrounds. 
+  She is still a work in progress, so if you find any issues you would like to report, please contact:`, 
+  "Poppy Software Team",
+  email.poppy,
+];
 
 const helpMessage = ["Poppy needs your help to ensure that she can stay up and running to educate future generations on SPR's rich history!", 
-"Interested in donating? Contact:", "Jeanine Scaramozzino", "swantonpoppycp@gmail.com"];
+"Interested in donating? Contact:", "Jeanine Scaramozzino", email.poppy];
 
-export default suggestions;
-export {aboutSPR, aboutCreators, helpMessage};
+const disclaimer = `Reasonable effort has been made to accurately and fairly represent the content shared through the Poppy interface. If you have comments, concerns or clarification on the content please email ${ email.poppy }.`
+
+export { suggestions, aboutSPR, aboutCreators, helpMessage, disclaimer };
