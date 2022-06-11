@@ -124,7 +124,7 @@ export default function Chatbot(props) {
                 }));
                 console.log("1")
 
-                setConversation(conversation => [...conversation, ...answerMessages]); //
+                setConversation(conversation => [...conversation, ...answerMessages]);
                 console.log("2")
 
             } catch (err) {
