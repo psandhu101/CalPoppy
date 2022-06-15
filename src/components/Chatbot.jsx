@@ -136,9 +136,9 @@ export function Chatbot(props) {
 
         }
 
-        function sleep(ms) {
-             return new Promise(resolve => setTimeout(resolve, ms));
-        }
+        // function sleep(ms) {
+        //      return new Promise(resolve => setTimeout(resolve, ms));
+        // }
 
         async function postMessage() {
             try {
