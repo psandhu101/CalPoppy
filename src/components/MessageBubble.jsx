@@ -22,7 +22,7 @@ export default function MessageBubble({
             </p>
             <br></br>
 
-            <div className=" msgBtns ">
+            <div className={` msgBtn ${!senderID ? "msgBtnUser" : ""} `}>
                 {/* play message */}
                 <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
                     <i class="bi bi-megaphone"></i>
