@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import '../style/chatMsg.css';
 import '../style/colors.css';
-import { synthesizeText } from './SpeechProcessing';
+import { speechOut } from './SpeechProcessing';
 import { poppyDir } from '../App';
 
 export default function MessageBubble({
@@ -13,23 +13,6 @@ export default function MessageBubble({
     feedback,
     timestamp,
     }) {
-
-    const playMsg = (text) => {
-        const path = require('path');
-
-        // output file for audio
-        // maybe add ogg files later since those are smaller
-        console.log(poppyDir);
-        const outputFile = path.join(poppyDir, "msg.mp3");
-
-        // call TTS synthesize function from Google's API
-        synthesizeText(text, outputFile);
-
-        // play audio file
-        <audio autoplay>
-            <source src={{ outputFile }} type="audio/mpeg" />
-        </audio>
-    }
 
     return (
         /* wrapper div for messages */
@@ -60,7 +43,7 @@ export default function MessageBubble({
                     )}
 
                     {/* play bot message -- can be expanded to user msgs as well */}
-                    <button type="button" className="feedbackIcon" onClick={() => playMsg(text)}>
+                    <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
                         <i class="bi bi-megaphone"></i>
                     </button>
                 </div>
