@@ -27,28 +27,23 @@ export default function MessageBubble({
                 <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
                     <i class="bi bi-megaphone"></i>
                 </button>
-            </div>
 
-            {/* extra bot buttons */}
-            {senderID && (
-                <div className=" feedbackOpts ">
-                    {/* feedback buttons */}
-                    {showFeedback && (
-                        <div>
-                            <button type="button"
-                            className={` feedbackIcon ${typeof feedback !== "undefined" && feedback ? "feedbackIconPos" : ""} `}
-                            onClick={() => onFeedbackGiven(timestamp, true)}>
-                                <i class="bi bi-hand-thumbs-up"></i>
-                            </button>
-                            <button type="button"
-                                className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `}
-                                onClick={() => onFeedbackGiven(timestamp, false)}>
-                                <i class="bi bi-hand-thumbs-down"></i>
-                            </button>
-                        </div>
-                    )}
-                </div>
-            )}
+                {/* extra bot buttons (feedback) */}
+                {senderID && showFeedback && (
+                    <div>
+                        <button type="button"
+                        className={` feedbackIcon ${typeof feedback !== "undefined" && feedback ? "feedbackIconPos" : ""} `}
+                        onClick={() => onFeedbackGiven(timestamp, true)}>
+                            <i class="bi bi-hand-thumbs-up"></i>
+                        </button>
+                        <button type="button"
+                            className={` feedbackIcon ${typeof feedback !== "undefined" && !feedback ? "feedbackIconNeg" : ""} `}
+                            onClick={() => onFeedbackGiven(timestamp, false)}>
+                            <i class="bi bi-hand-thumbs-down"></i>
+                        </button>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
