@@ -2,7 +2,6 @@
 import '../style/chatMsg.css';
 import '../style/colors.css';
 import { speechOut } from './SpeechProcessing';
-import { poppyDir } from '../App';
 
 export default function MessageBubble({
     text,

@@ -19,30 +19,6 @@ import {
   Link
 } from "react-router-dom";
 
-function makeTmpDir() {
-    // TODO: find alternative to Node.js fs because React ignores it
-    const fs = require('fs');
-    const os = require('os');
-    const path = require('path');
-
-    // creates temp dir for entire web app
-    const tmpDirOS = os.tmpdir();
-    let tmpDir;
-    fs.mkdtemp(path.join(tmpDirOS, "poppy-"), (err, tmpDir) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            console.log(`Temp dir for Poppy created at ${tmpDir}`);
-        }
-    });
-
-    console.log(tmpDir);
-    return tmpDir;
-}
-
-export const poppyDir = makeTmpDir();
-
 export default function App() {
   return (
     <ThemeProvider theme={theme}>  
