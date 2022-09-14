@@ -85,10 +85,11 @@
     border-bottom-right-radius: var(--pointedCorner);
 }
 
-.feedbackOpts {
+.msgBtns {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
 }
 
 .feedbackIcon {

@@ -22,8 +22,8 @@ export default function MessageBubble({
             </p>
             <br></br>
 
-            {/* play message */}
-            <div className=" feedbackOpts ">
+            <div className=" msgBtns ">
+                {/* play message */}
                 <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
                     <i class="bi bi-megaphone"></i>
                 </button>
