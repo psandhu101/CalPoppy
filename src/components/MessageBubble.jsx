@@ -40,13 +40,15 @@ export default function MessageBubble({
                             </button>
                         </div>
                     )}
-
-                    {/* play bot message -- can be expanded to user msgs as well */}
-                    <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
-                        <i class="bi bi-megaphone"></i>
-                    </button>
                 </div>
             )}
+
+            {/* play message */}
+            <div className=" feedbackOpts ">
+                <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
+                    <i class="bi bi-megaphone"></i>
+                </button>
+            </div>
         </div>
     );
 }
