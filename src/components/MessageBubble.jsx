@@ -22,6 +22,13 @@ export default function MessageBubble({
             </p>
             <br></br>
 
+            {/* play message */}
+            <div className=" feedbackOpts ">
+                <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
+                    <i class="bi bi-megaphone"></i>
+                </button>
+            </div>
+
             {/* extra bot buttons */}
             {senderID && (
                 <div className=" feedbackOpts ">
@@ -42,13 +49,6 @@ export default function MessageBubble({
                     )}
                 </div>
             )}
-
-            {/* play message */}
-            <div className=" feedbackOpts ">
-                <button type="button" className="feedbackIcon" onClick={() => speechOut(text)}>
-                    <i class="bi bi-megaphone"></i>
-                </button>
-            </div>
         </div>
     );
 }
