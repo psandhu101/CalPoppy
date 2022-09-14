@@ -4,10 +4,8 @@ import Speech from "react-speech";
 /******* TEXT TO SPEECH *******/
 
 export const speechOut = (text) => {
-    React.render(
-        <Speech text="Welcome to react speech" />,
-        document.getElementById('node')
-    );
+    console.log("Poppy is speaking");
+    return <Speech text="text" />;
 }
 
 
