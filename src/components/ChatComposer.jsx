@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import { Send, Mic } from "react-feather";
 import "../style/chatComposer.css";
 import "../style/text.css";
-import { speechOut } from "./SpeechProcessing";
+import { speechIn } from "./SpeechProcessing";
 
 export default function ChatComposer({ onSend }) {
 
