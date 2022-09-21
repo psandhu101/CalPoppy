@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import '../style/chatMsg.css';
 import '../style/colors.css';
-import { speechOut } from "./SpeechProcessing";
+import { speechOut } from "./Speech";
 
 export default function MessageBubble({
     text,
