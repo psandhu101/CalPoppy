@@ -11,7 +11,6 @@
 # production
 /build
 flask-server/venv/**
-flask-server/__pycache__/**
 
 # misc
 .DS_Store

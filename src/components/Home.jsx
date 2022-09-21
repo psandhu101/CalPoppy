@@ -25,10 +25,8 @@ export default function Home() {
             </Row>
             <Row style={{filter:"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}}>
                 <Col>
-                    {/* for some reason, "class" is currently throwing an errror
-                        but it won't work with "className" */}
-                    <Link to="/about" marginleft='50rem' marginright='10rem'>
-                        <Button variant='primary' id='btn-small' class='rounded-1 text-nowrap'>About</Button>
+                <Link to="/about" marginLeft='50rem' marginRight='10rem'>
+                        <Button variant='primary' id='btn-small' class='rounded-1 text-nowrap'>Learn More</Button>
                     </Link>
                 </Col>
             </Row>
