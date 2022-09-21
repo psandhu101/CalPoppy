@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import '../style/chatMsg.css';
 import '../style/colors.css';
-// import { speechOut } from './SpeechProcessing';
-import { useSpeechSynthesis, useSpeechRecognition } from "react-speech-kit";
+import { speechOut } from "./SpeechProcessing";
 
 export default function MessageBubble({
     text,
@@ -14,8 +13,6 @@ export default function MessageBubble({
     feedback,
     timestamp,
     }) {
-
-    const { speechOut } = useSpeechSynthesis();
 
     return (
         /* wrapper div for messages */

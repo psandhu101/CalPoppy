@@ -76,3 +76,5 @@ export default function App() {
     </ThemeProvider>
   );
 }
+
+export const synth = window.speechSynthesis;
