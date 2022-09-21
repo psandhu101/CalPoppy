@@ -7,6 +7,7 @@ A chatbot web app for the [Swanton Virtual Assistant](https://github.com/swanton
 Features include:
 
 - A simplistic chat interface where users send messages to the Swanton Virtual Assistant
+    - Messages that can be converted from speech to text
 - FAQs that direct visitors toward interesting historical stories about the ranch.
 - A simple interactive map to learn about different locations on the ranch.
 
