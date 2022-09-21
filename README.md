@@ -1,6 +1,6 @@
 # Swanton Chat Bot
 
-A chatbot web app for the [Swanton Virtual Assistant](https://github.com/calpoly-csai/swanton). Its purpose is to answer historical and cultural questions about Swanton Pacific Ranch.
+A chatbot web app for the [Swanton Virtual Assistant](https://github.com/swantonpoppycp/CalPoppy). Its purpose is to answer historical and cultural questions about Swanton Pacific Ranch.
 
 [See it live](https://swantonpoppy.org)
 
@@ -10,13 +10,19 @@ Features include:
 - FAQs that direct visitors toward interesting historical stories about the ranch.
 - A simple interactive map to learn about different locations on the ranch.
 
+Legacy repos:
+
+- https://github.com/calpoly-csai/swanton
+- https://github.com/EdikusRex/CalPoppy
+- https://github.com/ebarruel/CalPoppy-June2022
+
 ## Getting Started
 
-1. Clone this repo: `https://github.com/EdikusRex/CalPoppy.git`
+1. Clone this repo: `https://github.com/swantonpoppycp/CalPoppy.git`
 2. Navigate to folder: `cd CalPoppy`
 3. Install dependencies: `npm install`
 4. Start the backend server (see section below)
-5. Start the development server (in a new terminal in the main directory): `npm start`
+5. Start the development server (in a new terminal in the main CalPoppy directory): `npm start`
 6. Open the app in your browser: `http://localhost:3000`
 
 ### Running the backend
